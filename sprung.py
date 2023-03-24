@@ -36,7 +36,7 @@ soup = BeautifulSoup(html, "html5lib")
 
 asset_tag = soup.find(asset_in_href_or_src)
 if not asset_tag:
-    sys.exit(f"⚠️ NOT FOUND IN PAGE: {sys.argv[2]}")
+    sys.exit(f"⚠️  NOT FOUND IN PAGE: {sys.argv[2]}")
 
 # libcal references assets with a full domain
 if asset_path.startswith("http"):
@@ -44,7 +44,7 @@ if asset_path.startswith("http"):
 elif asset_path.startswith("/"):
     asset_min = requests.get(f"{site_url}{asset_path}").text
 else:
-    sys.exit(f"⚠️ UNEXPECTED PATH: {asset_path}")
+    sys.exit(f"⚠️  UNEXPECTED PATH: {asset_path}")
 
 # use the asset version in the commit message later in the workflow
 with open(os.getenv("GITHUB_ENV"), "a") as env_file:
@@ -55,5 +55,5 @@ if asset_path.endswith(".css"):
 elif asset_path.endswith(".js"):
     asset_beautified = jsbeautifier.beautify(asset_min)
 
-with open(f'{sys.argv[2].replace(".min", ".beautified")}', "w") as asset_file:
+with open(f'upstream/{sys.argv[2].replace(".min", ".beautified")}', "w") as asset_file:
     asset_file.write(asset_beautified)
