@@ -8557,6 +8557,10 @@ a.link-bold {
     color: #707070
 }
 
+.s-srch-resultlist .dropdown-toggle:focus {
+    outline: 5px auto Highlight
+}
+
 body {
     font-family: Arial, Helvetica, Verdana;
     font-size: 12px;
@@ -9019,7 +9023,7 @@ textarea {
     border-radius: 3px 3px 0 0;
     font-size: 12px;
     margin-top: 0;
-    color: #666
+    color: #545454
 }
 
 .s-lib-box .s-lg-box-footer {
@@ -9084,7 +9088,7 @@ textarea {
 }
 
 .s-lib-box-container .s-lg-box-footer .s-lg-box-updated {
-    color: #c3c3c3;
+    color: #555;
     font-size: 10px
 }
 
@@ -9188,7 +9192,7 @@ textarea {
 }
 
 #s-lg-page-friendly-anchor div {
-    color: #777;
+    color: #545454;
     font-size: 11px;
     font-weight: 700;
     padding-bottom: 15px;
@@ -9468,7 +9472,7 @@ textarea {
 }
 
 .s-lib-footer {
-    font-size: .9em;
+    font-size: 1em;
     padding-top: 5px;
     padding-bottom: 5px;
     border-top: 1px solid #bbb;
@@ -10623,6 +10627,34 @@ ul.multiselect-container li label {
 .ui-dialog-content {
     max-height: 75vh !important;
     overflow-y: auto !important
+}
+
+.ul-link-list {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0
+}
+
+.ul-link-list li {
+    display: inline
+}
+
+.ul-link-list li a {
+    margin-inline-start: 3px
+}
+
+.ul-link-list li+li::before {
+    content: ", "
+}
+
+.s-lib-box-title button.close {
+    color: #545454;
+    opacity: .8
+}
+
+#s-lg-guide-tabs-title-bar .navbar-default .navbar-nav>li>a {
+    color: #545454
 }
 
 .s-ui-helptip {
