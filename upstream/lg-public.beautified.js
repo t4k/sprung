@@ -1084,7 +1084,6 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
         colltab.attr("id", collid), collparent && (colltab.attr({
             "aria-controls": collpanel.attr("id"),
             role: "tab",
-            "aria-selected": "false",
             "aria-expanded": "false"
         }), $(collparent).find("div:not(.collapse,.panel-body), h4").attr("role", "presentation"), collparent.attr({
             role: "tablist",
@@ -1097,7 +1096,6 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
         }), collpanel.attr({
             tabindex: "-1"
         })) : collpanel.hasClass("in") ? (colltab.attr({
-            "aria-selected": "true",
             "aria-expanded": "true",
             tabindex: "0"
         }), collpanel.attr({
@@ -1120,21 +1118,18 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
             this.$parent;
             this.$parent && (curTab = this.$parent.find('[data-toggle=collapse][href="#' + this.$element.attr("id") + '"]')), collToggle.apply(this, arguments), $.support.transition && this.$element.one($.support.transition.end, function() {
                 prevTab.attr({
-                    "aria-selected": "false",
                     "aria-expanded": "false",
                     tabIndex: "-1"
                 }), $prevPanel.attr({
                     "aria-hidden": "true",
                     tabIndex: "-1"
                 }), curTab.attr({
-                    "aria-selected": "true",
                     "aria-expanded": "true",
                     tabIndex: "0"
                 }), $curPanel.hasClass("in") ? $curPanel.attr({
                     "aria-hidden": "false",
                     tabIndex: "0"
                 }) : (curTab.attr({
-                    "aria-selected": "false",
                     "aria-expanded": "false"
                 }), $curPanel.attr({
                     "aria-hidden": "true",
@@ -2577,8 +2572,16 @@ springSpace.util = {}, springSpace.common = {}, springSpace.validation = {}, spr
         }))
     }, UI.prototype.initPopOvers = function(bs5 = !1) {
         if (bs5) {
-            [...document.querySelectorAll('[data-bs-toggle="popover"]')].map((el => new bootstrap.Popover(el)))
-        } else jQuery("[data-toggle='popover']").popover()
+            [...document.querySelectorAll('[data-bs-toggle="popover"]')].map((el => new bootstrap.Popover(el, {
+                container: "body",
+                placement: "auto",
+                boundary: "viewport"
+            })))
+        } else jQuery("[data-toggle='popover']").popover({
+            container: "body",
+            placement: "auto",
+            boundary: "viewport"
+        })
     }, UI.prototype.initHelpPopOvers = function(bs5 = !1) {
         bs5 ? document.querySelectorAll('[data-toggle="help-popover-info"]').forEach((el => {
             new bootstrap.Popover(el, {
