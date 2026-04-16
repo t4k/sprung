@@ -8786,7 +8786,6 @@ ul:empty {
 }
 
 .s-la-box-title h2 {
-    font-size: 14px;
     margin: 0;
     line-height: normal;
     color: #333
@@ -8794,10 +8793,6 @@ ul:empty {
 
 .s-la-box-content {
     padding: 15px 20px
-}
-
-.s-la-box-content h3 {
-    font-size: 18px
 }
 
 .s-la-box-content-edit,
@@ -8833,7 +8828,9 @@ ul:empty {
     margin-left: 0
 }
 
-.s-la-box-title.s-la-box-title-simple h2 {
+.s-la-box .s-la-box-title.s-la-color-bars.s-la-color-bars-border h2,
+div:not(.s-la-box-type-4)>.s-la-box .s-la-box-title h2,
+div:not(.s-la-box-type-4)>.s-la-box .s-la-box-title-simple h2 {
     font-size: 16px
 }
 
@@ -9363,10 +9360,6 @@ button#s-la-vote-yes:hover span.fa-thumbs-up {
     padding: 15px 10px
 }
 
-.s-la-box-type-4 .s-la-box-title.s-la-box-title-simple h2 {
-    font-size: 24px
-}
-
 .s-la-faq-meta {
     padding-top: 10px;
     border-top: 1px solid #e1e1e5;
@@ -9388,7 +9381,6 @@ button#s-la-vote-yes:hover span.fa-thumbs-up {
 }
 
 .s-la-faq-answer-header {
-    font-size: 20px;
     margin: 10px 0 24px 0
 }
 
