@@ -8561,6 +8561,10 @@ a.link-bold {
     outline: 5px auto Highlight
 }
 
+input::placeholder {
+    color: #6c757d !important
+}
+
 body {
     font-family: Arial, Helvetica, Verdana;
     font-size: 12px;
@@ -8598,7 +8602,7 @@ select {
 .s-lg-link-contrast,
 .ui-widget-content a,
 a {
-    color: #2954d1
+    color: #1863d4
 }
 
 #s-lib-admin-main .dataTables_paginate .paginate_button.disabled a,
