@@ -78,7 +78,7 @@ function(e, t) {
         return e instanceof Array || "[object Array]" === Object.prototype.toString.call(e)
     }
 
-    function U(e) {
+    function L(e) {
         return null != e && "[object Object]" === Object.prototype.toString.call(e)
     }
 
@@ -86,7 +86,7 @@ function(e, t) {
         return Object.prototype.hasOwnProperty.call(e, t)
     }
 
-    function L(e) {
+    function U(e) {
         if (Object.getOwnPropertyNames) return 0 === Object.getOwnPropertyNames(e).length;
         for (var t in e)
             if (h(e, t)) return;
@@ -206,8 +206,8 @@ function(e, t) {
 
     function X(e, t) {
         var n, i = W({}, e);
-        for (n in t) h(t, n) && (U(e[n]) && U(t[n]) ? (i[n] = {}, W(i[n], e[n]), W(i[n], t[n])) : null != t[n] ? i[n] = t[n] : delete i[n]);
-        for (n in e) h(e, n) && !h(t, n) && U(e[n]) && (i[n] = W({}, i[n]));
+        for (n in t) h(t, n) && (L(e[n]) && L(t[n]) ? (i[n] = {}, W(i[n], e[n]), W(i[n], t[n])) : null != t[n] ? i[n] = t[n] : delete i[n]);
+        for (n in e) h(e, n) && !h(t, n) && L(e[n]) && (i[n] = W({}, i[n]));
         return i
     }
 
@@ -509,8 +509,8 @@ function(e, t) {
         i = n._locale.monthsParse(e, i, n._strict);
         null != i ? t[D] = i : v(n).invalidMonth = e
     });
-    var Ue = "January_February_March_April_May_June_July_August_September_October_November_December".split("_"),
-        Le = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"),
+    var Le = "January_February_March_April_May_June_July_August_September_October_November_December".split("_"),
+        Ue = "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"),
         Re = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/,
         $e = a,
         We = a;
@@ -699,8 +699,8 @@ function(e, t) {
                 y: "a year",
                 yy: "%d years"
             },
-            months: Ue,
-            monthsShort: Le,
+            months: Le,
+            monthsShort: Ue,
             week: {
                 dow: 0,
                 doy: 6
@@ -860,7 +860,7 @@ function(e, t) {
                 if (e <= 999) return 1900 + e
             }
             return e
-        }(e), Le.indexOf(t), parseInt(n, 10), parseInt(i, 10), parseInt(a, 10)];
+        }(e), Ue.indexOf(t), parseInt(n, 10), parseInt(i, 10), parseInt(a, 10)];
         return r && e.push(parseInt(r, 10)), e
     }
 
@@ -919,7 +919,7 @@ function(e, t) {
         else if (y(r = (a = e)._i)) a._d = new Date(p.now());
         else R(r) ? a._d = new Date(r.valueOf()) : "string" == typeof r ? (n = a, null !== (t = bt.exec(n._i)) ? n._d = new Date(+t[1]) : (Dt(n), !1 === n._isValid && (delete n._isValid, xt(n), !1 === n._isValid) && (delete n._isValid, n._strict ? n._isValid = !1 : p.createFromInputFallback(n)))) : g(r) ? (a._a = $(r.slice(0), function(e) {
             return parseInt(e, 10)
-        }), Yt(a)) : U(r) ? (t = a)._d || (i = void 0 === (n = le(t._i)).day ? n.date : n.day, t._a = $([n.year, n.month, i, n.hour, n.minute, n.second, n.millisecond], function(e) {
+        }), Yt(a)) : L(r) ? (t = a)._d || (i = void 0 === (n = le(t._i)).day ? n.date : n.day, t._a = $([n.year, n.month, i, n.hour, n.minute, n.second, n.millisecond], function(e) {
             return e && parseInt(e, 10)
         }), Yt(t)) : _(r) ? a._d = new Date(r) : p.createFromInputFallback(a);
         return I(e) || (e._d = null), e
@@ -927,7 +927,7 @@ function(e, t) {
 
     function Ft(e, t, n, i, a) {
         var r = {};
-        return !0 !== t && !1 !== t || (i = t, t = void 0), !0 !== n && !1 !== n || (i = n, n = void 0), (U(e) && L(e) || g(e) && 0 === e.length) && (e = void 0), r._isAMomentObject = !0, r._useUTC = r._isUTC = a, r._l = n, r._i = e, r._f = t, r._strict = i, (a = new q(pt(Ot(a = r))))._nextDay && (a.add(1, "d"), a._nextDay = void 0), a
+        return !0 !== t && !1 !== t || (i = t, t = void 0), !0 !== n && !1 !== n || (i = n, n = void 0), (L(e) && U(e) || g(e) && 0 === e.length) && (e = void 0), r._isAMomentObject = !0, r._useUTC = r._isUTC = a, r._l = n, r._i = e, r._f = t, r._strict = i, (a = new q(pt(Ot(a = r))))._nextDay && (a.add(1, "d"), a._nextDay = void 0), a
     }
 
     function P(e, t, n, i) {
@@ -984,21 +984,21 @@ function(e, t) {
         return e < 0 ? -1 * Math.round(-1 * e) : Math.round(e)
     }
 
-    function Ut(e, n) {
+    function Lt(e, n) {
         i(e, 0, 0, function() {
             var e = this.utcOffset(),
                 t = "+";
             return e < 0 && (e = -e, t = "-"), t + r(~~(e / 60), 2) + n + r(~~e % 60, 2)
         })
     }
-    Ut("Z", ":"), Ut("ZZ", ""), c("Z", ke), c("ZZ", ke), k(["Z", "ZZ"], function(e, t, n) {
+    Lt("Z", ":"), Lt("ZZ", ""), c("Z", ke), c("ZZ", ke), k(["Z", "ZZ"], function(e, t, n) {
         n._useUTC = !0, n._tzm = Rt(ke, e)
     });
-    var Lt = /([\+\-]|\d\d)/gi;
+    var Ut = /([\+\-]|\d\d)/gi;
 
     function Rt(e, t) {
         var t = (t || "").match(e);
-        return null === t ? null : 0 === (t = 60 * (e = ((t[t.length - 1] || []) + "").match(Lt) || ["-", 0, 0])[1] + b(e[2])) ? 0 : "+" === e[0] ? t : -t
+        return null === t ? null : 0 === (t = 60 * (e = ((t[t.length - 1] || []) + "").match(Ut) || ["-", 0, 0])[1] + b(e[2])) ? 0 : "+" === e[0] ? t : -t
     }
 
     function $t(e, t) {
@@ -1075,7 +1075,7 @@ function(e, t) {
     N.fn = Nt.prototype, N.invalid = function() {
         return N(NaN)
     };
-    Ue = Gt(1, "add"), Je = Gt(-1, "subtract");
+    Le = Gt(1, "add"), Je = Gt(-1, "subtract");
 
     function Bt(e) {
         return "string" == typeof e || e instanceof String
@@ -1090,7 +1090,7 @@ function(e, t) {
             }).length);
             return e && n
         }(e) || function(e) {
-            var t, n, i = U(e) && !L(e),
+            var t, n, i = L(e) && !U(e),
                 a = !1,
                 r = ["years", "year", "y", "months", "month", "M", "days", "day", "d", "dates", "date", "D", "hours", "hour", "h", "minutes", "minute", "m", "seconds", "second", "s", "milliseconds", "millisecond", "ms"],
                 s = r.length;
@@ -1210,9 +1210,9 @@ function(e, t) {
     function cn(e) {
         return e
     }
-    l.add = Ue, l.calendar = function(e, t) {
+    l.add = Le, l.calendar = function(e, t) {
         1 === arguments.length && (arguments[0] ? Zt(arguments[0]) ? (e = arguments[0], t = void 0) : function(e) {
-            for (var t = U(e) && !L(e), n = !1, i = ["sameDay", "nextDay", "lastDay", "nextWeek", "lastWeek", "sameElse"], a = 0; a < i.length; a += 1) n = n || h(e, i[a]);
+            for (var t = L(e) && !U(e), n = !1, i = ["sameDay", "nextDay", "lastDay", "nextWeek", "lastWeek", "sameElse"], a = 0; a < i.length; a += 1) n = n || h(e, i[a]);
             return t && n
         }(arguments[0]) && (t = arguments[0], e = void 0) : t = e = void 0);
         var e = e || P(),
@@ -1692,7 +1692,7 @@ function(e, t) {
             return this.as(e)
         }
     }
-    de = wn("ms"), t = wn("s"), ge = wn("m"), ce = wn("h"), Ue = wn("d"), pe = wn("w"), me = wn("M"), Je = wn("Q"), a = wn("y"), he = de;
+    de = wn("ms"), t = wn("s"), ge = wn("m"), ce = wn("h"), Le = wn("d"), pe = wn("w"), me = wn("M"), Je = wn("Q"), a = wn("y"), he = de;
 
     function bn(e) {
         return function() {
@@ -1778,7 +1778,7 @@ function(e, t) {
             default:
                 throw new Error("Unknown unit " + e)
         }
-    }, E.asMilliseconds = de, E.asSeconds = t, E.asMinutes = ge, E.asHours = ce, E.asDays = Ue, E.asWeeks = pe, E.asMonths = me, E.asQuarters = Je, E.asYears = a, E.valueOf = he, E._bubble = function() {
+    }, E.asMilliseconds = de, E.asSeconds = t, E.asMinutes = ge, E.asHours = ce, E.asDays = Le, E.asWeeks = pe, E.asMonths = me, E.asQuarters = Je, E.asYears = a, E.valueOf = he, E._bubble = function() {
         var e = this._milliseconds,
             t = this._days,
             n = this._months,
@@ -1879,8 +1879,8 @@ function(e, t) {
     var N = /\s*/,
         E = /\s+/,
         A = /\s*=/,
-        U = /\s*\}/,
-        L = /#|\^|\/|>|\{|&|=|!/;
+        L = /\s*\}/,
+        U = /#|\^|\/|>|\{|&|=|!/;
 
     function s(e, t) {
         if (!e) return [];
@@ -1909,7 +1909,7 @@ function(e, t) {
             if (p = b.pos, y = b.scanUntil(n))
                 for (var k = 0, S = y.length; k < S; ++k) P(_ = y.charAt(k)) ? (l.push(o.length), c += _) : (r = d = !0, c += " "), o.push(["text", _, p, p + 1]), p += 1, "\n" === _ && (f(), c = "", h = 0, r = !1);
             if (!b.scan(n)) break;
-            if (u = !0, g = b.scan(L) || "name", b.scan(N), "=" === g ? (y = b.scanUntil(A), b.scan(A), b.scanUntil(i)) : "{" === g ? (y = b.scanUntil(a), b.scan(U), b.scanUntil(i), g = "&") : y = b.scanUntil(i), !b.scan(i)) throw new Error("Unclosed tag at " + b.pos);
+            if (u = !0, g = b.scan(U) || "name", b.scan(N), "=" === g ? (y = b.scanUntil(A), b.scan(A), b.scanUntil(i)) : "{" === g ? (y = b.scanUntil(a), b.scan(L), b.scanUntil(i), g = "&") : y = b.scanUntil(i), !b.scan(i)) throw new Error("Unclosed tag at " + b.pos);
             if (v = ">" == g ? [g, y, p, b.pos, c, h, r] : [g, y, p, b.pos], h++, o.push(v), "#" === g || "^" === g) s.push(v);
             else if ("/" === g) {
                 if (!(w = s.pop())) throw new Error('Unopened section "' + y + '" at ' + p);
@@ -2345,7 +2345,7 @@ function setupLanguageDropdown() {
                 }
             }
             if (0 < this.allowedFileExtensions.length) {
-                var s = a.name.split(".").pop();
+                var s = a.name.split(".").pop().toLowerCase();
                 if (-1 === this.allowedFileExtensions.indexOf(s)) {
                     l.showError(this.translations.invalidExtension + a.name), n.push(i);
                     continue
