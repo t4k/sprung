@@ -10690,10 +10690,6 @@ h3.fb-thread-header {
     color: #3b5998
 }
 
-.fa-pinterest-square {
-    color: #cb2027
-}
-
 label.itemchecklabel {
     padding: 5px 10px;
     margin: -5px
@@ -12272,10 +12268,6 @@ legend.radio-label {
     background-color: #e6e6e6
 }
 
-.formlibcpt {
-    min-height: 140px
-}
-
 .formlibcpt.active {
     padding: 15px;
     margin-bottom: 20px;
@@ -12412,6 +12404,40 @@ button.multiselect.dropdown-toggle {
 
 .patron-lookup-info {
     font-size: 1.5rem
+}
+
+.altcha .altcha-footer {
+    display: none
+}
+
+.altcha-main>div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.altcha-checkbox-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem
+}
+
+div.altcha-checkbox-native {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: auto
+}
+
+.altcha-checkbox-wrap input[type=checkbox] {
+    height: 2rem;
+    width: 2rem
+}
+
+.altcha-checkbox-wrap label {
+    margin: 0;
+    padding: 0
 }
 
 .s-srch-top-header {
