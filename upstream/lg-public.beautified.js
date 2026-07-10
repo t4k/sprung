@@ -1153,7 +1153,7 @@ springSpace.public = {}, springSpace.public._construct = function() {
         }), this.login_status = null
     }
     Public.prototype.loadHomepageList = function(config) {
-        springSpace.Util.setObjProp("nav", "", config), key = springSpace.Util.setProp(config.key, 0), type_id = springSpace.Util.setProp(config.type_id, 0), group_id = springSpace.Util.setProp(config.group_id, 0), owner_id = springSpace.Util.setProp(config.owner_id, 0), type_label = springSpace.Util.setProp(config.type_label, "Guides"), num_cols = springSpace.Util.setProp(config.num_cols, ""), display_sort = springSpace.Util.setProp(config.display_sort, !1), jQuery(".s-lg-index-nav-btn.active > button").removeAttr("aria-pressed"), jQuery(".s-lg-index-nav-btn").removeClass("active"), jQuery("#" + config.button_id).addClass("active"), jQuery("#" + config.button_id + " > button").attr("aria-pressed", "true"), jQuery("#s-lg-guide-list-controls").hide(), jQuery("#" + config.elt_id).html('<div class="bold s-lib-color-lt-grey pad-top-med">Loading...</div>'), springSpace.homepage.current_list !== config.action && (springSpace.homepage.current_list = config.action, springSpace.homepage.current_btn_id = config.button_id, springSpace.homepage.current_button_code = springSpace.homepage.mapButtonEltIdToQSId(config.button_id), springSpace.homepage.current_num_cols = num_cols, springSpace.homepage.current_type_label = type_label || jQuery("#s-lg-index-label").html()), xhr = jQuery.ajax({
+        springSpace.Util.setObjProp("nav", "", config), key = springSpace.Util.setProp(config.key, 0), type_id = springSpace.Util.setProp(config.type_id, 0), group_id = springSpace.Util.setProp(config.group_id, 0), owner_id = springSpace.Util.setProp(config.owner_id, 0), type_label = springSpace.Util.setProp(config.type_label, "Guides"), num_cols = springSpace.Util.setProp(config.num_cols, ""), display_sort = springSpace.Util.setProp(config.display_sort, !1), is_bootstrap5 && jQuery(".btn-help-popover").popover("hide"), jQuery(".s-lg-index-nav-btn.active > button").removeAttr("aria-pressed"), jQuery(".s-lg-index-nav-btn").removeClass("active"), jQuery("#" + config.button_id).addClass("active"), jQuery("#" + config.button_id + " > button").attr("aria-pressed", "true"), jQuery("#s-lg-guide-list-controls").hide(), jQuery("#" + config.elt_id).html('<div class="bold s-lib-color-lt-grey pad-top-med">Loading...</div>'), springSpace.homepage.current_list !== config.action && (springSpace.homepage.current_list = config.action, springSpace.homepage.current_btn_id = config.button_id, springSpace.homepage.current_button_code = springSpace.homepage.mapButtonEltIdToQSId(config.button_id), springSpace.homepage.current_num_cols = num_cols, springSpace.homepage.current_type_label = type_label || jQuery("#s-lg-index-label").html()), is_bootstrap5_preview = "undefined" != typeof is_bootstrap5_preview && is_bootstrap5_preview, xhr = jQuery.ajax({
             url: "/index_process.php",
             data: {
                 action: config.action,
@@ -1163,7 +1163,7 @@ springSpace.public = {}, springSpace.public._construct = function() {
                 group_id: group_id,
                 num_cols: springSpace.homepage.current_num_cols,
                 search: jQuery("#s-lg-guide-search").val(),
-                bs5: is_bootstrap5 ? 1 : 0
+                bs5: is_bootstrap5_preview ? 1 : 0
             },
             type: "GET",
             dataType: "json",
@@ -1471,14 +1471,14 @@ springSpace.public = {}, springSpace.public._construct = function() {
         let filtersApplied = Object.keys(data.subjects ?? []).length || Object.keys(data.types ?? []).length || Object.keys(data.vendors ?? []).length || data.q?.trim().length,
             desktopLabel = mobileLabel = data.count + " " + (data.label_databases ?? "Database" + (1 == data.count ? "" : "s"));
         filtersApplied && (data.label_databases_found_for ? desktopLabel = data.label_databases_found_for.replace("{{list_count}}", data.count) : desktopLabel += " Found for: ", mobileLabel = data.count + " Matching Result" + (1 == data.count ? "" : "s") + " for:"), jQuery("#s-lg-az-result-count").html('<span class="d-lg-none" aria-hidden="true">' + mobileLabel + '</span><span class="d-none d-lg-inline me-1">' + desktopLabel + "</span>"), Object.keys(data.subjects ?? []).forEach((function(key) {
-            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.subjects[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzBySubjectEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation'/></a></span>")
+            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.subjects[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzBySubjectEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation' alt='Remove'/></a></span>")
         })), Object.keys(data.types ?? []).forEach((function(key) {
-            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.types[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzByTypeEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation'/></a></span>")
+            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.types[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzByTypeEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation' alt='Remove'/></a></span>")
         })), Object.keys(data.vendors ?? []).forEach((function(key) {
-            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.vendors[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzByVendorEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation'/></a></span>")
+            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.vendors[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzByVendorEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation' alt='Remove'/></a></span>")
         })), Object.keys(data.access_modes ?? []).forEach((function(key) {
-            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.access_modes[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzByAccessModeEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation'/></a></span>")
-        })), data.q && (jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'><span class='data-q-display'></span><a class='d-lg-none' onclick='springSpace.publicObj.filterAzBySearchEdit(" + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation'/></a></span>"), jQuery(".data-q-display").text(data.q)), filtersApplied && jQuery(".az-filter-chip:last-of-type").after("<a id='az-mobile-filter-edit' aria-hidden='true' class='d-lg-none' data-bs-toggle='modal' data-bs-target='#az-mobile-filter-edit-modal'><i class='fa fa-pencil' aria-hidden='true'></i>&nbsp;Edit Filters</a>")
+            jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'>" + data.access_modes[key] + "<a class='d-lg-none' onclick='springSpace.publicObj.filterAzByAccessModeEdit(" + key + ", " + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation' alt='Remove'/></a></span>")
+        })), data.q && (jQuery("#s-lg-az-result-count").append("<span class='az-filter-chip' aria-hidden='true'><span class='data-q-display'></span><a class='d-lg-none' onclick='springSpace.publicObj.filterAzBySearchEdit(" + site_id + "); return false;'><img src='/web/assets/media/icons/duotune/arrows/arr097.svg' role='presentation' alt='Remove'/></a></span>"), jQuery(".data-q-display").text(data.q)), filtersApplied && jQuery(".az-filter-chip:last-of-type").after("<a id='az-mobile-filter-edit' aria-hidden='true' class='d-lg-none' data-bs-toggle='modal' data-bs-target='#az-mobile-filter-edit-modal'><i class='fa fa-pencil' aria-hidden='true'></i>&nbsp;Edit Filters</a>")
     }, Public.prototype.getSearchTerm = function() {
         var allSearches = [];
         return jQuery(".s-lg-az-search").each((function() {
@@ -2728,6 +2728,46 @@ springSpace.util = {}, springSpace.common = {}, springSpace.validation = {}, spr
         })), alertObj.show(), !1
     }, UI.prototype.closeAlertBS = function() {
         jQuery("#s-lib-alert").modal("hide")
+    }, UI.prototype.alertBS5 = function(config) {
+        this.alertTriggeredElt = document.activeElement;
+        let alertElement = jQuery("#s-lib-alert-bs5");
+        if (alertElement.is(":visible")) return this.closeAlertBS5(), void alertElement.one("hidden.bs.modal", (function() {
+            springSpace.UI.alertBS5(config)
+        }));
+        let loadingDiv = jQuery("#s-lib-alert-loading-bs5"),
+            contentDiv = jQuery("#s-lib-alert-content-bs5"),
+            buttonsDiv = jQuery("#s-lib-alert-buttons-bs5");
+        if (0 === contentDiv.length) return console.log("API error: div #s-lib-alert-content-bs5 not defined."), !1;
+        void 0 === config && (config = {}), this.alertConfig = config;
+        var obj_this = this,
+            focus_on_close = springSpace.Util.setProp(config.focus_on_close, !0),
+            async = springSpace.Util.setProp(config.async, !0), title = springSpace.Util.setProp(config.title, "[ADD TITLE]"), content = springSpace.Util.setProp(config.content, "[content]"), url = springSpace.Util.setProp(config.url, null), url_data = springSpace.Util.setProp(config.data, null), small = springSpace.Util.setProp(config.small, !1), load_callback = springSpace.Util.setProp(config.load_callback, null), close_callback = springSpace.Util.setProp(config.close_callback, null), buttons = springSpace.Util.setProp(config.buttons, {
+                OK: springSpace.UI.closeAlertBS5
+            });
+        jQuery("#s-lib-alert-title-bs5").text(title), jQuery("#s-lib-alert-bs5 .modal-dialog").removeClass("modal-sm").removeClass("modal-lg").addClass(small ? "modal-sm" : "modal-lg"), null !== url ? (loadingDiv.show(), contentDiv.hide(), buttonsDiv.html(""), jQuery.ajax({
+            url: url,
+            cache: !1,
+            data: url_data,
+            async: async,
+            success: function(data) {
+                loadingDiv.hide(), springSpace.UI.setupAlertButtons(buttonsDiv, buttons), contentDiv.html(data).show(), null !== load_callback && load_callback(), obj_this.initPopOvers()
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                loadingDiv.hide(), springSpace.UI.setupAlertButtons(buttonsDiv, buttons), contentDiv.html(errorThrown).show()
+            }
+        })) : (loadingDiv.hide(), springSpace.UI.setupAlertButtons(buttonsDiv, buttons), contentDiv.html(content).show());
+        return alertObj = new bootstrap.Modal("#s-lib-alert-bs5", {
+            backdrop: "static"
+        }), alertElement.off("hidden.bs.modal").on("hidden.bs.modal", (function() {
+            focus_on_close && obj_this.alertTriggeredElt.focus(), null !== close_callback && close_callback(), jQuery("#s-lib-alert-content-bs5, #s-lib-alert-buttons-bs5").empty()
+        })), alertObj.show(), !1
+    }, UI.prototype.closeAlertBS5 = function() {
+        jQuery("#s-lib-alert-bs5").modal("hide")
+    }, UI.prototype.refreshAlertBS5 = function() {
+        var config = this.alertConfig;
+        this.closeAlertBS5(), jQuery("#s-lib-alert-bs5").one("hidden.bs.modal", (function() {
+            springSpace.UI.alertBS5(config)
+        }))
     }, UI.prototype.getAlertButton = function(config) {
         return springSpace.Util.setObjProp("name", "", config), "" !== config.name ? jQuery(".ui-dialog-buttonset :button:contains('" + config.name + "')") : {}
     }, UI.prototype.error = function(err_txt) {
@@ -2997,6 +3037,11 @@ springSpace.util = {}, springSpace.common = {}, springSpace.validation = {}, spr
             (rte_modal = jQuery('<div id="s-lib-rte-validation-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rte-validation-title"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="rte-validation-title">Validation Failed</h4></div><div class="modal-body"></div><div class="modal-footer"><button id="s-lg-btn-save-code" type="button" class="btn btn-sm btn-default">Save Anyway</button><button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Cancel - I\'ll fix my code</button></div></div>\x3c!-- /.modal-content --\x3e</div>\x3c!-- /.modal-dialog --\x3e</div>\x3c!-- /.modal --\x3e')).appendTo("body")
         }
         jQuery("#s-lib-rte-validation-modal .modal-body").html(config.content), jQuery("#s-lib-rte-validation-modal").modal()
+    }, UI.prototype.openTextEditorModalBS5 = function(config) {
+        if (springSpace.Util.setObjProp("content", "", config), !document.getElementById("s-lib-rte-validation-modal")) {
+            jQuery('<div id="s-lib-rte-validation-modal" class="modal fade" tabindex="-1" aria-labelledby="rte-validation-title" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="rte-validation-title">Validation Failed</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"></div><div class="modal-footer"><button id="s-lg-btn-save-code" type="button" class="btn btn-sm btn-secondary">Save Anyway</button><button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Cancel - I\'ll fix my code</button></div></div>\x3c!-- /.modal-content --\x3e</div>\x3c!-- /.modal-dialog --\x3e</div>\x3c!-- /.modal --\x3e').appendTo("body")
+        }
+        jQuery("#s-lib-rte-validation-modal .modal-body").html(config.content), bootstrap.Modal.getOrCreateInstance(document.getElementById("s-lib-rte-validation-modal")).show()
     }, this.UI = UI
 }, springSpace.ui._construct(), springSpace.UI = new springSpace.ui.UI, springSpace.validation._construct = function() {
     function Validation() {}
@@ -3448,7 +3493,8 @@ springSpace.util = {}, springSpace.common = {}, springSpace.validation = {}, spr
             VALIDATION_TYPE_TAG_NOT_ALLOWED: 4,
             DISPLAY_TYPE_ALERT: "alert",
             DISPLAY_TYPE_HTML: "string",
-            DISPLAY_TYPE_BS_MODAL: "bootstrap_modal"
+            DISPLAY_TYPE_BS_MODAL: "bootstrap_modal",
+            DISPLAY_TYPE_BS5_MODAL: "bootstrap5_modal"
         }, this.validation_url = "https://validator.w3.org/#validate_by_input+with_options", this.validation_msg = {
             text: '<i class="fa fa-code"></i> <a href="' + this.validation_url + '" target="_blank" title="Open the W3C Markup Validation Service in a new window">W3C Code Validation Service</a>. <i class="fa fa-fw fa-external-link" aria-hidden="true" title="This link opens in a new window"></i>'
         }, this.defaults = {
@@ -3597,6 +3643,11 @@ springSpace.util = {}, springSpace.common = {}, springSpace.validation = {}, spr
                     break;
                 case this.CONST.DISPLAY_TYPE_BS_MODAL:
                     springSpace.UI.openTextEditorModal({
+                        content: this.output
+                    });
+                    break;
+                case this.CONST.DISPLAY_TYPE_BS5_MODAL:
+                    springSpace.UI.openTextEditorModalBS5({
                         content: this.output
                     })
             }
