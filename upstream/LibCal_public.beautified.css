@@ -2595,6 +2595,11 @@ a.s-lc-color-links:hover {
     cursor: not-allowed !important
 }
 
+.s-lc-eq-not-bookable {
+    visibility: hidden !important;
+    pointer-events: none !important
+}
+
 .s-lc-time-grid-legend {
     text-align: center;
     font-size: 1.15em
