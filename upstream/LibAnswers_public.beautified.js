@@ -902,7 +902,7 @@ function(t) {
 }(function() {
     "use strict";
     var t = document.createElement("style");
-    t.textContent = ':root {\n  --altcha-border-color: var(--altcha-color-neutral);\n  --altcha-border-width: 1px;\n  --altcha-border-radius: 6px;\n  --altcha-color-base: light-dark(oklch(100% 0.00011 271.152), oklch(20.904% 0.00002 271.152));\n  --altcha-color-base-content: light-dark(\n  \toklch(20.904% 0.00002 271.152),\n  \toklch(100% 0.00011 271.152)\n  );\n  --altcha-color-error: oklch(51.284% 0.20527 28.678);\n  --altcha-color-error-content: oklch(100% 0.00011 271.152);\n  --altcha-color-neutral: light-dark(oklch(83.591% 0.0001 271.152), oklch(46.04% 0.00005 271.152));\n  --altcha-color-neutral-content: light-dark(\n  \toklch(46.76% 0.00005 271.152),\n  \toklch(100% 0.00011 271.152)\n  );\n  --altcha-color-primary: oklch(40.279% 0.2449 268.131);\n  --altcha-color-primary-content: oklch(100% 0.00011 271.152);\n  --altcha-color-success: oklch(55.748% 0.18968 142.511);\n  --altcha-color-success-content: oklch(100% 0.00011 271.152);\n  --altcha-checkbox-border-color: light-dark(\n  \toklch(66.494% 0.00233 15.434),\n  \toklch(51.028% 0.00006 271.152)\n  );\n  --altcha-checkbox-border-radius: 5px;\n  --altcha-checkbox-border-width: var(--altcha-border-width);\n  --altcha-checkbox-outline: 2px solid var(--altcha-checkbox-outline-color);\n  --altcha-checkbox-outline-color: -webkit-focus-ring-color;\n  --altcha-checkbox-outline-offset: 2px;\n  --altcha-checkbox-size: 22px;\n  --altcha-checkbox-transition-duration: var(--altcha-transition-duration);\n  --altcha-input-background-color: var(--altcha-color-base);\n  --altcha-input-border-radius: 3px;\n  --altcha-input-border-width: 1px;\n  --altcha-input-color: var(--altcha-color-base-content);\n  --altcha-max-width: 320px;\n  --altcha-padding: 0.75rem;\n  --altcha-popover-arrow-size: 6px;\n  --altcha-popover-color: var(--altcha-border-color);\n  --altcha-shadow: drop-shadow(3px 3px 6px oklch(0% 0 0 / 0.2));\n  --altcha-spinner-color: var(--altcha-color-base-content);\n  --altcha-switch-background-color: var(--altcha-color-neutral);\n  --altcha-switch-border-radius: calc(infinity * 1px);\n  --altcha-switch-height: var(--altcha-checkbox-size);\n  --altcha-switch-padding: 0.25rem;\n  --altcha-switch-width: calc(var(--altcha-checkbox-size) * 1.75);\n  --altcha-switch-toggle-border-radius: 100%;\n  --altcha-switch-toggle-color: var(--altcha-color-neutral-content);\n  --altcha-switch-toggle-size: calc(\n  \tvar(--altcha-switch-height) - calc(var(--altcha-switch-padding) * 2)\n  );\n  --altcha-transition-duration: 0.6s;\n  --altcha-z-index: 99999999;\n  --altcha-z-index-popover: 999999999;\n}\n\n@supports (-moz-appearance: none) {\n  :root {\n    --altcha-checkbox-outline-color: var(--altcha-color-primary);\n  }\n}\n.altcha {\n  all: revert-layer;\n  display: none;\n  font-family: inherit;\n  font-size: inherit;\n  position: relative;\n}\n.altcha[data-visible] {\n  display: block;\n}\n.altcha-popover, .altcha-popover * {\n  all: revert-layer;\n  box-sizing: border-box;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: 1.25;\n}\n.altcha * {\n  all: revert-layer;\n  box-sizing: border-box;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: 1.25;\n}\n.altcha a, .altcha-popover a {\n  color: currentColor;\n  text-decoration: none;\n}\n.altcha a:hover, .altcha-popover a:hover {\n  color: currentColor;\n}\n.altcha-main {\n  align-items: start;\n  background-color: var(--altcha-color-base);\n  border: var(--altcha-border-width, 1px) solid var(--altcha-border-color);\n  border-radius: var(--altcha-border-radius, 0);\n  color: var(--altcha-color-base-content);\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  justify-content: space-between;\n  padding: var(--altcha-padding);\n  max-width: var(--altcha-max-width, 100%);\n}\n.altcha-main > * {\n  display: flex;\n  width: 100%;\n}\n.altcha-main > *:first-child {\n  flex-grow: 1;\n}\n.altcha-checkbox-wrap {\n  align-items: center;\n  display: flex;\n  flex-direction: row;\n  flex-grow: 1;\n  gap: 0.5rem;\n}\n.altcha-checkbox-wrap > * {\n  display: flex;\n}\n.altcha-logo {\n  opacity: 0.7;\n}\n.altcha-footer {\n  align-items: center;\n  display: flex;\n  flex-grow: 1;\n  gap: 0.5rem;\n  justify-content: flex-end;\n  font-size: 0.7rem;\n  opacity: 0.7;\n}\n.altcha-footer p {\n  margin: 0;\n  padding: 0;\n}\n.altcha-error {\n  font-size: 0.85rem;\n}\n.altcha-button {\n  align-items: center;\n  background: var(--altcha-color-primary);\n  border: var(--altcha-input-border-width) solid var(--altcha-color-primary);\n  border-radius: var(--altcha-input-border-radius);\n  color: var(--altcha-color-primary-content);\n  cursor: pointer;\n  display: flex;\n  font-size: 0.9rem;\n  gap: 0.5rem;\n  padding: 0.35rem;\n}\n.altcha-button:focus {\n  border-color: var(--altcha-color-primary);\n  outline: var(--altcha-checkbox-outline);\n  outline-offset: var(--altcha-checkbox-outline-offset);\n}\n.altcha-button > .altcha-spinner, .altcha-button > svg {\n  height: 20px;\n  width: 20px;\n}\n.altcha-button-secondary {\n  background: transparent;\n  border-color: var(--altcha-color-neutral);\n  color: var(--altcha-color-neutral-content);\n}\n.altcha-input {\n  background: var(--altcha-input-background-color);\n  border: var(--altcha-input-border-width) solid var(--altcha-color-neutral);\n  border-radius: var(--altcha-input-border-radius);\n  color: var(--altcha-input-color);\n  flex-grow: 1;\n  font-size: 1rem;\n  min-width: 0;\n  padding: 0.25rem;\n  width: auto;\n}\n.altcha-input:focus {\n  border-color: var(--altcha-color-primary);\n  outline: var(--altcha-checkbox-outline);\n  outline-offset: var(--altcha-checkbox-outline-offset);\n}\n.altcha-spinner {\n  animation: altcha-rotate 0.6s linear infinite;\n  border-radius: 100%;\n  border: var(--altcha-checkbox-border-width) solid var(--altcha-spinner-color);\n  border-bottom-color: transparent;\n  border-right-color: transparent;\n  opacity: 0.7;\n}\n.altcha-popover {\n  background-color: var(--altcha-color-base);\n  border: var(--altcha-border-width) solid var(--altcha-border-color);\n  border-radius: var(--altcha-border-radius);\n  color: var(--altcha-color-base-content);\n  filter: var(--altcha-shadow);\n  position: absolute;\n  left: calc(var(--altcha-padding) / 2);\n  max-width: calc(var(--altcha-max-width) - var(--altcha-padding));\n  top: calc(var(--altcha-padding) + var(--altcha-checkbox-size) + var(--altcha-popover-arrow-size));\n  z-index: var(--altcha-z-index-popover);\n}\n.altcha-popover-arrow {\n  border: var(--altcha-popover-arrow-size) solid transparent;\n  border-bottom-color: var(--altcha-popover-color);\n  content: "";\n  height: 0;\n  left: calc(var(--altcha-checkbox-size) / 2);\n  position: absolute;\n  top: calc(var(--altcha-popover-arrow-size) * -2);\n  width: 0;\n}\n.altcha-popover-content {\n  max-height: 100dvh;\n  overflow: auto;\n  padding: var(--altcha-padding);\n}\n.altcha-popover[data-top=true][data-display=standard] {\n  bottom: calc(100% - (var(--altcha-padding) - var(--altcha-popover-arrow-size)));\n  top: auto;\n}\n.altcha-popover[data-top=true][data-display=standard] .altcha-popover-arrow {\n  border-bottom-color: transparent;\n  border-top-color: var(--altcha-popover-color);\n  bottom: calc(var(--altcha-popover-arrow-size) * -2);\n  top: auto;\n}\n.altcha-popover[data-variant=error] {\n  --altcha-popover-color: var(--altcha-color-error);\n  background-color: var(--altcha-color-error);\n  border-color: var(--altcha-color-error);\n  color: var(--altcha-color-error-content);\n}\n.altcha-popover[data-variant=error] .altcha-popover-content {\n  padding: calc(var(--altcha-padding) / 1.5) var(--altcha-padding);\n}\n.altcha-popover[data-display=overlay] {\n  animation: altcha-overlay-slidein 0.5s forwards;\n  left: 50%;\n  position: fixed;\n  top: 45%;\n  transform: translate(-50%, -50%);\n  width: var(--altcha-max-width);\n  z-index: var(--altcha-z-index);\n}\n.altcha-popover[data-display=bottomsheet] {\n  animation: altcha-bottomsheet-slideup 0.5s forwards;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  border-bottom: 0;\n  bottom: -100%;\n  left: 50%;\n  position: fixed;\n  top: auto;\n  transform: translate(-50%, 0);\n  width: var(--altcha-max-width);\n  z-index: var(--altcha-z-index);\n}\n.altcha-popover[data-display=bottomsheet] .altcha-popover-content {\n  padding-bottom: calc(var(--altcha-padding) * 2);\n}\n.altcha-popover-backdrop {\n  background: var(--altcha-color-base-content);\n  bottom: 0;\n  left: 0;\n  opacity: 0.1;\n  position: fixed;\n  right: 0;\n  top: 0;\n  transition: opacity 0.5s;\n  z-index: var(--altcha-z-index);\n}\n.altcha-popover-close {\n  color: var(--altcha-color-base-content);\n  cursor: pointer;\n  display: inline-block;\n  font-size: 1rem;\n  height: 1.25rem;\n  line-height: 0.95;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  text-shadow: 0 0 1px var(--altcha-color-base);\n  top: -1.5rem;\n  width: 1.25rem;\n  z-index: var(--altcha-z-index);\n}\n[dir=rtl] .altcha-popover {\n  left: auto;\n  right: calc(var(--altcha-padding) / 2);\n}\n[dir=rtl] .altcha-popover-arrow {\n  left: auto;\n  right: calc(var(--altcha-checkbox-size) / 2);\n}\n[dir=rtl] .altcha-popover-close {\n  left: 0;\n  right: auto;\n}\n.altcha-popover[data-display=bottomsheet] .altcha-footer, .altcha-popover[data-display=overlay] .altcha-footer {\n  align-items: center;\n  justify-content: center;\n  padding-top: 1rem;\n  gap: 0.5rem;\n}\n.altcha-popover[data-display=bottomsheet] .altcha-footer svg, .altcha-popover[data-display=overlay] .altcha-footer svg {\n  height: 18px;\n  width: 18px;\n  vertical-align: middle;\n}\n.altcha-code-challenge > form {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n}\n.altcha-code-challenge-title {\n  font-weight: 600;\n}\n.altcha-code-challenge-text {\n  font-size: 0.85rem;\n}\n.altcha-code-challenge-image {\n  background: white;\n  border: var(--altcha-input-border-width) solid var(--altcha-color-neutral);\n  border-radius: var(--altcha-input-border-radius);\n  object-fit: contain;\n  height: 50px;\n}\n.altcha-code-challenge-row {\n  display: flex;\n  gap: 0.5rem;\n}\n.altcha-code-challenge-buttons {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  margin-top: var(--altcha-padding);\n  justify-content: space-between;\n}\n.altcha-code-challenge-buttons button {\n  justify-content: center;\n  width: 100%;\n}\n.altcha-checkbox {\n  cursor: pointer;\n  height: var(--altcha-checkbox-size);\n  position: relative;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox input {\n  appearance: none;\n  background: var(--altcha-input-background-color);\n  border: var(--altcha-checkbox-border-width, 2px) solid var(--altcha-checkbox-border-color);\n  border-radius: var(--altcha-checkbox-border-radius);\n  cursor: pointer;\n  height: var(--altcha-checkbox-size);\n  left: 0;\n  margin: 0;\n  padding: 0;\n  position: absolute;\n  top: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox input:before {\n  border-radius: var(--altcha-checkbox-border-radius);\n  content: "";\n  width: 100%;\n  height: 100%;\n  background: var(--altcha-color-neutral);\n  display: block;\n  transform: scale(0);\n}\n.altcha-checkbox input:checked {\n  background-color: var(--altcha-color-success);\n  border-color: var(--altcha-color-success);\n}\n.altcha-checkbox input:checked::before {\n  background-color: var(--altcha-color-success);\n  opacity: 0;\n  transform: scale(2.2);\n  transition: all var(--altcha-checkbox-transition-duration) ease;\n  transition-delay: 0.1s;\n}\n.altcha-checkbox svg {\n  --altcha-radio-svg-size: calc(var(--altcha-checkbox-size) * 0.5);\n  --altcha-radio-svg-offset: calc(var(--altcha-checkbox-size) * 0.25);\n  fill: none;\n  left: var(--altcha-radio-svg-offset);\n  height: var(--altcha-radio-svg-size);\n  opacity: 0;\n  position: absolute;\n  stroke: currentColor;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  top: var(--altcha-radio-svg-offset);\n  transform: translate3d(0, 0, 0);\n  width: var(--altcha-radio-svg-size);\n}\n.altcha-checkbox input:checked + svg {\n  color: var(--altcha-color-success-content);\n  opacity: 1;\n  stroke-dashoffset: 0;\n  transition: all var(--altcha-checkbox-transition-duration) ease;\n  transition-delay: 0.1s;\n}\n.altcha-checkbox-spinner {\n  display: none;\n  left: 0;\n  height: var(--altcha-checkbox-size);\n  position: absolute;\n  top: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox[data-loading=true] input {\n  appearance: none;\n  opacity: 0;\n  pointer-events: none;\n}\n.altcha-checkbox[data-loading=true] .altcha-checkbox-spinner {\n  display: block;\n}\n.altcha-checkbox-native {\n  height: var(--altcha-checkbox-size);\n  position: relative;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox-native input {\n  height: var(--altcha-checkbox-size);\n  margin: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox-native-spinner {\n  display: none;\n  left: 0;\n  height: var(--altcha-checkbox-size);\n  position: absolute;\n  top: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox-native[data-loading=true] input {\n  appearance: none;\n  opacity: 0;\n  pointer-events: none;\n}\n.altcha-checkbox-native[data-loading=true] .altcha-checkbox-native-spinner {\n  display: block;\n}\n.altcha-switch {\n  align-items: center;\n  border-radius: var(--altcha-switch-border-radius);\n  background-color: var(--altcha-switch-background-color);\n  display: flex;\n  height: var(--altcha-switch-height);\n  padding: var(--altcha-switch-padding);\n  position: relative;\n  width: var(--altcha-switch-width);\n}\n.altcha-switch:focus-within {\n  outline: var(--altcha-checkbox-outline);\n  outline-offset: var(--altcha-checkbox-outline-offset);\n}\n.altcha-switch input {\n  appearance: none;\n  cursor: pointer;\n  height: 100%;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n.altcha-switch-toggle {\n  align-items: center;\n  background-color: var(--altcha-switch-toggle-color);\n  border-radius: var(--altcha-switch-toggle-border-radius);\n  cursor: pointer;\n  display: flex;\n  height: var(--altcha-switch-toggle-size);\n  justify-content: center;\n  left: var(--altcha-switch-padding);\n  position: absolute;\n  transition: width 150ms ease-out, left 150ms ease-out;\n  width: var(--altcha-switch-toggle-size);\n}\n.altcha-switch-spinner {\n  display: none;\n  height: var(--altcha-switch-toggle-size);\n  width: var(--altcha-switch-toggle-size);\n}\n.altcha-switch[data-loading=true] {\n  pointer-events: none;\n}\n.altcha-switch[data-loading=true] .altcha-switch-spinner {\n  display: block;\n}\n.altcha-switch[data-loading=true] .altcha-switch-toggle {\n  background-color: transparent;\n  left: calc(50% - var(--altcha-switch-toggle-size) / 2);\n}\n[data-state=verified] .altcha-switch {\n  --altcha-switch-background-color: var(--altcha-color-success);\n}\n[data-state=verified] .altcha-switch-toggle {\n  background-color: var(--altcha-color-success-content);\n  left: calc(100% - var(--altcha-switch-height) + var(--altcha-switch-padding));\n}\n[dir=rtl] .altcha-switch-toggle {\n  left: calc(100% - var(--altcha-switch-height) + var(--altcha-switch-padding));\n}\n[dir=rtl][data-state=verified] .altcha-switch-toggle {\n  left: var(--altcha-switch-padding);\n}\n.altcha-floating-arrow {\n  border: 6px solid transparent;\n  border-bottom-color: var(--altcha-border-color);\n  content: "";\n  height: 0;\n  left: 12px;\n  position: absolute;\n  top: -12px;\n  width: 0;\n}\n.altcha-overlay-backdrop {\n  bottom: 0;\n  left: 0;\n  position: fixed;\n  right: 0;\n  top: 0;\n  transition: opacity var(--altcha-transition-duration);\n  z-index: var(--altcha-z-index);\n}\n.altcha-overlay-close {\n  display: inline-block;\n  color: currentColor;\n  cursor: pointer;\n  font-size: 1rem;\n  height: 1rem;\n  line-height: 0.85;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  text-shadow: 0 0 1px var(--altcha-color-base);\n  top: -1.5rem;\n  width: 1rem;\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=overlay] {\n  animation: altcha-overlay-slidein var(--altcha-transition-duration) forwards;\n  filter: var(--altcha-shadow);\n  left: 50%;\n  opacity: 0;\n  position: fixed;\n  top: 45%;\n  transform: translate(-50%, -50%);\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=overlay] .altcha-main {\n  width: var(--altcha-max-width);\n}\n.altcha[data-display=floating] {\n  display: none;\n  filter: var(--altcha-shadow);\n  left: var(--altcha-floating-left, -100%);\n  position: fixed;\n  top: var(--altcha-floating-top, -100%);\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=floating] .altcha-main {\n  width: var(--altcha-max-width);\n}\n.altcha[data-display=floating][data-floating-position=top] .altcha-floating-arrow {\n  border-bottom-color: transparent;\n  border-top-color: var(--altcha-border-color);\n  bottom: -12px;\n  top: auto;\n}\n.altcha[data-display=floating][data-visible] {\n  display: flex;\n}\n.altcha[data-display=bar] {\n  bottom: -100%;\n  filter: var(--altcha-shadow);\n  left: 0;\n  position: fixed;\n  right: 0;\n  transition: bottom var(--altcha-transition-duration), top var(--altcha-transition-duration);\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=bar] .altcha-main {\n  align-items: center;\n  border-radius: 0;\n  border-width: var(--altcha-border-width) 0 0 0;\n  flex-direction: row;\n  max-width: 100% !important;\n}\n.altcha[data-display=bar] .altcha-main > * {\n  width: auto;\n}\n.altcha[data-display=bar][data-placement=top] {\n  bottom: auto;\n  top: -100%;\n}\n.altcha[data-display=bar][data-placement=top] .altcha-main {\n  border-width: 0 0 var(--altcha-border-width) 0;\n}\n.altcha[data-display=bar][data-placement=bottom]:not([data-state=unverified]) {\n  bottom: 0;\n}\n.altcha[data-display=bar][data-placement=top]:not([data-state=unverified]) {\n  top: 0;\n}\n.altcha[data-display=invisible] {\n  display: none;\n}\n\n@keyframes altcha-rotate {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n@keyframes altcha-bottomsheet-slideup {\n  100% {\n    bottom: 0;\n  }\n}\n@keyframes altcha-overlay-slidein {\n  100% {\n    opacity: 1;\n    top: 50%;\n  }\n}/*$vite$:1*/', document.head.appendChild(t);
+    t.textContent = ':root {\n  --altcha-border-color: var(--altcha-color-neutral);\n  --altcha-border-width: 1px;\n  --altcha-border-radius: 6px;\n  --altcha-color-base: light-dark(oklch(100% 0.00011 271.152), oklch(20.904% 0.00002 271.152));\n  --altcha-color-base-content: light-dark(\n  \toklch(20.904% 0.00002 271.152),\n  \toklch(100% 0.00011 271.152)\n  );\n  --altcha-color-error: oklch(51.284% 0.20527 28.678);\n  --altcha-color-error-content: oklch(100% 0.00011 271.152);\n  --altcha-color-neutral: light-dark(oklch(83.591% 0.0001 271.152), oklch(46.04% 0.00005 271.152));\n  --altcha-color-neutral-content: light-dark(\n  \toklch(46.76% 0.00005 271.152),\n  \toklch(100% 0.00011 271.152)\n  );\n  --altcha-color-primary: oklch(40.279% 0.2449 268.131);\n  --altcha-color-primary-content: oklch(100% 0.00011 271.152);\n  --altcha-color-success: oklch(55.748% 0.18968 142.511);\n  --altcha-color-success-content: oklch(100% 0.00011 271.152);\n  --altcha-checkbox-border-color: light-dark(\n  \toklch(66.494% 0.00233 15.434),\n  \toklch(51.028% 0.00006 271.152)\n  );\n  --altcha-checkbox-border-radius: 5px;\n  --altcha-checkbox-border-width: var(--altcha-border-width);\n  --altcha-checkbox-outline: 2px solid var(--altcha-checkbox-outline-color);\n  --altcha-checkbox-outline-color: -webkit-focus-ring-color;\n  --altcha-checkbox-outline-offset: 2px;\n  --altcha-checkbox-size: 22px;\n  --altcha-checkbox-transition-duration: var(--altcha-transition-duration);\n  --altcha-input-background-color: var(--altcha-color-base);\n  --altcha-input-border-radius: 3px;\n  --altcha-input-border-width: 1px;\n  --altcha-input-color: var(--altcha-color-base-content);\n  --altcha-max-width: 320px;\n  --altcha-padding: 0.75rem;\n  --altcha-popover-arrow-size: 6px;\n  --altcha-popover-color: var(--altcha-border-color);\n  --altcha-shadow: drop-shadow(3px 3px 6px oklch(0% 0 0 / 0.2));\n  --altcha-spinner-color: var(--altcha-color-base-content);\n  --altcha-switch-background-color: var(--altcha-color-neutral);\n  --altcha-switch-border-radius: calc(infinity * 1px);\n  --altcha-switch-height: var(--altcha-checkbox-size);\n  --altcha-switch-padding: 0.25rem;\n  --altcha-switch-width: calc(var(--altcha-checkbox-size) * 1.75);\n  --altcha-switch-toggle-border-radius: 100%;\n  --altcha-switch-toggle-color: var(--altcha-color-neutral-content);\n  --altcha-switch-toggle-size: calc(\n  \tvar(--altcha-switch-height) - calc(var(--altcha-switch-padding) * 2)\n  );\n  --altcha-transition-duration: 0.6s;\n  --altcha-z-index: 99999999;\n  --altcha-z-index-popover: 999999999;\n}\n\n@supports (-moz-appearance: none) {\n  :root {\n    --altcha-checkbox-outline-color: var(--altcha-color-primary);\n  }\n}\n.altcha {\n  all: revert-layer;\n  display: none;\n  font-family: inherit;\n  font-size: inherit;\n  position: relative;\n}\n.altcha[data-visible] {\n  display: block;\n}\n.altcha-popover, .altcha-popover * {\n  all: revert-layer;\n  box-sizing: border-box;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: 1.25;\n}\n.altcha * {\n  all: revert-layer;\n  box-sizing: border-box;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: 1.25;\n}\n.altcha a, .altcha-popover a {\n  color: currentColor;\n  text-decoration: none;\n}\n.altcha a:hover, .altcha-popover a:hover {\n  color: currentColor;\n}\n.altcha-main {\n  align-items: start;\n  background-color: var(--altcha-color-base);\n  border: var(--altcha-border-width, 1px) solid var(--altcha-border-color);\n  border-radius: var(--altcha-border-radius, 0);\n  color: var(--altcha-color-base-content);\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  justify-content: space-between;\n  padding: var(--altcha-padding);\n  max-width: var(--altcha-max-width, 100%);\n}\n.altcha-main > * {\n  display: flex;\n  width: 100%;\n}\n.altcha-main > *:first-child {\n  flex-grow: 1;\n}\n.altcha-checkbox-wrap {\n  align-items: center;\n  display: flex;\n  flex-direction: row;\n  flex-grow: 1;\n  gap: 0.5rem;\n}\n.altcha-checkbox-wrap > * {\n  display: flex;\n}\n.altcha-logo {\n  opacity: 0.7;\n}\n.altcha-footer {\n  align-items: center;\n  display: flex;\n  flex-grow: 1;\n  gap: 0.5rem;\n  justify-content: flex-end;\n  font-size: 0.7rem;\n  opacity: 0.7;\n}\n.altcha-footer p {\n  margin: 0;\n  padding: 0;\n}\n.altcha-error {\n  font-size: 0.85rem;\n}\n.altcha-button {\n  align-items: center;\n  background: var(--altcha-color-primary);\n  border: var(--altcha-input-border-width) solid var(--altcha-color-primary);\n  border-radius: var(--altcha-input-border-radius);\n  color: var(--altcha-color-primary-content);\n  cursor: pointer;\n  display: flex;\n  font-size: 0.9rem;\n  gap: 0.5rem;\n  padding: 0.35rem;\n}\n.altcha-button:focus {\n  border-color: var(--altcha-color-primary);\n  outline: var(--altcha-checkbox-outline);\n  outline-offset: var(--altcha-checkbox-outline-offset);\n}\n.altcha-button > .altcha-spinner, .altcha-button > svg {\n  height: 20px;\n  width: 20px;\n}\n.altcha-button-secondary {\n  background: transparent;\n  border-color: var(--altcha-color-neutral);\n  color: var(--altcha-color-neutral-content);\n}\n.altcha-input {\n  background: var(--altcha-input-background-color);\n  border: var(--altcha-input-border-width) solid var(--altcha-color-neutral);\n  border-radius: var(--altcha-input-border-radius);\n  color: var(--altcha-input-color);\n  flex-grow: 1;\n  font-size: 1rem;\n  min-width: 0;\n  padding: 0.25rem;\n  width: auto;\n}\n.altcha-input:focus {\n  border-color: var(--altcha-color-primary);\n  outline: var(--altcha-checkbox-outline);\n  outline-offset: var(--altcha-checkbox-outline-offset);\n}\n.altcha-spinner {\n  animation: altcha-rotate 0.6s linear infinite;\n  border-radius: 100%;\n  border: var(--altcha-checkbox-border-width) solid var(--altcha-spinner-color);\n  border-bottom-color: transparent;\n  border-right-color: transparent;\n  opacity: 0.7;\n}\n.altcha-popover {\n  background-color: var(--altcha-color-base);\n  border: var(--altcha-border-width) solid var(--altcha-border-color);\n  border-radius: var(--altcha-border-radius);\n  color: var(--altcha-color-base-content);\n  filter: var(--altcha-shadow);\n  position: absolute;\n  left: calc(var(--altcha-padding) / 2);\n  max-width: calc(var(--altcha-max-width) - var(--altcha-padding));\n  top: calc(var(--altcha-padding) + var(--altcha-checkbox-size) + var(--altcha-popover-arrow-size));\n  z-index: var(--altcha-z-index-popover);\n}\n.altcha-popover-arrow {\n  border: var(--altcha-popover-arrow-size) solid transparent;\n  border-bottom-color: var(--altcha-popover-color);\n  content: "";\n  height: 0;\n  left: calc(var(--altcha-checkbox-size) / 2);\n  position: absolute;\n  top: calc(var(--altcha-popover-arrow-size) * -2);\n  width: 0;\n}\n.altcha-popover-content {\n  max-height: 100dvh;\n  overflow: auto;\n  padding: var(--altcha-padding);\n}\n.altcha-popover[data-top=true][data-display=standard] {\n  bottom: calc(100% - (var(--altcha-padding) - var(--altcha-popover-arrow-size)));\n  top: auto;\n}\n.altcha-popover[data-top=true][data-display=standard] .altcha-popover-arrow {\n  border-bottom-color: transparent;\n  border-top-color: var(--altcha-popover-color);\n  bottom: calc(var(--altcha-popover-arrow-size) * -2);\n  top: auto;\n}\n.altcha-popover[data-variant=error] {\n  --altcha-popover-color: var(--altcha-color-error);\n  background-color: var(--altcha-color-error);\n  border-color: var(--altcha-color-error);\n  color: var(--altcha-color-error-content);\n}\n.altcha-popover[data-variant=error] .altcha-popover-content {\n  padding: calc(var(--altcha-padding) / 1.5) var(--altcha-padding);\n}\n.altcha-popover[data-display=overlay] {\n  animation: altcha-overlay-slidein 0.5s forwards;\n  left: 50%;\n  position: fixed;\n  top: 45%;\n  transform: translate(-50%, -50%);\n  width: var(--altcha-max-width);\n  z-index: var(--altcha-z-index);\n}\n.altcha-popover[data-display=bottomsheet] {\n  animation: altcha-bottomsheet-slideup 0.5s forwards;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  border-bottom: 0;\n  bottom: -100%;\n  left: 50%;\n  position: fixed;\n  top: auto;\n  transform: translate(-50%, 0);\n  width: var(--altcha-max-width);\n  z-index: var(--altcha-z-index);\n}\n.altcha-popover[data-display=bottomsheet] .altcha-popover-content {\n  padding-bottom: calc(var(--altcha-padding) * 2);\n}\n.altcha-popover-backdrop {\n  background: var(--altcha-color-base-content);\n  bottom: 0;\n  left: 0;\n  opacity: 0.1;\n  position: fixed;\n  right: 0;\n  top: 0;\n  transition: opacity 0.5s;\n  z-index: var(--altcha-z-index);\n}\n.altcha-popover-close {\n  color: var(--altcha-color-base-content);\n  cursor: pointer;\n  display: inline-block;\n  font-size: 1rem;\n  height: 1.25rem;\n  line-height: 0.95;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  text-shadow: 0 0 1px var(--altcha-color-base);\n  top: -1.5rem;\n  width: 1.25rem;\n  z-index: var(--altcha-z-index);\n}\n[dir=rtl] .altcha-popover {\n  left: auto;\n  right: calc(var(--altcha-padding) / 2);\n}\n[dir=rtl] .altcha-popover-arrow {\n  left: auto;\n  right: calc(var(--altcha-checkbox-size) / 2);\n}\n[dir=rtl] .altcha-popover-close {\n  left: 0;\n  right: auto;\n}\n.altcha-popover[data-display=bottomsheet] .altcha-footer, .altcha-popover[data-display=overlay] .altcha-footer {\n  align-items: center;\n  justify-content: center;\n  padding-top: 1rem;\n  gap: 0.5rem;\n}\n.altcha-popover[data-display=bottomsheet] .altcha-footer svg, .altcha-popover[data-display=overlay] .altcha-footer svg {\n  height: 18px;\n  width: 18px;\n  vertical-align: middle;\n}\n.altcha-code-challenge > form {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n}\n.altcha-code-challenge-title {\n  font-weight: 600;\n}\n.altcha-code-challenge-text {\n  font-size: 0.85rem;\n}\n.altcha-code-challenge-image {\n  background: white;\n  border: var(--altcha-input-border-width) solid var(--altcha-color-neutral);\n  border-radius: var(--altcha-input-border-radius);\n  object-fit: contain;\n  height: 50px;\n}\n.altcha-code-challenge-row {\n  display: flex;\n  gap: 0.5rem;\n}\n.altcha-code-challenge-buttons {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  margin-top: var(--altcha-padding);\n  justify-content: space-between;\n}\n.altcha-code-challenge-buttons button {\n  justify-content: center;\n  width: 100%;\n}\n.altcha-checkbox {\n  cursor: pointer;\n  height: var(--altcha-checkbox-size);\n  position: relative;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox input {\n  appearance: none;\n  background: var(--altcha-input-background-color);\n  border: var(--altcha-checkbox-border-width, 2px) solid var(--altcha-checkbox-border-color);\n  border-radius: var(--altcha-checkbox-border-radius);\n  cursor: pointer;\n  height: var(--altcha-checkbox-size);\n  left: 0;\n  margin: 0;\n  padding: 0;\n  position: absolute;\n  top: 0;\n  width: var(--altcha-checkbox-size);\n}\n@supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {\n  .altcha-checkbox input {\n    /* Safari-only: fixes focus outline */\n  }\n  .altcha-checkbox input:focus {\n    outline-width: 2px;\n    outline-style: solid;\n  }\n}\n.altcha-checkbox input:before {\n  border-radius: var(--altcha-checkbox-border-radius);\n  content: "";\n  width: 100%;\n  height: 100%;\n  background: var(--altcha-color-neutral);\n  display: block;\n  transform: scale(0);\n}\n.altcha-checkbox input:checked {\n  background-color: var(--altcha-color-success);\n  border-color: var(--altcha-color-success);\n}\n.altcha-checkbox input:checked::before {\n  background-color: var(--altcha-color-success);\n  opacity: 0;\n  transform: scale(2.2);\n  transition: all var(--altcha-checkbox-transition-duration) ease;\n  transition-delay: 0.1s;\n}\n.altcha-checkbox svg {\n  --altcha-radio-svg-size: calc(var(--altcha-checkbox-size) * 0.5);\n  --altcha-radio-svg-offset: calc(var(--altcha-checkbox-size) * 0.25);\n  fill: none;\n  left: var(--altcha-radio-svg-offset);\n  height: var(--altcha-radio-svg-size);\n  opacity: 0;\n  position: absolute;\n  stroke: currentColor;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  top: var(--altcha-radio-svg-offset);\n  transform: translate3d(0, 0, 0);\n  width: var(--altcha-radio-svg-size);\n}\n.altcha-checkbox input:checked + svg {\n  color: var(--altcha-color-success-content);\n  opacity: 1;\n  stroke-dashoffset: 0;\n  transition: all var(--altcha-checkbox-transition-duration) ease;\n  transition-delay: 0.1s;\n}\n.altcha-checkbox-spinner {\n  display: none;\n  left: 0;\n  height: var(--altcha-checkbox-size);\n  position: absolute;\n  top: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox[data-loading=true] input {\n  appearance: none;\n  opacity: 0;\n  pointer-events: none;\n}\n.altcha-checkbox[data-loading=true] .altcha-checkbox-spinner {\n  display: block;\n}\n.altcha-checkbox-native {\n  height: var(--altcha-checkbox-size);\n  position: relative;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox-native input {\n  height: var(--altcha-checkbox-size);\n  margin: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox-native-spinner {\n  display: none;\n  left: 0;\n  height: var(--altcha-checkbox-size);\n  position: absolute;\n  top: 0;\n  width: var(--altcha-checkbox-size);\n}\n.altcha-checkbox-native[data-loading=true] input {\n  appearance: none;\n  opacity: 0;\n  pointer-events: none;\n}\n.altcha-checkbox-native[data-loading=true] .altcha-checkbox-native-spinner {\n  display: block;\n}\n.altcha-switch {\n  align-items: center;\n  border-radius: var(--altcha-switch-border-radius);\n  background-color: var(--altcha-switch-background-color);\n  display: flex;\n  height: var(--altcha-switch-height);\n  padding: var(--altcha-switch-padding);\n  position: relative;\n  width: var(--altcha-switch-width);\n}\n.altcha-switch:focus-within {\n  outline: var(--altcha-checkbox-outline);\n  outline-offset: var(--altcha-checkbox-outline-offset);\n}\n.altcha-switch input {\n  appearance: none;\n  cursor: pointer;\n  height: 100%;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n.altcha-switch-toggle {\n  align-items: center;\n  background-color: var(--altcha-switch-toggle-color);\n  border-radius: var(--altcha-switch-toggle-border-radius);\n  cursor: pointer;\n  display: flex;\n  height: var(--altcha-switch-toggle-size);\n  justify-content: center;\n  left: var(--altcha-switch-padding);\n  position: absolute;\n  transition: width 150ms ease-out, left 150ms ease-out;\n  width: var(--altcha-switch-toggle-size);\n}\n.altcha-switch-spinner {\n  display: none;\n  height: var(--altcha-switch-toggle-size);\n  width: var(--altcha-switch-toggle-size);\n}\n.altcha-switch[data-loading=true] {\n  pointer-events: none;\n}\n.altcha-switch[data-loading=true] .altcha-switch-spinner {\n  display: block;\n}\n.altcha-switch[data-loading=true] .altcha-switch-toggle {\n  background-color: transparent;\n  left: calc(50% - var(--altcha-switch-toggle-size) / 2);\n}\n[data-state=verified] .altcha-switch {\n  --altcha-switch-background-color: var(--altcha-color-success);\n}\n[data-state=verified] .altcha-switch-toggle {\n  background-color: var(--altcha-color-success-content);\n  left: calc(100% - var(--altcha-switch-height) + var(--altcha-switch-padding));\n}\n[dir=rtl] .altcha-switch-toggle {\n  left: calc(100% - var(--altcha-switch-height) + var(--altcha-switch-padding));\n}\n[dir=rtl][data-state=verified] .altcha-switch-toggle {\n  left: var(--altcha-switch-padding);\n}\n.altcha-floating-arrow {\n  border: 6px solid transparent;\n  border-bottom-color: var(--altcha-border-color);\n  content: "";\n  height: 0;\n  left: 12px;\n  position: absolute;\n  top: -12px;\n  width: 0;\n}\n.altcha-overlay-backdrop {\n  bottom: 0;\n  left: 0;\n  position: fixed;\n  right: 0;\n  top: 0;\n  transition: opacity var(--altcha-transition-duration);\n  z-index: var(--altcha-z-index);\n}\n.altcha-overlay-close {\n  display: inline-block;\n  color: currentColor;\n  cursor: pointer;\n  font-size: 1rem;\n  height: 1rem;\n  line-height: 0.85;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  text-shadow: 0 0 1px var(--altcha-color-base);\n  top: -1.5rem;\n  width: 1rem;\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=overlay] {\n  animation: altcha-overlay-slidein var(--altcha-transition-duration) forwards;\n  filter: var(--altcha-shadow);\n  left: 50%;\n  opacity: 0;\n  position: fixed;\n  top: 45%;\n  transform: translate(-50%, -50%);\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=overlay] .altcha-main {\n  width: var(--altcha-max-width);\n}\n.altcha[data-display=floating] {\n  display: none;\n  filter: var(--altcha-shadow);\n  left: var(--altcha-floating-left, -100%);\n  position: fixed;\n  top: var(--altcha-floating-top, -100%);\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=floating] .altcha-main {\n  width: var(--altcha-max-width);\n}\n.altcha[data-display=floating][data-floating-position=top] .altcha-floating-arrow {\n  border-bottom-color: transparent;\n  border-top-color: var(--altcha-border-color);\n  bottom: -12px;\n  top: auto;\n}\n.altcha[data-display=floating][data-visible] {\n  display: flex;\n}\n.altcha[data-display=bar] {\n  bottom: -100%;\n  filter: var(--altcha-shadow);\n  left: 0;\n  position: fixed;\n  right: 0;\n  transition: bottom var(--altcha-transition-duration), top var(--altcha-transition-duration);\n  z-index: var(--altcha-z-index);\n}\n.altcha[data-display=bar] .altcha-main {\n  align-items: center;\n  border-radius: 0;\n  border-width: var(--altcha-border-width) 0 0 0;\n  flex-direction: row;\n  max-width: 100% !important;\n}\n.altcha[data-display=bar] .altcha-main > * {\n  width: auto;\n}\n.altcha[data-display=bar][data-placement=top] {\n  bottom: auto;\n  top: -100%;\n}\n.altcha[data-display=bar][data-placement=top] .altcha-main {\n  border-width: 0 0 var(--altcha-border-width) 0;\n}\n.altcha[data-display=bar][data-placement=bottom]:not([data-state=unverified]) {\n  bottom: 0;\n}\n.altcha[data-display=bar][data-placement=top]:not([data-state=unverified]) {\n  top: 0;\n}\n.altcha[data-display=invisible] {\n  display: none;\n}\n\n@keyframes altcha-rotate {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n@keyframes altcha-bottomsheet-slideup {\n  100% {\n    bottom: 0;\n  }\n}\n@keyframes altcha-overlay-slidein {\n  100% {\n    opacity: 1;\n    top: 50%;\n  }\n}/*$vite$:1*/', document.head.appendChild(t);
     const e = !1;
     var n = Array.isArray,
         i = Array.prototype.indexOf,
@@ -945,16 +945,16 @@ function(t) {
         I = 1 << 19,
         O = 65536,
         L = 1 << 21,
-        R = 1 << 23,
-        D = Symbol("$state"),
+        D = 1 << 23,
+        R = Symbol("$state"),
         j = Symbol("legacy props"),
-        U = Symbol(""),
-        N = Symbol("attributes"),
+        N = Symbol(""),
+        U = Symbol("attributes"),
         P = Symbol("class"),
         q = Symbol("style"),
         H = Symbol("text"),
-        M = Symbol("form reset"),
-        F = new class extends Error {
+        F = Symbol("form reset"),
+        M = new class extends Error {
             name = "StaleReactionError";
             message = "The reaction that called `getAbortSignal()` was re-run or destroyed"
         },
@@ -988,7 +988,7 @@ function(t) {
             e: null,
             s: t,
             x: null,
-            r: Fe,
+            r: Me,
             l: null
         }
     }
@@ -1076,7 +1076,7 @@ function(t) {
     }
 
     function pt(t) {
-        if ("object" != typeof t || null === t || D in t) return t;
+        if ("object" != typeof t || null === t || R in t) return t;
         const e = h(t);
         if (e !== u && e !== d) return t;
         var i = new Map,
@@ -1087,9 +1087,9 @@ function(t) {
                 if (Ze === o) return t();
                 var e = qe,
                     n = Ze;
-                Me(null), Ye(o);
+                Fe(null), Ye(o);
                 var i = t();
-                return Me(e), Ye(n), i
+                return Fe(e), Ye(n), i
             };
         return r && i.set("length", Ee(t.length)), new Proxy(t, {
             defineProperty(t, e, n) {
@@ -1113,7 +1113,7 @@ function(t) {
                 return !0
             },
             get(e, n, r) {
-                if (n === D) return t;
+                if (n === R) return t;
                 var a = i.get(n),
                     o = n in e;
                 if (void 0 !== a || o && !l(e, n)?.writable || (a = s(() => Ee(pt(o ? e[n] : J))), i.set(n, a)), void 0 !== a) {
@@ -1140,10 +1140,10 @@ function(t) {
                 return n
             },
             has(t, e) {
-                if (e === D) return !0;
+                if (e === R) return !0;
                 var n = i.get(e),
                     r = void 0 !== n && n.v !== J || Reflect.has(t, e);
-                if ((void 0 !== n || null !== Fe && (!r || l(t, e)?.writable)) && (void 0 === n && (n = s(() => Ee(r ? pt(t[e]) : J)), i.set(e, n)), ln(n) === J)) return !1;
+                if ((void 0 !== n || null !== Me && (!r || l(t, e)?.writable)) && (void 0 === n && (n = s(() => Ee(r ? pt(t[e]) : J)), i.set(e, n)), ln(n) === J)) return !1;
                 return r
             },
             set(t, e, n, o) {
@@ -1185,7 +1185,7 @@ function(t) {
 
     function gt(t) {
         try {
-            if (null !== t && "object" == typeof t && D in t) return t[D]
+            if (null !== t && "object" == typeof t && R in t) return t[R]
         } catch {}
         return t
     }
@@ -1201,7 +1201,7 @@ function(t) {
             var t = Element.prototype,
                 e = Node.prototype,
                 n = Text.prototype;
-            wt = l(e, "firstChild").get, St = l(e, "nextSibling").get, f(t) && (t[P] = void 0, t[N] = null, t[q] = void 0, t.__e = void 0), f(n) && (n[H] = void 0)
+            wt = l(e, "firstChild").get, St = l(e, "nextSibling").get, f(t) && (t[P] = void 0, t[U] = null, t[q] = void 0, t.__e = void 0), f(n) && (n[H] = void 0)
         }
     }
 
@@ -1269,8 +1269,8 @@ function(t) {
     }
 
     function Ot(t) {
-        var e = Fe;
-        if (null === e) return qe.f |= R, t;
+        var e = Me;
+        if (null === e) return qe.f |= D, t;
         if (0 === (e.f & E) && !(4 & e.f)) throw t;
         Lt(t, e)
     }
@@ -1289,23 +1289,23 @@ function(t) {
         }
         throw t
     }
-    const Rt = -7169;
+    const Dt = -7169;
 
-    function Dt(t, e) {
-        t.f = t.f & Rt | e
+    function Rt(t, e) {
+        t.f = t.f & Dt | e
     }
 
     function jt(t) {
-        0 !== (t.f & w) || null === t.deps ? Dt(t, S) : Dt(t, $)
+        0 !== (t.f & w) || null === t.deps ? Rt(t, S) : Rt(t, $)
     }
 
-    function Ut(t) {
+    function Nt(t) {
         if (null !== t)
-            for (const e of t) 2 & e.f && 0 !== (e.f & O) && (e.f ^= O, Ut(e.deps))
+            for (const e of t) 2 & e.f && 0 !== (e.f & O) && (e.f ^= O, Nt(e.deps))
     }
 
-    function Nt(t, e, n) {
-        0 !== (t.f & x) ? e.add(t) : 0 !== (t.f & $) && n.add(t), Ut(t.deps), Dt(t, S)
+    function Ut(t, e, n) {
+        0 !== (t.f & x) ? e.add(t) : 0 !== (t.f & $) && n.add(t), Nt(t.deps), Rt(t, S)
     }
 
     function Pt(t, e, n) {
@@ -1345,11 +1345,11 @@ function(t) {
         }
     }
 
-    function Mt(t) {
+    function Ft(t) {
         let e;
         return Pt(t, t => e = t)(), e
     }
-    let Ft = Symbol("unmounted");
+    let Mt = Symbol("unmounted");
 
     function zt(t, e, n) {
         const i = n[e] ??= {
@@ -1357,14 +1357,14 @@ function(t) {
             source: Ce(void 0),
             unsubscribe: p
         };
-        if (i.store !== t && !(Ft in n))
+        if (i.store !== t && !(Mt in n))
             if (i.unsubscribe(), i.store = t ?? null, null == t) i.source.v = void 0, i.unsubscribe = p;
             else {
                 var r = !0;
                 i.unsubscribe = Pt(t, t => {
                     r ? i.source.v = t : Te(i.source, t)
                 }), r = !1
-            } return t && Ft in n ? Mt(t) : ln(i.source)
+            } return t && Mt in n ? Ft(t) : ln(i.source)
     }
     let Bt = null,
         Vt = null,
@@ -1425,8 +1425,8 @@ function(t) {
         unskip_effect(t, e = t => this.schedule(t)) {
             var n = this.#f.get(t);
             if (n) {
-                for (var i of (this.#f.delete(t), n.d)) Dt(i, x), e(i);
-                for (i of n.m) Dt(i, $), e(i)
+                for (var i of (this.#f.delete(t), n.d)) Rt(i, x), e(i);
+                for (i of n.m) Rt(i, $), e(i)
             }
             this.#p.add(t)
         }
@@ -1440,8 +1440,8 @@ function(t) {
                         Lt(t, Gt)
                     }
                 }()), !this.#v()) {
-                for (const t of this.#d) this.#h.delete(t), Dt(t, x), this.schedule(t);
-                for (const t of this.#h) Dt(t, $), this.schedule(t)
+                for (const t of this.#d) this.#h.delete(t), Rt(t, x), this.schedule(t);
+                for (const t of this.#h) Rt(t, $), this.schedule(t)
             }
             const t = this.#c;
             this.#c = [], this.apply();
@@ -1523,7 +1523,7 @@ function(t) {
                         if (2 & i) e(t);
                         else {
                             var r = t;
-                            4194320 & i && !this.async_deriveds.has(r) && (this.#h.delete(r), Dt(r, x), this.schedule(r))
+                            4194320 & i && !this.async_deriveds.has(r) && (this.#h.delete(r), Rt(r, x), this.schedule(r))
                         }
                     }
             };
@@ -1531,10 +1531,10 @@ function(t) {
             this.oncommit(() => t.discard()), t.#b(), Qt = this, this.#m()
         }
         #w(t) {
-            for (var e = 0; e < t.length; e += 1) Nt(t[e], this.#d, this.#h)
+            for (var e = 0; e < t.length; e += 1) Ut(t[e], this.#d, this.#h)
         }
         capture(t, e, n = !1) {
-            t.v === J || this.previous.has(t) || this.previous.set(t, t.v), 0 === (t.f & R) && (this.current.set(t, [e, n]), Jt?.set(t, e)), this.is_fork || (t.v = e)
+            t.v === J || this.previous.has(t) || this.previous.set(t, t.v), 0 === (t.f & D) && (this.current.set(t, [e, n]), Jt?.set(t, e)), this.is_fork || (t.v = e)
         }
         activate() {
             Qt = this
@@ -1593,7 +1593,7 @@ function(t) {
                         a = new Map;
                         var s = [...c.current.keys()].filter(t => !this.current.has(t) || this.current.get(t)[0] !== t.v);
                         if (s.length > 0)
-                            for (const t of this.#u) 155648 & t.f || !se(t, s, a) || (4194320 & t.f ? (Dt(t, x), c.schedule(t)) : c.#d.add(t));
+                            for (const t of this.#u) 155648 & t.f || !se(t, s, a) || (4194320 & t.f ? (Rt(t, x), c.schedule(t)) : c.#d.add(t));
                         if (c.#c.length > 0) {
                             for (var l of (c.apply(), c.#c)) c.#y(l, [], []);
                             c.#c = []
@@ -1656,7 +1656,7 @@ function(t) {
             else {
                 for (var e = t; null !== e.parent;) {
                     var n = (e = e.parent).f;
-                    if (!(null === Yt || e !== Fe || null !== qe && 2 & qe.f)) return;
+                    if (!(null === Yt || e !== Me || null !== qe && 2 & qe.f)) return;
                     if (96 & n) {
                         if (0 === (n & S)) return;
                         e.f ^= S
@@ -1717,7 +1717,7 @@ function(t) {
         if (!n.has(t) && (n.add(t), null !== t.reactions))
             for (const r of t.reactions) {
                 const t = r.f;
-                2 & t ? oe(r, e, n, i) : 4194320 & t && 0 === (t & x) && se(r, e, i) && (Dt(r, x), le(r))
+                2 & t ? oe(r, e, n, i) : 4194320 & t && 0 === (t & x) && se(r, e, i) && (Rt(r, x), le(r))
             }
     }
 
@@ -1738,13 +1738,13 @@ function(t) {
 
     function ce(t, e) {
         if (0 === (t.f & b) || 0 === (t.f & S)) {
-            0 !== (t.f & x) ? e.d.push(t) : 0 !== (t.f & $) && e.m.push(t), Dt(t, S);
+            0 !== (t.f & x) ? e.d.push(t) : 0 !== (t.f & $) && e.m.push(t), Rt(t, S);
             for (var n = t.first; null !== n;) ce(n, e), n = n.next
         }
     }
 
     function ue(t) {
-        Dt(t, S);
+        Rt(t, S);
         for (var e = t.first; null !== e;) ue(e), e = e.next
     }
     class de {
@@ -1759,13 +1759,13 @@ function(t) {
         #I = null;
         #O = null;
         #L = null;
-        #R = null;
-        #D = 0;
+        #D = null;
+        #R = 0;
         #j = 0;
-        #U = !1;
+        #N = !1;
         #d = new Set;
         #h = new Set;
-        #N = null;
+        #U = null;
         #P = function(t) {
             let e, n = 0,
                 i = _e(0);
@@ -1776,14 +1776,14 @@ function(t) {
                     })
                 })))
             }
-        }(() => (this.#N = _e(this.#D), () => {
-            this.#N = null
+        }(() => (this.#U = _e(this.#R), () => {
+            this.#U = null
         }));
         constructor(t, e, n, i) {
             this.#_ = t, this.#C = e, this.#T = t => {
-                var e = Fe;
+                var e = Me;
                 e.b = this, e.f |= 128, n(t)
-            }, this.parent = Fe.b, this.transform_error = i ?? this.parent?.transform_error ?? (t => t), this.#A = Sn(() => {
+            }, this.parent = Me.b, this.transform_error = i ?? this.parent?.transform_error ?? (t => t), this.#A = Sn(() => {
                 if (ot) {
                     const t = this.#E;
                     ct();
@@ -1791,11 +1791,11 @@ function(t) {
                     if (t.data.startsWith("[?")) {
                         const e = JSON.parse(t.data.slice(2));
                         this.#q(e)
-                    } else e ? this.#H() : this.#M()
-                } else this.#F()
+                    } else e ? this.#H() : this.#F()
+                } else this.#M()
             }, 589824), ot && (this.#_ = at)
         }
-        #M() {
+        #F() {
             try {
                 this.#I = $n(() => this.#T(this.#_))
             } catch (t) {
@@ -1811,20 +1811,20 @@ function(t) {
         #H() {
             const t = this.#C.pending;
             t && (this.is_pending = !0, this.#O = $n(() => t(this.#_)), nt(() => {
-                var t = this.#R = document.createDocumentFragment(),
+                var t = this.#D = document.createDocumentFragment(),
                     e = $t();
-                t.append(e), this.#I = this.#z(() => $n(() => this.#T(e))), 0 === this.#j && (this.#_.before(t), this.#R = null, An(this.#O, () => {
+                t.append(e), this.#I = this.#z(() => $n(() => this.#T(e))), 0 === this.#j && (this.#_.before(t), this.#D = null, An(this.#O, () => {
                     this.#O = null
                 }), this.#B(Qt))
             }))
         }
-        #F() {
+        #M() {
             try {
-                if (this.is_pending = this.has_pending_snippet(), this.#j = 0, this.#D = 0, this.#I = $n(() => {
+                if (this.is_pending = this.has_pending_snippet(), this.#j = 0, this.#R = 0, this.#I = $n(() => {
                         this.#T(this.#_)
                     }), this.#j > 0) {
-                    var t = this.#R = document.createDocumentFragment();
-                    Rn(this.#I, t);
+                    var t = this.#D = document.createDocumentFragment();
+                    Dn(this.#I, t);
                     const e = this.#C.pending;
                     this.#O = $n(() => e(this.#_))
                 } else this.#B(Qt)
@@ -1836,7 +1836,7 @@ function(t) {
             this.is_pending = !1, t.transfer_effects(this.#d, this.#h)
         }
         defer_effect(t) {
-            Nt(t, this.#d, this.#h)
+            Ut(t, this.#d, this.#h)
         }
         is_rendered() {
             return !this.is_pending && (!this.parent || this.parent.is_rendered())
@@ -1845,30 +1845,30 @@ function(t) {
             return !!this.#C.pending
         }
         #z(t) {
-            var e = Fe,
+            var e = Me,
                 n = qe,
                 i = K;
-            ze(this.#A), Me(this.#A), Z(this.#A.ctx);
+            ze(this.#A), Fe(this.#A), Z(this.#A.ctx);
             try {
                 return ne.ensure(), t()
             } catch (t) {
                 return Ot(t), null
             } finally {
-                ze(e), Me(n), Z(i)
+                ze(e), Fe(n), Z(i)
             }
         }
         #V(t, e) {
             this.has_pending_snippet() ? (this.#j += t, 0 === this.#j && (this.#B(e), this.#O && An(this.#O, () => {
                 this.#O = null
-            }), this.#R && (this.#_.before(this.#R), this.#R = null))) : this.parent && this.parent.#V(t, e)
+            }), this.#D && (this.#_.before(this.#D), this.#D = null))) : this.parent && this.parent.#V(t, e)
         }
         update_pending_count(t, e) {
-            this.#V(t, e), this.#D += t, this.#N && !this.#U && (this.#U = !0, nt(() => {
-                this.#U = !1, this.#N && Ae(this.#N, this.#D)
+            this.#V(t, e), this.#R += t, this.#U && !this.#N && (this.#N = !0, nt(() => {
+                this.#N = !1, this.#U && Ae(this.#U, this.#R)
             }))
         }
         get_effect_pending() {
-            return this.#P(), ln(this.#N)
+            return this.#P(), ln(this.#U)
         }
         error(t) {
             if (!this.#C.onerror && !this.#C.failed) throw t;
@@ -1888,7 +1888,7 @@ function(t) {
                     }(), null !== this.#L && An(this.#L, () => {
                         this.#L = null
                     }), this.#z(() => {
-                        this.#F()
+                        this.#M()
                     }))
                 },
                 o = t => {
@@ -1900,7 +1900,7 @@ function(t) {
                     n && (this.#L = this.#z(() => {
                         try {
                             return $n(() => {
-                                var e = Fe;
+                                var e = Me;
                                 e.b = this, e.f |= 128, n(this.#_, () => t, () => a)
                             })
                         } catch (t) {
@@ -1924,9 +1924,9 @@ function(t) {
         const r = ge;
         var a = t.filter(t => !t.settled);
         if (0 !== n.length || 0 !== a.length) {
-            var o, s, l, c, u = Fe,
-                d = (o = Fe, s = qe, l = K, c = Qt, function(t = !0) {
-                    ze(o), Me(s), Z(l), t && 0 === (o.f & _) && (c?.activate(), c?.apply())
+            var o, s, l, c, u = Me,
+                d = (o = Me, s = qe, l = K, c = Qt, function(t = !0) {
+                    ze(o), Fe(s), Z(l), t && 0 === (o.f & _) && (c?.activate(), c?.apply())
                 }),
                 h = 1 === a.length ? a[0].promise : a.length > 1 ? Promise.all(a.map(t => t.promise)) : null,
                 f = pe();
@@ -1953,11 +1953,11 @@ function(t) {
     }
 
     function fe(t = !0) {
-        ze(null), Me(null), Z(null), t && Qt?.deactivate()
+        ze(null), Fe(null), Z(null), t && Qt?.deactivate()
     }
 
     function pe() {
-        var t = Fe,
+        var t = Me,
             e = t.b,
             n = Qt,
             i = e.is_rendered();
@@ -1967,7 +1967,7 @@ function(t) {
     }
 
     function ge(t) {
-        null !== Fe && (Fe.f |= I);
+        null !== Me && (Me.f |= I);
         return {
             ctx: K,
             deps: null,
@@ -1979,14 +1979,14 @@ function(t) {
             rv: 0,
             v: J,
             wv: 0,
-            parent: Fe,
+            parent: Me,
             ac: null
         }
     }
     const ve = Symbol("obsolete");
 
     function me(t, e, n) {
-        let i = Fe;
+        let i = Me;
         null === i && function() {
             throw new Error("https://svelte.dev/e/async_derived_orphan")
         }();
@@ -1997,12 +1997,12 @@ function(t) {
         return function(t) {
             fn(4718592, t)
         }(() => {
-            var e = Fe,
+            var e = Me,
                 n = g();
             r = n.promise;
             try {
                 Promise.resolve(t()).then(n.resolve, t => {
-                    t !== F && n.reject(t)
+                    t !== M && n.reject(t)
                 }).finally(fe)
             } catch (t) {
                 n.reject(t), fe()
@@ -2016,7 +2016,7 @@ function(t) {
                 s.add(n), l.async_deriveds.set(e, n)
             }
             const u = (t, e = void 0) => {
-                c?.(), s.delete(n), e !== ve && (l.activate(), e ? (a.f |= R, Ae(a, e)) : (0 !== (a.f & R) && (a.f ^= R), Ae(a, t)), l.deactivate())
+                c?.(), s.delete(n), e !== ve && (l.activate(), e ? (a.f |= D, Ae(a, e)) : (0 !== (a.f & D) && (a.f ^= D), Ae(a, t)), l.deactivate())
             };
             n.promise.then(u, t => u(null, t || "unknown"))
         }), gn(() => {
@@ -2037,9 +2037,9 @@ function(t) {
     }
 
     function ye(t) {
-        var e, n = Fe,
+        var e, n = Me,
             i = t.parent;
-        if (!Ne && null !== i && t.v !== J && 24576 & i.f) return console.warn("https://svelte.dev/e/derived_inert"), t.v;
+        if (!Ue && null !== i && t.v !== J && 24576 & i.f) return console.warn("https://svelte.dev/e/derived_inert"), t.v;
         ze(i);
         try {
             t.f &= -65537,
@@ -2058,7 +2058,7 @@ function(t) {
 
     function we(t) {
         var e = ye(t);
-        t.equals(e) || (t.wv = Xe(), Qt?.is_fork && null !== t.deps || (null !== Qt ? (Qt.capture(t, e, !0), Wt?.capture(t, e, !0)) : t.v = e, null !== t.deps)) ? Ne || (null !== Jt ? (pn() || Qt?.is_fork) && Jt.set(t, e) : jt(t)) : Dt(t, S)
+        t.equals(e) || (t.wv = Xe(), Qt?.is_fork && null !== t.deps || (null !== Qt ? (Qt.capture(t, e, !0), Wt?.capture(t, e, !0)) : t.v = e, null !== t.deps)) ? Ue || (null !== Jt ? (pn() || Qt?.is_fork) && Jt.set(t, e) : jt(t)) : Rt(t, S)
     }
 
     function Se(t) {
@@ -2098,19 +2098,19 @@ function(t) {
 
     function Ae(t, e, n = null) {
         if (!t.equals(e)) {
-            $e.set(t, Ne ? e : t.v);
+            $e.set(t, Ue ? e : t.v);
             var i = ne.ensure();
             if (i.capture(t, e), 2 & t.f) {
                 const e = t;
                 0 !== (t.f & x) && ye(e), null === Jt && jt(e)
             }
-            t.wv = Xe(), Oe(t, x, n), null === Fe || 0 === (Fe.f & S) || 96 & Fe.f || (null === Je ? function(t) {
+            t.wv = Xe(), Oe(t, x, n), null === Me || 0 === (Me.f & S) || 96 & Me.f || (null === Je ? function(t) {
                 Je = t
             }([t]) : Je.push(t)), !i.is_fork && xe.size > 0 && !ke && function() {
                 ke = !1;
                 for (const t of xe) {
                     let e;
-                    0 !== (t.f & S) && Dt(t, $);
+                    0 !== (t.f & S) && Rt(t, $);
                     try {
                         e = tn(t)
                     } catch {
@@ -2135,10 +2135,10 @@ function(t) {
                 var o = i[a],
                     s = o.f,
                     l = 0 === (s & x);
-                if (l && Dt(o, e), 0 !== (s & A)) xe.add(o);
+                if (l && Rt(o, e), 0 !== (s & A)) xe.add(o);
                 else if (2 & s) {
                     var c = o;
-                    Jt?.delete(c), 0 === (s & O) && (s & w && (null === Fe || 0 === (Fe.f & L)) && (o.f |= O), Oe(c, $, n))
+                    Jt?.delete(c), 0 === (s & O) && (s & w && (null === Me || 0 === (Me.f & L)) && (o.f |= O), Oe(c, $, n))
                 } else if (l) {
                     var u = o;
                     0 !== (s & m) && null !== re && re.add(u), null !== n ? n.push(u) : le(u)
@@ -2154,13 +2154,13 @@ function(t) {
             })
         }
     }
-    let Re = !1;
+    let De = !1;
 
-    function De() {
-        Re || (Re = !0, document.addEventListener("reset", t => {
+    function Re() {
+        De || (De = !0, document.addEventListener("reset", t => {
             Promise.resolve().then(() => {
                 if (!t.defaultPrevented)
-                    for (const e of t.target.elements) e[M]?.()
+                    for (const e of t.target.elements) e[F]?.()
             })
         }, {
             capture: !0
@@ -2169,30 +2169,30 @@ function(t) {
 
     function je(t) {
         var e = qe,
-            n = Fe;
-        Me(null), ze(null);
+            n = Me;
+        Fe(null), ze(null);
         try {
             return t()
         } finally {
-            Me(e), ze(n)
+            Fe(e), ze(n)
         }
     }
-    let Ue = !1,
-        Ne = !1;
+    let Ne = !1,
+        Ue = !1;
 
     function Pe(t) {
-        Ne = t
+        Ue = t
     }
     let qe = null,
         He = !1;
 
-    function Me(t) {
+    function Fe(t) {
         qe = t
     }
-    let Fe = null;
+    let Me = null;
 
     function ze(t) {
-        Fe = t
+        Me = t
     }
     let Be = null;
 
@@ -2222,7 +2222,7 @@ function(t) {
                 var a = n[r];
                 if (tn(a) && we(a), a.wv > t.wv) return !0
             }
-            0 !== (e & w) && null === Jt && Dt(t, S)
+            0 !== (e & w) && null === Jt && Rt(t, S)
         }
         return !1
     }
@@ -2232,7 +2232,7 @@ function(t) {
         if (null !== i && (null === Be || !r.call(Be, t)))
             for (var a = 0; a < i.length; a++) {
                 var o = i[a];
-                2 & o.f ? en(o, e, !1) : e === o && (n ? Dt(o, x) : 0 !== (o.f & S) && Dt(o, $), le(o))
+                2 & o.f ? en(o, e, !1) : e === o && (n ? Rt(o, x) : 0 !== (o.f & S) && Rt(o, $), le(o))
             }
     }
 
@@ -2247,7 +2247,7 @@ function(t) {
             l = Ze,
             c = t.f;
         Qe = null, We = 0, Je = null, qe = 96 & c ? null : t, Be = null, Z(t.ctx), He = !1, Ze = ++Ke, null !== t.ac && (je(() => {
-            t.ac.abort(F)
+            t.ac.abort(M)
         }), t.ac = null);
         try {
             t.f |= L;
@@ -2272,7 +2272,7 @@ function(t) {
                     for (const t of e) t.rv = Ke;
                 null !== Je && (null === i ? i = Je : i.push(...Je))
             }
-            return 0 !== (t.f & R) && (t.f ^= R), u
+            return 0 !== (t.f & D) && (t.f ^= D), u
         } catch (t) {
             return Ot(t)
         } finally {
@@ -2294,7 +2294,7 @@ function(t) {
             0 !== (s.f & w) && (s.f ^= w, s.f &= -65537), s.v !== J && jt(s),
                 function(t) {
                     if (null !== t.effects)
-                        for (const e of t.effects)(e.teardown || e.ac) && (e.teardown?.(), e.ac?.abort(F), null !== e.fn && (e.teardown = p), e.ac = null, an(e, 0), _n(e))
+                        for (const e of t.effects)(e.teardown || e.ac) && (e.teardown?.(), e.ac?.abort(M), null !== e.fn && (e.teardown = p), e.ac = null, an(e, 0), _n(e))
                 }(s), an(s, 0)
         }
     }
@@ -2308,10 +2308,10 @@ function(t) {
     function on(t) {
         var e = t.f;
         if (0 === (e & _)) {
-            Dt(t, S);
-            var n = Fe,
-                i = Ue;
-            Fe = t, Ue = !0;
+            Rt(t, S);
+            var n = Me,
+                i = Ne;
+            Me = t, Ne = !0;
             try {
                 16777232 & e ? function(t) {
                     var e = t.first;
@@ -2323,7 +2323,7 @@ function(t) {
                 var r = nn(t);
                 t.teardown = "function" == typeof r ? r : null, t.wv = Ge
             } finally {
-                Ue = i, Fe = n
+                Ne = i, Me = n
             }
         }
     }
@@ -2333,7 +2333,7 @@ function(t) {
 
     function ln(t) {
         var e = !!(2 & t.f);
-        if (null !== qe && !He && !(null !== Fe && 0 !== (Fe.f & _) || null !== Be && r.call(Be, t))) {
+        if (null !== qe && !He && !(null !== Me && 0 !== (Me.f & _) || null !== Be && r.call(Be, t))) {
             var n = qe.deps;
             if (0 !== (qe.f & L)) t.rv < Ke && (t.rv = Ke, null === Qe && null !== n && n[We] === t ? We++ : null === Qe ? Qe = [t] : Qe.push(t));
             else {
@@ -2342,19 +2342,19 @@ function(t) {
                 null === i ? t.reactions = [qe] : r.call(i, qe) || i.push(qe)
             }
         }
-        if (Ne && $e.has(t)) return $e.get(t);
+        if (Ue && $e.has(t)) return $e.get(t);
         if (e) {
             var a = t;
-            if (Ne) {
+            if (Ue) {
                 var o = a.v;
                 return (0 === (a.f & S) && null !== a.reactions || un(a)) && (o = ye(a)), $e.set(a, o), o
             }
-            var s = 0 === (a.f & w) && !He && null !== qe && (Ue || 0 !== (qe.f & w)),
+            var s = 0 === (a.f & w) && !He && null !== qe && (Ne || 0 !== (qe.f & w)),
                 l = 0 === (a.f & E);
             tn(a) && (s && (a.f |= w), we(a)), s && !l && (Se(a), cn(a))
         }
         if (Jt?.has(t)) return Jt.get(t);
-        if (0 !== (t.f & R)) throw t.v;
+        if (0 !== (t.f & D)) throw t.v;
         return t.v
     }
 
@@ -2383,17 +2383,17 @@ function(t) {
     }
 
     function hn(t) {
-        null === Fe && (null === qe && function() {
+        null === Me && (null === qe && function() {
             throw new Error("https://svelte.dev/e/effect_orphan")
         }(), function() {
             throw new Error("https://svelte.dev/e/effect_in_unowned_derived")
-        }()), Ne && function() {
+        }()), Ue && function() {
             throw new Error("https://svelte.dev/e/effect_in_teardown")
         }()
     }
 
     function fn(t, e) {
-        var n = Fe;
+        var n = Me;
         null !== n && 0 !== (n.f & k) && (t |= k);
         var i = {
             ctx: K,
@@ -2438,12 +2438,12 @@ function(t) {
 
     function gn(t) {
         const e = fn(8, null);
-        return Dt(e, S), e.teardown = t, e
+        return Rt(e, S), e.teardown = t, e
     }
 
     function vn(t) {
         hn();
-        var e = Fe.f;
+        var e = Me.f;
         if (!(!qe && 0 !== (e & b) && 0 === (e & E))) return mn(t);
         var n = K;
         (n.e ??= []).push(t)
@@ -2482,13 +2482,13 @@ function(t) {
     function kn(t) {
         var e = t.teardown;
         if (null !== e) {
-            const t = Ne,
+            const t = Ue,
                 n = qe;
-            Pe(!0), Me(null);
+            Pe(!0), Fe(null);
             try {
                 e.call(null)
             } finally {
-                Pe(t), Me(n)
+                Pe(t), Fe(n)
             }
         }
     }
@@ -2498,7 +2498,7 @@ function(t) {
         for (t.first = t.last = null; null !== n;) {
             const t = n.ac;
             null !== t && je(() => {
-                t.abort(F)
+                t.abort(M)
             });
             var i = n.next;
             0 !== (n.f & y) ? n.parent = null : En(n, e), n = i
@@ -2507,7 +2507,7 @@ function(t) {
 
     function En(t, e = !0) {
         var n = !1;
-        (e || 262144 & t.f) && null !== t.nodes && null !== t.nodes.end && (Cn(t.nodes.start, t.nodes.end), n = !0), Dt(t, C), _n(t, e && !n), an(t, 0);
+        (e || 262144 & t.f) && null !== t.nodes && null !== t.nodes.end && (Cn(t.nodes.start, t.nodes.end), n = !0), Rt(t, C), _n(t, e && !n), an(t, 0);
         var i = t.nodes && t.nodes.t;
         if (null !== i)
             for (const t of i) t.stop();
@@ -2563,7 +2563,7 @@ function(t) {
 
     function Ln(t, e) {
         if (0 !== (t.f & k)) {
-            t.f ^= k, 0 === (t.f & S) && (Dt(t, x), ne.ensure().schedule(t));
+            t.f ^= k, 0 === (t.f & S) && (Rt(t, x), ne.ensure().schedule(t));
             for (var n = t.first; null !== n;) {
                 var i = n.next;
                 Ln(n, !!(0 !== (n.f & T) || 0 !== (n.f & b)) && e), n = i
@@ -2574,7 +2574,7 @@ function(t) {
         }
     }
 
-    function Rn(t, e) {
+    function Dn(t, e) {
         if (t.nodes)
             for (var n = t.nodes.start, i = t.nodes.end; null !== n;) {
                 var r = n === i ? null : _t(n);
@@ -2582,13 +2582,13 @@ function(t) {
             }
     }
 
-    function Dn(t) {
+    function Rn(t) {
         const e = {
-            get: t => Mt(e.store)[t],
+            get: t => Ft(e.store)[t],
             set: (t, n) => {
-                "string" == typeof t ? Object.assign(Mt(e.store), {
+                "string" == typeof t ? Object.assign(Ft(e.store), {
                     [t]: n
-                }) : Object.assign(Mt(e.store), t), e.store.set(Mt(e.store))
+                }) : Object.assign(Ft(e.store), t), e.store.set(Ft(e.store))
             },
             store: Ht(t)
         };
@@ -2596,12 +2596,12 @@ function(t) {
     }
     globalThis.$altcha = globalThis.$altcha || {
         algorithms: new Map,
-        defaults: Dn({}),
-        i18n: Dn({}),
+        defaults: Rn({}),
+        i18n: Rn({}),
         instances: new Set,
         plugins: new Set
     };
-    const jn = {
+    globalThis.$altcha.i18n.set("en", {
         ariaLinkLabel: "Altcha (official website)",
         cancel: "Cancel",
         enterCode: "Enter code",
@@ -2619,55 +2619,54 @@ function(t) {
         verified: "Verified",
         verifying: "Verifying...",
         waitAlert: "Verifying... please wait."
-    };
-    "$altcha" in globalThis && globalThis.$altcha.i18n.set("en", jn);
+    });
     "undefined" != typeof window && ((window.__svelte ??= {}).v ??= new Set).add("5");
-    const Un = Symbol("events"),
+    const jn = Symbol("events"),
         Nn = new Set,
-        Pn = new Set;
+        Un = new Set;
 
-    function qn(t, e, n, i = {}) {
+    function Pn(t, e, n, i = {}) {
         function r(t) {
-            if (i.capture || Bn.call(e, t), !t.cancelBubble) return je(() => n?.call(this, t))
+            if (i.capture || zn.call(e, t), !t.cancelBubble) return je(() => n?.call(this, t))
         }
         return t.startsWith("pointer") || t.startsWith("touch") || "wheel" === t ? nt(() => {
             e.addEventListener(t, r, i)
         }) : e.addEventListener(t, r, i), r
     }
 
-    function Hn(t, e, n, i, r) {
+    function qn(t, e, n, i, r) {
         var a = {
                 capture: i,
                 passive: r
             },
-            o = qn(t, e, n, a);
+            o = Pn(t, e, n, a);
         (e === document.body || e === window || e === document || e instanceof HTMLMediaElement) && gn(() => {
             e.removeEventListener(t, o, a)
         })
     }
 
-    function Mn(t, e, n) {
-        (e[Un] ??= {})[t] = n
+    function Hn(t, e, n) {
+        (e[jn] ??= {})[t] = n
     }
 
     function Fn(t) {
         for (var e = 0; e < t.length; e++) Nn.add(t[e]);
-        for (var n of Pn) n(t)
+        for (var n of Un) n(t)
     }
-    let zn = null;
+    let Mn = null;
 
-    function Bn(t) {
+    function zn(t) {
         var e = this,
             n = e.ownerDocument,
             i = t.type,
             r = t.composedPath?.() || [],
             a = r[0] || t.target;
-        zn = t;
+        Mn = t;
         var o = 0,
-            l = zn === t && t[Un];
+            l = Mn === t && t[jn];
         if (l) {
             var c = r.indexOf(l);
-            if (-1 !== c && (e === document || e === window)) return void(t[Un] = e);
+            if (-1 !== c && (e === document || e === window)) return void(t[jn] = e);
             var u = r.indexOf(e);
             if (-1 === u) return;
             c <= u && (o = c)
@@ -2678,13 +2677,13 @@ function(t) {
                 get: () => a || n
             });
             var d = qe,
-                h = Fe;
-            Me(null), ze(null);
+                h = Me;
+            Fe(null), ze(null);
             try {
                 for (var f, p = []; null !== a;) {
                     var g = a.assignedSlot || a.parentNode || a.host || null;
                     try {
-                        var v = a[Un]?.[i];
+                        var v = a[jn]?.[i];
                         null == v || a.disabled && t.target !== a || v.call(a, t)
                     } catch (t) {
                         f ? p.push(t) : f = t
@@ -2699,23 +2698,23 @@ function(t) {
                     throw f
                 }
             } finally {
-                t[Un] = e, delete t.currentTarget, Me(d), ze(h)
+                t[jn] = e, delete t.currentTarget, Fe(d), ze(h)
             }
         }
     }
-    const Vn = globalThis?.window?.trustedTypes && globalThis.window.trustedTypes.createPolicy("svelte-trusted-html", {
+    const Bn = globalThis?.window?.trustedTypes && globalThis.window.trustedTypes.createPolicy("svelte-trusted-html", {
         createHTML: t => t
     });
 
-    function Qn(t) {
+    function Vn(t) {
         var e = At("template");
         return e.innerHTML = function(t) {
-            return Vn?.createHTML(t) ?? t
+            return Bn?.createHTML(t) ?? t
         }(t.replaceAll("<!>", "\x3c!----\x3e")), e.content
     }
 
-    function Wn(t, e) {
-        var n = Fe;
+    function Qn(t, e) {
+        var n = Me;
         null === n.nodes && (n.nodes = {
             start: t,
             end: e,
@@ -2724,70 +2723,70 @@ function(t) {
         })
     }
 
-    function Jn(t, e) {
+    function Wn(t, e) {
         var n, i = !!(1 & e),
             r = !!(2 & e),
             a = !t.startsWith("<!>");
         return () => {
-            if (ot) return Wn(at, null), at;
-            void 0 === n && (n = Qn(a ? t : "<!>" + t), i || (n = kt(n)));
+            if (ot) return Qn(at, null), at;
+            void 0 === n && (n = Vn(a ? t : "<!>" + t), i || (n = kt(n)));
             var e = r || yt ? document.importNode(n, !0) : n.cloneNode(!0);
-            i ? Wn(kt(e), e.lastChild) : Wn(e, e);
+            i ? Qn(kt(e), e.lastChild) : Qn(e, e);
             return e
         }
     }
 
-    function Gn(t, e, n = "svg") {
+    function Jn(t, e, n = "svg") {
         var i, r = `<${n}>${!t.startsWith("<!>")?t:"<!>"+t}</${n}>`;
         return () => {
-            if (ot) return Wn(at, null), at;
+            if (ot) return Qn(at, null), at;
             if (!i) {
-                var t = Qn(r);
+                var t = Vn(r);
                 i = kt(kt(t))
             }
             var e = i.cloneNode(!0);
-            return Wn(e, e), e
+            return Qn(e, e), e
         }
     }
 
-    function Kn(t, e) {
-        return Gn(t, 0, "svg")
+    function Gn(t, e) {
+        return Jn(t, 0, "svg")
     }
 
-    function Zn(t = "") {
+    function Kn(t = "") {
         if (!ot) {
             var e = $t(t + "");
-            return Wn(e, e), e
+            return Qn(e, e), e
         }
         var n = at;
-        return 3 !== n.nodeType ? (n.before(n = $t()), lt(n)) : It(n), Wn(n, n), n
+        return 3 !== n.nodeType ? (n.before(n = $t()), lt(n)) : It(n), Qn(n, n), n
     }
 
-    function Yn() {
-        if (ot) return Wn(at, null), at;
+    function Zn() {
+        if (ot) return Qn(at, null), at;
         var t = document.createDocumentFragment(),
             e = document.createComment(""),
             n = $t();
-        return t.append(e, n), Wn(e, n), t
+        return t.append(e, n), Qn(e, n), t
     }
 
-    function Xn(t, e) {
+    function Yn(t, e) {
         if (ot) {
-            var n = Fe;
+            var n = Me;
             return 0 !== (n.f & E) && null !== n.nodes.end || (n.nodes.end = at), void ct()
         }
         null !== t && t.before(e)
     }
 
-    function ti(t) {
+    function Xn(t) {
         return t.endsWith("capture") && "gotpointercapture" !== t && "lostpointercapture" !== t
     }
-    const ei = ["beforeinput", "click", "change", "dblclick", "contextmenu", "focusin", "focusout", "input", "keydown", "keyup", "mousedown", "mousemove", "mouseout", "mouseover", "mouseup", "pointerdown", "pointermove", "pointerout", "pointerover", "pointerup", "touchend", "touchmove", "touchstart"];
+    const ti = ["beforeinput", "click", "change", "dblclick", "contextmenu", "focusin", "focusout", "input", "keydown", "keyup", "mousedown", "mousemove", "mouseout", "mouseover", "mouseup", "pointerdown", "pointermove", "pointerout", "pointerover", "pointerup", "touchend", "touchmove", "touchstart"];
 
-    function ni(t) {
-        return ei.includes(t)
+    function ei(t) {
+        return ti.includes(t)
     }
-    const ii = {
+    const ni = {
         formnovalidate: "formNoValidate",
         ismap: "isMap",
         nomodule: "noModule",
@@ -2802,25 +2801,25 @@ function(t) {
         disableremoteplayback: "disableRemotePlayback"
     };
 
-    function ri(t) {
-        return t = t.toLowerCase(), ii[t] ?? t
+    function ii(t) {
+        return t = t.toLowerCase(), ni[t] ?? t
     }
-    const ai = ["touchstart", "touchmove"];
+    const ri = ["touchstart", "touchmove"];
 
-    function oi(t) {
-        return ai.includes(t)
+    function ai(t) {
+        return ri.includes(t)
     }
 
-    function si(t, e) {
+    function oi(t, e) {
         var n = null == e ? "" : "object" == typeof e ? `${e}` : e;
         n !== (t[H] ??= t.nodeValue) && (t[H] = n, t.nodeValue = `${n}`)
     }
 
-    function li(t, e) {
-        return di(t, e)
+    function si(t, e) {
+        return ui(t, e)
     }
 
-    function ci(t, e) {
+    function li(t, e) {
         xt(), e.intro = e.intro ?? !1;
         const n = e.target,
             i = ot,
@@ -2829,7 +2828,7 @@ function(t) {
             for (var a = kt(n); a && (8 !== a.nodeType || "[" !== a.data);) a = _t(a);
             if (!a) throw W;
             st(!0), lt(a);
-            const i = di(t, {
+            const i = ui(t, {
                 ...e,
                 anchor: a
             });
@@ -2838,14 +2837,14 @@ function(t) {
             if (i instanceof Error && i.message.split("\n").some(t => t.startsWith("https://svelte.dev/e/"))) throw i;
             return i !== W && console.warn("Failed to hydrate: ", i), !1 === e.recover && function() {
                 throw new Error("https://svelte.dev/e/hydration_failed")
-            }(), xt(), n.textContent = "", st(!1), li(t, e)
+            }(), xt(), n.textContent = "", st(!1), si(t, e)
         } finally {
             st(i), lt(r)
         }
     }
-    const ui = new Map;
+    const ci = new Map;
 
-    function di(t, {
+    function ui(t, {
         target: e,
         anchor: n,
         props: i = {},
@@ -2871,7 +2870,7 @@ function(t) {
                 }(s, {
                     pending: () => {}
                 }, e => {
-                    if (Y({}), o && (K.c = o), r && (i.$$events = r), ot && Wn(e, null), c = t(e, i) || {}, ot && (Fe.nodes.end = at, null === at || 8 !== at.nodeType || "]" !== at.data)) throw rt(), W;
+                    if (Y({}), o && (K.c = o), r && (i.$$events = r), ot && Qn(e, null), c = t(e, i) || {}, ot && (Me.nodes.end = at, null === at || 8 !== at.nodeType || "]" !== at.data)) throw rt(), W;
                     X()
                 }, l);
                 var u = new Set,
@@ -2880,32 +2879,32 @@ function(t) {
                             var i = t[n];
                             if (!u.has(i)) {
                                 u.add(i);
-                                var r = oi(i);
+                                var r = ai(i);
                                 for (const t of [e, document]) {
-                                    var a = ui.get(t);
-                                    void 0 === a && (a = new Map, ui.set(t, a));
+                                    var a = ci.get(t);
+                                    void 0 === a && (a = new Map, ci.set(t, a));
                                     var o = a.get(i);
-                                    void 0 === o ? (t.addEventListener(i, Bn, {
+                                    void 0 === o ? (t.addEventListener(i, zn, {
                                         passive: r
                                     }), a.set(i, 1)) : a.set(i, o + 1)
                                 }
                             }
                         }
                     };
-                return d(a(Nn)), Pn.add(d), () => {
+                return d(a(Nn)), Un.add(d), () => {
                     for (var t of u)
                         for (const n of [e, document]) {
-                            var i = ui.get(n),
+                            var i = ci.get(n),
                                 r = i.get(t);
-                            0 == --r ? (n.removeEventListener(t, Bn), i.delete(t), 0 === i.size && ui.delete(n)) : i.set(t, r)
+                            0 == --r ? (n.removeEventListener(t, zn), i.delete(t), 0 === i.size && ci.delete(n)) : i.set(t, r)
                         }
-                    Pn.delete(d), s !== n && s.parentNode?.removeChild(s)
+                    Un.delete(d), s !== n && s.parentNode?.removeChild(s)
                 }
             });
-        return hi.set(c, u), c
+        return di.set(c, u), c
     }
-    let hi = new WeakMap;
-    class fi {
+    let di = new WeakMap;
+    class hi {
         anchor;
         #W = new Map;
         #J = new Map;
@@ -2934,7 +2933,7 @@ function(t) {
                     const r = () => {
                         if (Array.from(this.#W.values()).includes(t)) {
                             var e = document.createDocumentFragment();
-                            Rn(i, e), e.append($t()), this.#G.set(t, {
+                            Dn(i, e), e.append($t()), this.#G.set(t, {
                                 effect: i,
                                 fragment: e
                             })
@@ -2957,7 +2956,7 @@ function(t) {
         }
     }
 
-    function pi(t) {
+    function fi(t) {
         null === K && function() {
             throw new Error("https://svelte.dev/e/lifecycle_outside_component")
         }(), vn(() => {
@@ -2966,10 +2965,10 @@ function(t) {
         })
     }
 
-    function gi(t, e, n = !1) {
+    function pi(t, e, n = !1) {
         var i;
         ot && (i = at, ct());
-        var r = new fi(t);
+        var r = new hi(t);
 
         function a(t, e) {
             if (ot) {
@@ -2988,9 +2987,9 @@ function(t) {
             }), t || a(-1, null)
         }, n ? T : 0)
     }
-    const vi = Symbol("NaN");
+    const gi = Symbol("NaN");
 
-    function mi(t, e, n = !1, i = !1, r = !1, a = !1) {
+    function vi(t, e, n = !1, i = !1, r = !1, a = !1) {
         var o = t,
             s = "";
         if (n) {
@@ -2998,20 +2997,20 @@ function(t) {
             ot && (o = lt(kt(l)))
         }
         wn(() => {
-            var t = Fe;
+            var t = Me;
             if (s !== (s = e() ?? "")) {
-                if (n && !ot) return t.nodes = null, l.innerHTML = s, void("" !== s && Wn(kt(l), l.lastChild));
+                if (n && !ot) return t.nodes = null, l.innerHTML = s, void("" !== s && Qn(kt(l), l.lastChild));
                 if (null !== t.nodes && (Cn(t.nodes.start, t.nodes.end), t.nodes = null), "" !== s) {
                     if (ot) {
                         at.data;
                         for (var a = ct(), c = a; null !== a && (8 !== a.nodeType || "" !== a.data);) c = a, a = _t(a);
                         if (null === a) throw rt(), W;
-                        return Wn(at, c), void(o = lt(a))
+                        return Qn(at, c), void(o = lt(a))
                     }
                     var u = At(i ? "svg" : r ? "math" : "template", i ? "http://www.w3.org/2000/svg" : r ? "http://www.w3.org/1998/Math/MathML" : void 0);
                     u.innerHTML = s;
                     var d = i || r ? u : u.content;
-                    if (Wn(kt(d), d.lastChild), i || r)
+                    if (Qn(kt(d), d.lastChild), i || r)
                         for (; kt(d);) o.before(kt(d));
                     else o.before(d)
                 }
@@ -3019,7 +3018,7 @@ function(t) {
         })
     }
 
-    function bi(t, e) {
+    function mi(t, e) {
         var n, i = void 0;
         xn(() => {
             i !== (i = e()) && (n && (En(n), n = null), i && (n = $n(() => {
@@ -3028,27 +3027,27 @@ function(t) {
         })
     }
 
-    function yi(t) {
+    function bi(t) {
         var e, n, i = "";
         if ("string" == typeof t || "number" == typeof t) i += t;
         else if ("object" == typeof t)
             if (Array.isArray(t)) {
                 var r = t.length;
-                for (e = 0; e < r; e++) t[e] && (n = yi(t[e])) && (i && (i += " "), i += n)
+                for (e = 0; e < r; e++) t[e] && (n = bi(t[e])) && (i && (i += " "), i += n)
             } else
                 for (n in t) t[n] && (i && (i += " "), i += n);
         return i
     }
 
-    function wi(t) {
+    function yi(t) {
         return "object" == typeof t ? function() {
-            for (var t, e, n = 0, i = "", r = arguments.length; n < r; n++)(t = arguments[n]) && (e = yi(t)) && (i && (i += " "), i += e);
+            for (var t, e, n = 0, i = "", r = arguments.length; n < r; n++)(t = arguments[n]) && (e = bi(t)) && (i && (i += " "), i += e);
             return i
         }(t) : t ?? ""
     }
-    const Si = [..." \t\n\r\f \v\ufeff"];
+    const wi = [..." \t\n\r\f \v\ufeff"];
 
-    function xi(t, e = !1) {
+    function Si(t, e = !1) {
         var n = e ? " !important;" : ";",
             i = "";
         for (var r of Object.keys(t)) {
@@ -3058,11 +3057,11 @@ function(t) {
         return i
     }
 
-    function $i(t) {
+    function xi(t) {
         return "-" !== t[0] || "-" !== t[1] ? t.toLowerCase() : t
     }
 
-    function ki(t, e, n, i, r, a) {
+    function $i(t, e, n, i, r, a) {
         var o = t[P];
         if (ot || o !== n || void 0 === o) {
             var s = function(t, e, n) {
@@ -3074,7 +3073,7 @@ function(t) {
                     for (var a = r.length, o = 0;
                         (o = i.indexOf(r, o)) >= 0;) {
                         var s = o + a;
-                        0 !== o && !Si.includes(i[o - 1]) || s !== i.length && !Si.includes(i[s]) ? o = s : i = (0 === o ? "" : i.substring(0, o)) + i.substring(s + 1)
+                        0 !== o && !wi.includes(i[o - 1]) || s !== i.length && !wi.includes(i[s]) ? o = s : i = (0 === o ? "" : i.substring(0, o)) + i.substring(s + 1)
                     }
                 return "" === i ? null : i
             }(n, 0, a);
@@ -3087,14 +3086,14 @@ function(t) {
         return a
     }
 
-    function _i(t, e = {}, n, i) {
+    function ki(t, e = {}, n, i) {
         for (var r in n) {
             var a = n[r];
             e[r] !== a && (null == n[r] ? t.style.removeProperty(r) : t.style.setProperty(r, a, i))
         }
     }
 
-    function Ei(t, e, n, i) {
+    function _i(t, e, n, i) {
         var r = t[q];
         if (ot || r !== e) {
             var a = function(t, e) {
@@ -3106,7 +3105,7 @@ function(t) {
                             o = 0,
                             s = !1,
                             l = [];
-                        n && l.push(...Object.keys(n).map($i)), i && l.push(...Object.keys(i).map($i));
+                        n && l.push(...Object.keys(n).map(xi)), i && l.push(...Object.keys(i).map(xi));
                         var c = 0,
                             u = -1;
                         const e = t.length;
@@ -3116,99 +3115,99 @@ function(t) {
                                 if (":" === h && -1 === u) u = d;
                                 else if (";" === h || d === e - 1) {
                                 if (-1 !== u) {
-                                    var f = $i(t.substring(c, u).trim());
+                                    var f = xi(t.substring(c, u).trim());
                                     l.includes(f) || (";" !== h && d++, r += " " + t.substring(c, d).trim() + ";")
                                 }
                                 c = d + 1, u = -1
                             }
                         }
                     }
-                    return n && (r += xi(n)), i && (r += xi(i, !0)), "" === (r = r.trim()) ? null : r
+                    return n && (r += Si(n)), i && (r += Si(i, !0)), "" === (r = r.trim()) ? null : r
                 }
                 return null == t ? null : String(t)
             }(e, i);
             ot && a === t.getAttribute("style") || (null == a ? t.removeAttribute("style") : t.style.cssText = a), t[q] = e
-        } else i && (Array.isArray(i) ? (_i(t, n?.[0], i[0]), _i(t, n?.[1], i[1], "important")) : _i(t, n, i));
+        } else i && (Array.isArray(i) ? (ki(t, n?.[0], i[0]), ki(t, n?.[1], i[1], "important")) : ki(t, n, i));
         return i
     }
 
-    function Ci(t, e, i = !1) {
+    function Ei(t, e, i = !1) {
         if (t.multiple) {
             if (null == e) return;
             if (!n(e)) return void console.warn("https://svelte.dev/e/select_multiple_invalid_value");
-            for (var r of t.options) r.selected = e.includes(Ti(r))
+            for (var r of t.options) r.selected = e.includes(Ci(r))
         } else {
             for (r of t.options) {
-                if (vt(Ti(r), e)) return void(r.selected = !0)
+                if (vt(Ci(r), e)) return void(r.selected = !0)
             }
             i && void 0 === e || (t.selectedIndex = -1)
         }
     }
 
-    function Ti(t) {
+    function Ci(t) {
         return "__value" in t ? t.__value : t.value
     }
-    const Ai = Symbol("class"),
-        Ii = Symbol("style"),
-        Oi = Symbol("is custom element"),
-        Li = Symbol("is html"),
-        Ri = z ? "link" : "LINK",
+    const Ti = Symbol("class"),
+        Ai = Symbol("style"),
+        Ii = Symbol("is custom element"),
+        Oi = Symbol("is html"),
+        Li = z ? "link" : "LINK",
         Di = z ? "input" : "INPUT",
-        ji = z ? "option" : "OPTION",
-        Ui = z ? "select" : "SELECT",
+        Ri = z ? "option" : "OPTION",
+        ji = z ? "select" : "SELECT",
         Ni = z ? "progress" : "PROGRESS";
 
-    function Pi(t) {
+    function Ui(t) {
         if (ot) {
             var e = !1,
                 n = () => {
                     if (!e) {
                         if (e = !0, t.hasAttribute("value")) {
                             var n = t.value;
-                            Hi(t, "value", null), t.value = n
+                            qi(t, "value", null), t.value = n
                         }
                         if (t.hasAttribute("checked")) {
                             var i = t.checked;
-                            Hi(t, "checked", null), t.checked = i
+                            qi(t, "checked", null), t.checked = i
                         }
                     }
                 };
-            t[M] = n, nt(n), De()
+            t[F] = n, nt(n), Re()
         }
     }
 
-    function qi(t, e) {
+    function Pi(t, e) {
         e ? t.hasAttribute("selected") || t.setAttribute("selected", "") : t.removeAttribute("selected")
     }
 
-    function Hi(t, e, n, i) {
+    function qi(t, e, n, i) {
         var r = Fi(t);
-        ot && (r[e] = t.getAttribute(e), "src" === e || "srcset" === e || "href" === e && t.nodeName === Ri) || r[e] !== (r[e] = n) && ("loading" === e && (t[U] = n), null == n ? t.removeAttribute(e) : "string" != typeof n && Bi(t).includes(e) ? t[e] = n : t.setAttribute(e, n))
+        ot && (r[e] = t.getAttribute(e), "src" === e || "srcset" === e || "href" === e && t.nodeName === Li) || r[e] !== (r[e] = n) && ("loading" === e && (t[N] = n), null == n ? t.removeAttribute(e) : "string" != typeof n && zi(t).includes(e) ? t[e] = n : t.setAttribute(e, n))
     }
 
-    function Mi(t, e, n = [], i = [], r = [], a, o = !1, s = !1) {
+    function Hi(t, e, n = [], i = [], r = [], a, o = !1, s = !1) {
         he(r, n, i, n => {
             var i = void 0,
                 r = {},
-                a = t.nodeName === Ui,
+                a = t.nodeName === ji,
                 l = !1;
             if (xn(() => {
                     var c = e(...n.map(ln)),
                         u = function(t, e, n, i, r = !1) {
                             if (ot && r && t.nodeName === Di) {
                                 var a = t;
-                                ("checkbox" === a.type ? "defaultChecked" : "defaultValue") in n || Pi(a)
+                                ("checkbox" === a.type ? "defaultChecked" : "defaultValue") in n || Ui(a)
                             }
                             var o = Fi(t),
-                                s = o[Oi],
-                                l = !o[Li];
+                                s = o[Ii],
+                                l = !o[Oi];
                             let c = ot && s;
                             c && st(!1);
                             var u = e || {},
-                                d = t.nodeName === ji;
+                                d = t.nodeName === Ri;
                             for (var h in e) h in n || (n[h] = null);
-                            n.class ? n.class = wi(n.class) : n[Ai] && (n.class = null), n[Ii] && (n.style ??= null);
-                            var f = Bi(t);
+                            n.class ? n.class = yi(n.class) : n[Ti] && (n.class = null), n[Ai] && (n.style ??= null);
+                            var f = zi(t);
                             for (const i in n) {
                                 let r = n[i];
                                 if (d && "value" === i && null == r) t.value = t.__value = "", u[i] = r;
@@ -3223,27 +3222,27 @@ function(t) {
                                                     const e = {},
                                                         n = "$$" + i;
                                                     let a = i.slice(2);
-                                                    var v = ni(a);
-                                                    if (ti(a) && (a = a.slice(0, -7), e.capture = !0), !v && p) {
+                                                    var v = ei(a);
+                                                    if (Xn(a) && (a = a.slice(0, -7), e.capture = !0), !v && p) {
                                                         if (null != r) continue;
                                                         t.removeEventListener(a, u[n], e), u[n] = null
                                                     }
-                                                    if (v) Mn(a, t, r), Fn([a]);
+                                                    if (v) Hn(a, t, r), Fn([a]);
                                                     else if (null != r) {
                                                         let r = function(t) {
                                                             u[i].call(this, t)
                                                         };
-                                                        u[n] = qn(a, t, r, e)
+                                                        u[n] = Pn(a, t, r, e)
                                                     }
-                                                } else if ("style" === i) Hi(t, i, r);
+                                                } else if ("style" === i) qi(t, i, r);
                                             else if ("autofocus" === i) Le(t, Boolean(r));
                                             else if (s || "__value" !== i && ("value" !== i || null == r))
-                                                if ("selected" === i && d) qi(t, r);
+                                                if ("selected" === i && d) Pi(t, r);
                                                 else {
                                                     var m = i;
-                                                    l || (m = ri(m));
+                                                    l || (m = ii(m));
                                                     var b = "defaultValue" === m || "defaultChecked" === m;
-                                                    if (null != r || s || b) b || f.includes(m) && (s || "string" != typeof r) ? (t[m] = r, m in o && (o[m] = J)) : "function" != typeof r && Hi(t, m, r);
+                                                    if (null != r || s || b) b || f.includes(m) && (s || "string" != typeof r) ? (t[m] = r, m in o && (o[m] = J)) : "function" != typeof r && qi(t, m, r);
                                                     else if (o[i] = null, "value" === m || "checked" === m) {
                                                         let n = t;
                                                         const i = void 0 === e;
@@ -3258,25 +3257,25 @@ function(t) {
                                                 }
                                             else t.value = t.__value = r
                                         }
-                                    } else Ei(t, r, e?.[Ii], n[Ii]), u[i] = r, u[Ii] = n[Ii];
-                                else ki(t, "http://www.w3.org/1999/xhtml" === t.namespaceURI, r, 0, e?.[Ai], n[Ai]), u[i] = r, u[Ai] = n[Ai]
+                                    } else _i(t, r, e?.[Ai], n[Ai]), u[i] = r, u[Ai] = n[Ai];
+                                else $i(t, "http://www.w3.org/1999/xhtml" === t.namespaceURI, r, 0, e?.[Ti], n[Ti]), u[i] = r, u[Ti] = n[Ti]
                             }
                             return c && st(!0), u
                         }(t, i, c, 0, o, s);
-                    l && a && "value" in c && Ci(t, c.value);
+                    l && a && "value" in c && Ei(t, c.value);
                     for (let t of Object.getOwnPropertySymbols(r)) c[t] || En(r[t]);
                     for (let e of Object.getOwnPropertySymbols(c)) {
                         var d = c[e];
-                        "@attach" !== e.description || i && d === i[e] || (r[e] && En(r[e]), r[e] = $n(() => bi(t, () => d))), u[e] = d
+                        "@attach" !== e.description || i && d === i[e] || (r[e] && En(r[e]), r[e] = $n(() => mi(t, () => d))), u[e] = d
                     }
                     i = u
                 }), a) {
                 var c = t;
                 bn(() => {
-                    Ci(c, i.value, !0),
+                    Ei(c, i.value, !0),
                         function(t) {
                             var e = new MutationObserver(() => {
-                                Ci(t, t.__value)
+                                Ei(t, t.__value)
                             });
                             e.observe(t, {
                                 childList: !0,
@@ -3294,18 +3293,18 @@ function(t) {
     }
 
     function Fi(t) {
-        return t[N] ??= {
-            [Oi]: t.nodeName.includes("-"),
-            [Li]: t.namespaceURI === G
+        return t[U] ??= {
+            [Ii]: t.nodeName.includes("-"),
+            [Oi]: t.namespaceURI === G
         }
     }
-    var zi = new Map;
+    var Mi = new Map;
 
-    function Bi(t) {
+    function zi(t) {
         var e, n = t.getAttribute("is") || t.nodeName,
-            i = zi.get(n);
+            i = Mi.get(n);
         if (i) return i;
-        zi.set(n, i = []);
+        Mi.set(n, i = []);
         for (var r = t, a = Element.prototype; a !== r;) {
             for (var o in e = c(r)) e[o].set && "innerHTML" !== o && "textContent" !== o && "innerText" !== o && i.push(o);
             r = h(r)
@@ -3313,17 +3312,17 @@ function(t) {
         return i
     }
 
-    function Vi(t, e, n = e) {
+    function Bi(t, e, n = e) {
         var i = new WeakSet;
         ! function(t, e, n, i = n) {
             t.addEventListener(e, () => je(n));
-            const r = t[M];
-            t[M] = r ? () => {
+            const r = t[F];
+            t[F] = r ? () => {
                 r(), i(!0)
-            } : () => i(!0), De()
+            } : () => i(!0), Re()
         }(t, "input", async r => {
             var a = r ? t.defaultValue : t.value;
-            if (a = Qi(t) ? Wi(a) : a, n(a), null !== Qt && i.add(Qt), await sn(), a !== (a = e())) {
+            if (a = Vi(t) ? Qi(a) : a, n(a), null !== Qt && i.add(Qt), await sn(), a !== (a = e())) {
                 var o = t.selectionStart,
                     s = t.selectionEnd,
                     l = t.value.length;
@@ -3332,49 +3331,49 @@ function(t) {
                     o === s && s === l && c > l ? (t.selectionStart = c, t.selectionEnd = c) : (t.selectionStart = o, t.selectionEnd = Math.min(s, c))
                 }
             }
-        }), (ot && t.defaultValue !== t.value || null == dn(e) && t.value) && (n(Qi(t) ? Wi(t.value) : t.value), null !== Qt && i.add(Qt)), yn(() => {
+        }), (ot && t.defaultValue !== t.value || null == dn(e) && t.value) && (n(Vi(t) ? Qi(t.value) : t.value), null !== Qt && i.add(Qt)), yn(() => {
             var n = e();
             if (t === document.activeElement) {
                 var r = Qt;
                 if (i.has(r)) return
             }
-            Qi(t) && n === Wi(t.value) || ("date" !== t.type || n || t.value) && n !== t.value && (t.value = n ?? "")
+            Vi(t) && n === Qi(t.value) || ("date" !== t.type || n || t.value) && n !== t.value && (t.value = n ?? "")
         })
     }
 
-    function Qi(t) {
+    function Vi(t) {
         var e = t.type;
         return "number" === e || "range" === e
     }
 
-    function Wi(t) {
+    function Qi(t) {
         return "" === t ? null : +t
     }
 
-    function Ji(t, e) {
-        return t === e || t?.[D] === e
+    function Wi(t, e) {
+        return t === e || t?.[R] === e
     }
 
-    function Gi(t = {}, e, n, i) {
+    function Ji(t = {}, e, n, i) {
         var r = K.r,
-            a = Fe;
+            a = Me;
         return bn(() => {
             var i, o;
             return yn(() => {
                 i = o, o = [], dn(() => {
-                    Ji(n(...o), t) || (e(t, ...o), i && Ji(n(...i), t) && e(null, ...i))
+                    Wi(n(...o), t) || (e(t, ...o), i && Wi(n(...i), t) && e(null, ...i))
                 })
             }), () => {
                 let i = a;
                 for (; i !== r && null !== i.parent && i.parent.f & C;) i = i.parent;
                 const s = i.teardown;
                 i.teardown = () => {
-                    o && Ji(n(...o), t) && e(null, ...o), s?.()
+                    o && Wi(n(...o), t) && e(null, ...o), s?.()
                 }
             }
         }), t
     }
-    const Ki = {
+    const Gi = {
         get(t, e) {
             if (!t.exclude.includes(e)) return t.props[e]
         },
@@ -3390,14 +3389,14 @@ function(t) {
         ownKeys: t => Reflect.ownKeys(t.props).filter(e => !t.exclude.includes(e))
     };
 
-    function Zi(t, e, n) {
+    function Ki(t, e, n) {
         return new Proxy({
             props: t,
             exclude: e
-        }, Ki)
+        }, Gi)
     }
 
-    function Yi(t, e, n, i) {
+    function Zi(t, e, n, i) {
         var r, a = i,
             o = !0,
             s = () => (o && (o = !1, a = i), a);
@@ -3407,16 +3406,16 @@ function(t) {
         };
         var l = !1,
             c = ge(() => (l = !1, r())),
-            u = Fe;
+            u = Me;
         return function(t, e) {
             if (arguments.length > 0) {
                 const n = e ? ln(c) : t;
                 return Te(c, n), l = !0, void 0 !== a && (a = n), t
             }
-            return Ne && l || 0 !== (u.f & _) ? c.v : ln(c)
+            return Ue && l || 0 !== (u.f & _) ? c.v : ln(c)
         }
     }
-    class Xi {
+    class Yi {
         #X;
         #tt;
         constructor(t) {
@@ -3433,7 +3432,7 @@ function(t) {
                 has: (t, i) => i === j || (ln(e.get(i) ?? n(i, Reflect.get(t, i))), Reflect.has(t, i)),
                 set: (t, i, r) => (Te(e.get(i) ?? n(i, r), r), Reflect.set(t, i, r))
             });
-            this.#tt = (t.hydrate ? ci : li)(t.component, {
+            this.#tt = (t.hydrate ? li : si)(t.component, {
                 target: t.target,
                 anchor: t.anchor,
                 props: i,
@@ -3455,8 +3454,8 @@ function(t) {
                 Object.assign(i, t)
             }, this.#tt.$destroy = () => {
                 ! function(t, e) {
-                    const n = hi.get(t);
-                    n ? (hi.delete(t), n(e)) : Promise.resolve()
+                    const n = di.get(t);
+                    n ? (di.delete(t), n(e)) : Promise.resolve()
                 }(this.#tt)
             }
         }
@@ -3474,9 +3473,9 @@ function(t) {
             this.#tt.$destroy()
         }
     }
-    let tr = class {};
+    let Xi = class {};
 
-    function er(t, e, n, i) {
+    function tr(t, e, n, i) {
         const r = n[t]?.type;
         if (e = "Boolean" === r && "boolean" != typeof e ? null != e : e, !i || !n[t]) return e;
         if ("toAttribute" === i) switch (r) {
@@ -3501,8 +3500,8 @@ function(t) {
         }
     }
 
-    function nr(t, e, n, i, r, a) {
-        let c = class extends tr {
+    function er(t, e, n, i, r, a) {
+        let c = class extends Xi {
             constructor() {
                 super(t, n, r), this.$$p_d = e
             }
@@ -3516,7 +3515,7 @@ function(t) {
                     return this.$$c && t in this.$$c ? this.$$c[t] : this.$$d[t]
                 },
                 set(n) {
-                    n = er(t, n, e), this.$$d[t] = n;
+                    n = tr(t, n, e), this.$$d[t] = n;
                     var i = this.$$c;
                     if (i) {
                         var r = l(i, t)?.get;
@@ -3534,7 +3533,7 @@ function(t) {
             })
         }), t.element = c, c
     }
-    "function" == typeof HTMLElement && (tr = class extends HTMLElement {
+    "function" == typeof HTMLElement && (Xi = class extends HTMLElement {
         $$ctor;
         $$s;
         $$c;
@@ -3567,7 +3566,7 @@ function(t) {
                 let e = function(t) {
                     return e => {
                         const n = At("slot");
-                        "default" !== t && (n.name = t), Xn(e, n)
+                        "default" !== t && (n.name = t), Yn(e, n)
                     }
                 };
                 if (await Promise.resolve(), !this.$$cn || this.$$c) return;
@@ -3581,7 +3580,7 @@ function(t) {
                 for (const t of this.$$s) t in i && ("default" !== t || this.$$d.children ? n[t] = e(t) : (this.$$d.children = e(t), n.default = !0));
                 for (const t of this.attributes) {
                     const e = this.$$g_p(t.name);
-                    e in this.$$d || (this.$$d[e] = er(e, t.value, this.$$p_d, "toProp"))
+                    e in this.$$d || (this.$$d[e] = tr(e, t.value, this.$$p_d, "toProp"))
                 }
                 for (const t in this.$$p_d) t in this.$$d || void 0 === this[t] || (this.$$d[t] = this[t], delete this[t]);
                 this.$$c = (t = {
@@ -3592,7 +3591,7 @@ function(t) {
                         $$slots: n,
                         $$host: this
                     }
-                }, new Xi(t)), this.$$me = function(t) {
+                }, new Yi(t)), this.$$me = function(t) {
                     ne.ensure();
                     const e = fn(524352, t);
                     return () => {
@@ -3604,7 +3603,7 @@ function(t) {
                         for (const t of o(this.$$c)) {
                             if (!this.$$p_d[t]?.reflect) continue;
                             this.$$d[t] = this.$$c[t];
-                            const e = er(t, this.$$d[t], this.$$p_d, "toAttribute");
+                            const e = tr(t, this.$$d[t], this.$$p_d, "toAttribute");
                             null == e ? this.removeAttribute(this.$$p_d[t].attribute || t) : this.setAttribute(this.$$p_d[t].attribute || t, e)
                         }
                         this.$$r = !1
@@ -3620,7 +3619,7 @@ function(t) {
             var t
         }
         attributeChangedCallback(t, e, n) {
-            this.$$r || (t = this.$$g_p(t), this.$$d[t] = er(t, n, this.$$p_d, "toProp"), this.$$c?.$set({
+            this.$$r || (t = this.$$g_p(t), this.$$d[t] = tr(t, n, this.$$p_d, "toProp"), this.$$c?.$set({
                 [t]: this.$$d[t]
             }))
         }
@@ -3633,12 +3632,12 @@ function(t) {
             return o(this.$$p_d).find(e => this.$$p_d[e].attribute === t || !this.$$p_d[e].attribute && e.toLowerCase() === t) || t
         }
     });
-    var ir = Jn('<div class="altcha-checkbox"><input/> <svg aria-hidden="true" width="12" height="9" viewBox="0 0 12 9"><polyline points="1 5 4 8 11 1"></polyline></svg> <div class="altcha-spinner altcha-checkbox-spinner" aria-hidden="true"></div></div>');
+    var nr = Wn('<div class="altcha-checkbox"><input/> <svg aria-hidden="true" width="12" height="9" viewBox="0 0 12 9"><polyline points="1 5 4 8 11 1"></polyline></svg> <div class="altcha-spinner altcha-checkbox-spinner" aria-hidden="true"></div></div>');
 
-    function rr(t, e) {
+    function ir(t, e) {
         Y(e, !0);
-        let n, i = Yi(e, "loading"),
-            r = Zi(e, ["$$slots", "$$events", "$$legacy", "$$host", "loading"]);
+        let n, i = Zi(e, "loading"),
+            r = Ki(e, ["$$slots", "$$events", "$$legacy", "$$host", "loading"]);
         var a = {
                 get loading() {
                     return i()
@@ -3647,28 +3646,28 @@ function(t) {
                     i(t), ie()
                 }
             },
-            o = ir(),
+            o = nr(),
             s = Et(o);
-        Mi(s, () => ({
+        Hi(s, () => ({
             type: "checkbox",
             ...r
-        }), void 0, void 0, void 0, 0, !0), Gi(s, t => n = t, () => n);
+        }), void 0, void 0, void 0, 0, !0), Ji(s, t => n = t, () => n);
         var l = Tt(s, 2);
-        return dt(2), ut(o), wn(() => Hi(o, "data-loading", i())), Mn("click", l, function() {
+        return dt(2), ut(o), wn(() => qi(o, "data-loading", i())), Hn("click", l, function() {
             n?.click()
-        }), Xn(t, o), X(a)
+        }), Yn(t, o), X(a)
     }
-    Fn(["click"]), nr(rr, {
+    Fn(["click"]), er(ir, {
         loading: {}
     }, [], [], {
         mode: "open"
     });
-    var ar = Jn('<div class="altcha-checkbox-native"><input/> <div class="altcha-spinner altcha-checkbox-native-spinner"></div></div>');
+    var rr = Wn('<div class="altcha-checkbox-native"><input/> <div class="altcha-spinner altcha-checkbox-native-spinner"></div></div>');
 
-    function or(t, e) {
+    function ar(t, e) {
         Y(e, !0);
-        let n = Yi(e, "loading"),
-            i = Zi(e, ["$$slots", "$$events", "$$legacy", "$$host", "loading"]);
+        let n = Zi(e, "loading"),
+            i = Ki(e, ["$$slots", "$$events", "$$legacy", "$$host", "loading"]);
         var r = {
                 get loading() {
                     return n()
@@ -3677,22 +3676,22 @@ function(t) {
                     n(t), ie()
                 }
             },
-            a = ar();
-        return Mi(Et(a), () => ({
+            a = rr();
+        return Hi(Et(a), () => ({
             type: "checkbox",
             ...i
-        }), void 0, void 0, void 0, 0, !0), dt(2), ut(a), wn(() => Hi(a, "data-loading", n())), Xn(t, a), X(r)
+        }), void 0, void 0, void 0, 0, !0), dt(2), ut(a), wn(() => qi(a, "data-loading", n())), Yn(t, a), X(r)
     }
-    nr(or, {
+    er(ar, {
         loading: {}
     }, [], [], {
         mode: "open"
     });
-    var sr = Jn('<div><a target="_blank" class="altcha-logo" aria-hidden="true" tabindex="-1"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.33955 16.4279C5.88954 20.6586 12.1971 21.2105 16.4279 17.6604C18.4699 15.947 19.6548 13.5911 19.9352 11.1365L17.9886 10.4279C17.8738 12.5624 16.909 14.6459 15.1423 16.1284C11.7577 18.9684 6.71167 18.5269 3.87164 15.1423C1.03163 11.7577 1.4731 6.71166 4.8577 3.87164C8.24231 1.03162 13.2883 1.4731 16.1284 4.8577C16.9767 5.86872 17.5322 7.02798 17.804 8.2324L19.9522 9.01429C19.7622 7.07737 19.0059 5.17558 17.6604 3.57212C14.1104 -0.658624 7.80283 -1.21043 3.57212 2.33956C-0.658625 5.88958 -1.21046 12.1971 2.33955 16.4279Z" fill="currentColor"></path><path d="M3.57212 2.33956C1.65755 3.94607 0.496389 6.11731 0.12782 8.40523L2.04639 9.13961C2.26047 7.15832 3.21057 5.25375 4.8577 3.87164C8.24231 1.03162 13.2883 1.4731 16.1284 4.8577L13.8302 6.78606L19.9633 9.13364C19.7929 7.15555 19.0335 5.20847 17.6604 3.57212C14.1104 -0.658624 7.80283 -1.21043 3.57212 2.33956Z" fill="currentColor"></path><path d="M7 10H5C5 12.7614 7.23858 15 10 15C12.7614 15 15 12.7614 15 10H13C13 11.6569 11.6569 13 10 13C8.3431 13 7 11.6569 7 10Z" fill="currentColor"></path></svg></a></div>');
+    var or = Wn('<div><a target="_blank" class="altcha-logo" aria-hidden="true" tabindex="-1"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.33955 16.4279C5.88954 20.6586 12.1971 21.2105 16.4279 17.6604C18.4699 15.947 19.6548 13.5911 19.9352 11.1365L17.9886 10.4279C17.8738 12.5624 16.909 14.6459 15.1423 16.1284C11.7577 18.9684 6.71167 18.5269 3.87164 15.1423C1.03163 11.7577 1.4731 6.71166 4.8577 3.87164C8.24231 1.03162 13.2883 1.4731 16.1284 4.8577C16.9767 5.86872 17.5322 7.02798 17.804 8.2324L19.9522 9.01429C19.7622 7.07737 19.0059 5.17558 17.6604 3.57212C14.1104 -0.658624 7.80283 -1.21043 3.57212 2.33956C-0.658625 5.88958 -1.21046 12.1971 2.33955 16.4279Z" fill="currentColor"></path><path d="M3.57212 2.33956C1.65755 3.94607 0.496389 6.11731 0.12782 8.40523L2.04639 9.13961C2.26047 7.15832 3.21057 5.25375 4.8577 3.87164C8.24231 1.03162 13.2883 1.4731 16.1284 4.8577L13.8302 6.78606L19.9633 9.13364C19.7929 7.15555 19.0335 5.20847 17.6604 3.57212C14.1104 -0.658624 7.80283 -1.21043 3.57212 2.33956Z" fill="currentColor"></path><path d="M7 10H5C5 12.7614 7.23858 15 10 15C12.7614 15 15 12.7614 15 10H13C13 11.6569 11.6569 13 10 13C8.3431 13 7 11.6569 7 10Z" fill="currentColor"></path></svg></a></div>');
 
-    function lr(t, e) {
+    function sr(t, e) {
         Y(e, !0);
-        let n = Yi(e, "strings");
+        let n = Zi(e, "strings");
         var i = {
                 get strings() {
                     return n()
@@ -3701,21 +3700,21 @@ function(t) {
                     n(t), ie()
                 }
             },
-            r = sr(),
+            r = or(),
             a = Et(r);
-        return Hi(a, "href", "https://altcha.org"), ut(r), wn(() => Hi(a, "aria-label", n().ariaLinkLabel)), Xn(t, r), X(i)
+        return qi(a, "href", "https://altcha.org"), ut(r), wn(() => qi(a, "aria-label", n().ariaLinkLabel)), Yn(t, r), X(i)
     }
-    nr(lr, {
+    er(sr, {
         strings: {}
     }, [], [], {
         mode: "open"
     });
-    var cr = Jn('<div class="altcha-footer"><p></p> <!></div>');
+    var lr = Wn('<div class="altcha-footer"><p></p> <!></div>');
 
-    function ur(t, e) {
+    function cr(t, e) {
         Y(e, !0);
-        let n = Yi(e, "logo"),
-            i = Yi(e, "strings");
+        let n = Zi(e, "logo"),
+            i = Zi(e, "strings");
         var r = {
                 get logo() {
                     return n()
@@ -3730,33 +3729,33 @@ function(t) {
                     i(t), ie()
                 }
             },
-            a = cr(),
+            a = lr(),
             o = Et(a);
-        mi(o, () => i().footer, !0), ut(o);
+        vi(o, () => i().footer, !0), ut(o);
         var s = Tt(o, 2),
             l = t => {
-                lr(t, {
+                sr(t, {
                     get strings() {
                         return i()
                     }
                 })
             };
-        return gi(s, t => {
+        return pi(s, t => {
             n() && t(l)
-        }), ut(a), Xn(t, a), X(r)
+        }), ut(a), Yn(t, a), X(r)
     }
-    nr(ur, {
+    er(cr, {
         logo: {},
         strings: {}
     }, [], [], {
         mode: "open"
     });
-    var dr = Jn('<div class="altcha-switch"><input/>  <div class="altcha-switch-toggle"><div class="altcha-spinner altcha-switch-spinner"></div></div></div>');
+    var ur = Wn('<div class="altcha-switch"><input/>  <div class="altcha-switch-toggle"><div class="altcha-spinner altcha-switch-spinner"></div></div></div>');
 
-    function hr(t, e) {
+    function dr(t, e) {
         Y(e, !0);
-        let n, i = Yi(e, "loading"),
-            r = Zi(e, ["$$slots", "$$events", "$$legacy", "$$host", "loading"]);
+        let n, i = Zi(e, "loading"),
+            r = Ki(e, ["$$slots", "$$events", "$$legacy", "$$host", "loading"]);
         var a = {
                 get loading() {
                     return i()
@@ -3765,43 +3764,43 @@ function(t) {
                     i(t), ie()
                 }
             },
-            o = dr(),
+            o = ur(),
             s = Et(o);
-        Mi(s, () => ({
+        Hi(s, () => ({
             type: "checkbox",
             ...r
-        }), void 0, void 0, void 0, 0, !0), Gi(s, t => n = t, () => n);
+        }), void 0, void 0, void 0, 0, !0), Ji(s, t => n = t, () => n);
         var l = Tt(s, 2);
-        return ut(o), wn(() => Hi(o, "data-loading", i())), Mn("click", l, function() {
+        return ut(o), wn(() => qi(o, "data-loading", i())), Hn("click", l, function() {
             n?.click()
-        }), Xn(t, o), X(a)
+        }), Yn(t, o), X(a)
     }
-    Fn(["click"]), nr(hr, {
+    Fn(["click"]), er(dr, {
         loading: {}
     }, [], [], {
         mode: "open"
     });
-    var fr = (t => (t.ERROR = "error", t.LOADING = "loading", t.PLAYING = "playing", t.PAUSED = "paused", t.READY = "ready", t))(fr || {}),
-        pr = (t => (t.CODE = "code", t.ERROR = "error", t.VERIFIED = "verified", t.VERIFYING = "verifying", t.UNVERIFIED = "unverified", t.EXPIRED = "expired", t))(pr || {}),
-        gr = Jn('<div class="altcha-code-challenge-title"> </div>'),
-        vr = Jn('<div class="altcha-spinner"></div>'),
-        mr = Kn('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8659 3.00017L22.3922 19.5002C22.6684 19.9785 22.5045 20.5901 22.0262 20.8662C21.8742 20.954 21.7017 21.0002 21.5262 21.0002H2.47363C1.92135 21.0002 1.47363 20.5525 1.47363 20.0002C1.47363 19.8246 1.51984 19.6522 1.60761 19.5002L11.1339 3.00017C11.41 2.52187 12.0216 2.358 12.4999 2.63414C12.6519 2.72191 12.7782 2.84815 12.8659 3.00017ZM10.9999 16.0002V18.0002H12.9999V16.0002H10.9999ZM10.9999 9.00017V14.0002H12.9999V9.00017H10.9999Z"></path></svg>'),
-        br = Kn('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15 7C15 6.44772 15.4477 6 16 6C16.5523 6 17 6.44772 17 7V17C17 17.5523 16.5523 18 16 18C15.4477 18 15 17.5523 15 17V7ZM7 7C7 6.44772 7.44772 6 8 6C8.55228 6 9 6.44772 9 7V17C9 17.5523 8.55228 18 8 18C7.44772 18 7 17.5523 7 17V7Z"></path></svg>'),
-        yr = Kn('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z"></path></svg>'),
-        wr = Jn('<button type="button" class="altcha-button altcha-button-secondary"><!></button>'),
-        Sr = Jn('<audio hidden="" autoplay=""></audio>'),
-        xr = Jn('<div class="altcha-code-challenge"><form data-code-challenge="true"><!> <div class="altcha-code-challenge-text"> </div> <img class="altcha-code-challenge-image" alt=""/> <div class="altcha-code-challenge-row"><input type="text" class="altcha-input" autocomplete="off" name="" required=""/> <!> <button type="button" class="altcha-button altcha-button-secondary"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2V4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 9.25022 5.38734 6.82447 7.50024 5.38451L7.5 8H9.5V2L3.5 2V4L5.99918 3.99989C3.57075 5.82434 2 8.72873 2 12Z"></path></svg></button></div> <div class="altcha-code-challenge-buttons"><button type="submit" class="altcha-button"> </button> <button type="button" class="altcha-button altcha-button-secondary"> </button></div></form> <!></div>');
+    var hr = (t => (t.ERROR = "error", t.LOADING = "loading", t.PLAYING = "playing", t.PAUSED = "paused", t.READY = "ready", t))(hr || {}),
+        fr = (t => (t.CODE = "code", t.ERROR = "error", t.VERIFIED = "verified", t.VERIFYING = "verifying", t.UNVERIFIED = "unverified", t.EXPIRED = "expired", t))(fr || {}),
+        pr = Wn('<div class="altcha-code-challenge-title"> </div>'),
+        gr = Wn('<div class="altcha-spinner"></div>'),
+        vr = Gn('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.8659 3.00017L22.3922 19.5002C22.6684 19.9785 22.5045 20.5901 22.0262 20.8662C21.8742 20.954 21.7017 21.0002 21.5262 21.0002H2.47363C1.92135 21.0002 1.47363 20.5525 1.47363 20.0002C1.47363 19.8246 1.51984 19.6522 1.60761 19.5002L11.1339 3.00017C11.41 2.52187 12.0216 2.358 12.4999 2.63414C12.6519 2.72191 12.7782 2.84815 12.8659 3.00017ZM10.9999 16.0002V18.0002H12.9999V16.0002H10.9999ZM10.9999 9.00017V14.0002H12.9999V9.00017H10.9999Z"></path></svg>'),
+        mr = Gn('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15 7C15 6.44772 15.4477 6 16 6C16.5523 6 17 6.44772 17 7V17C17 17.5523 16.5523 18 16 18C15.4477 18 15 17.5523 15 17V7ZM7 7C7 6.44772 7.44772 6 8 6C8.55228 6 9 6.44772 9 7V17C9 17.5523 8.55228 18 8 18C7.44772 18 7 17.5523 7 17V7Z"></path></svg>'),
+        br = Gn('<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12H7C8.10457 12 9 12.8954 9 14V19C9 20.1046 8.10457 21 7 21H4C2.89543 21 2 20.1046 2 19V12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12V19C22 20.1046 21.1046 21 20 21H17C15.8954 21 15 20.1046 15 19V14C15 12.8954 15.8954 12 17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z"></path></svg>'),
+        yr = Wn('<button type="button" class="altcha-button altcha-button-secondary"><!></button>'),
+        wr = Wn('<audio hidden="" autoplay=""></audio>'),
+        Sr = Wn('<div class="altcha-code-challenge"><form data-code-challenge="true"><!> <div class="altcha-code-challenge-text"> </div> <img class="altcha-code-challenge-image" alt=""/> <div class="altcha-code-challenge-row"><input type="text" class="altcha-input" autocomplete="off" name="" required=""/> <!> <button type="button" class="altcha-button altcha-button-secondary"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2V4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 9.25022 5.38734 6.82447 7.50024 5.38451L7.5 8H9.5V2L3.5 2V4L5.99918 3.99989C3.57075 5.82434 2 8.72873 2 12Z"></path></svg></button></div> <div class="altcha-code-challenge-buttons"><button type="submit" class="altcha-button"> </button> <button type="button" class="altcha-button altcha-button-secondary"> </button></div></form> <!></div>');
 
-    function $r(t, e) {
+    function xr(t, e) {
         Y(e, !0);
-        let n = Yi(e, "audioUrl"),
-            i = Yi(e, "codeChallenge"),
-            r = Yi(e, "config"),
-            a = Yi(e, "imageUrl"),
-            o = Yi(e, "onCancel"),
-            s = Yi(e, "onReload"),
-            l = Yi(e, "onSubmit"),
-            c = Yi(e, "strings"),
+        let n = Zi(e, "audioUrl"),
+            i = Zi(e, "codeChallenge"),
+            r = Zi(e, "config"),
+            a = Zi(e, "imageUrl"),
+            o = Zi(e, "onCancel"),
+            s = Zi(e, "onReload"),
+            l = Zi(e, "onSubmit"),
+            c = Zi(e, "strings"),
             u = Ee(void 0),
             d = Ee(void 0),
             h = Ee(void 0),
@@ -3810,35 +3809,35 @@ function(t) {
             g = Ee(!1);
 
         function v() {
-            Te(u, fr.PAUSED, !0)
+            Te(u, hr.PAUSED, !0)
         }
 
         function m(t) {
-            Te(u, fr.ERROR, !0)
+            Te(u, hr.ERROR, !0)
         }
 
         function b() {
-            Te(u, fr.READY, !0)
+            Te(u, hr.READY, !0)
         }
 
         function y() {
-            Te(u, fr.LOADING, !0)
+            Te(u, hr.LOADING, !0)
         }
 
         function w() {
-            Te(u, fr.PLAYING, !0)
+            Te(u, hr.PLAYING, !0)
         }
 
         function S() {
-            Te(u, fr.PAUSED, !0)
+            Te(u, hr.PAUSED, !0)
         }
 
         function x() {
-            ln(d) ? ln(u) === fr.LOADING || (ln(d).paused ? (n() && ln(d).src !== n() && (ln(d).src = n()), ln(d).currentTime = 0, ln(d).play()) : ln(d).pause()) : (Te(g, !0), requestAnimationFrame(() => {
+            ln(d) ? ln(u) === hr.LOADING || (ln(d).paused ? (n() && ln(d).src !== n() && (ln(d).src = n()), ln(d).currentTime = 0, ln(d).play()) : ln(d).pause()) : (Te(g, !0), requestAnimationFrame(() => {
                 ln(d) && n() && (ln(d).src = n(), ln(d).play())
             }))
         }
-        pi(() => (r().disableAutoFocus || sn().then(() => {
+        fi(() => (r().disableAutoFocus || sn().then(() => {
             ln(h)?.focus()
         }), () => {
             ln(d) && (ln(d).pause(), Te(d, void 0))
@@ -3893,15 +3892,15 @@ function(t) {
                     c(t), ie()
                 }
             },
-            k = xr(),
+            k = Sr(),
             _ = Et(k),
             E = Et(_),
             C = t => {
-                var e = gr(),
+                var e = pr(),
                     n = Et(e, !0);
-                ut(e), wn(() => si(n, c().verificationRequired)), Xn(t, e)
+                ut(e), wn(() => oi(n, c().verificationRequired)), Yn(t, e)
             };
-        gi(E, t => {
+        pi(E, t => {
             "standard" !== r().codeChallengeDisplay && t(C)
         });
         var T = Tt(E, 2),
@@ -3910,57 +3909,57 @@ function(t) {
         var I = Tt(T, 2),
             O = Tt(I, 2),
             L = Et(O);
-        Pi(L), L.disabled = ln(f), Gi(L, t => Te(h, t), () => ln(h));
-        var R = Tt(L, 2),
-            D = t => {
-                var e = wr(),
+        Ui(L), L.disabled = ln(f), Ji(L, t => Te(h, t), () => ln(h));
+        var D = Tt(L, 2),
+            R = t => {
+                var e = yr(),
                     n = Et(e),
                     i = t => {
-                        Xn(t, vr())
+                        Yn(t, gr())
                     },
                     r = t => {
-                        Xn(t, mr())
+                        Yn(t, vr())
                     },
                     a = t => {
-                        Xn(t, br())
+                        Yn(t, mr())
                     },
                     o = t => {
-                        Xn(t, yr())
+                        Yn(t, br())
                     };
-                gi(n, t => {
-                    ln(u) === fr.LOADING ? t(i) : ln(u) === fr.ERROR ? t(r, 1) : ln(u) === fr.PLAYING ? t(a, 2) : t(o, -1)
+                pi(n, t => {
+                    ln(u) === hr.LOADING ? t(i) : ln(u) === hr.ERROR ? t(r, 1) : ln(u) === hr.PLAYING ? t(a, 2) : t(o, -1)
                 }), ut(e), wn(() => {
-                    Hi(e, "title", c().getAudioChallenge), e.disabled = ln(u) === fr.LOADING || ln(u) === fr.ERROR, Hi(e, "aria-label", ln(u) === fr.LOADING ? c().loading : c().getAudioChallenge)
-                }), Hn("click", e, () => x(), !0), Xn(t, e)
+                    qi(e, "title", c().getAudioChallenge), e.disabled = ln(u) === hr.LOADING || ln(u) === hr.ERROR, qi(e, "aria-label", ln(u) === hr.LOADING ? c().loading : c().getAudioChallenge)
+                }), qn("click", e, () => x(), !0), Yn(t, e)
             };
-        gi(R, t => {
-            i().audio && t(D)
+        pi(D, t => {
+            i().audio && t(R)
         });
-        var j = Tt(R, 2);
+        var j = Tt(D, 2);
         ut(O);
-        var U = Tt(O, 2),
-            N = Et(U),
-            P = Et(N, !0);
-        ut(N);
-        var q = Tt(N, 2),
+        var N = Tt(O, 2),
+            U = Et(N),
+            P = Et(U, !0);
+        ut(U);
+        var q = Tt(U, 2),
             H = Et(q, !0);
-        ut(q), ut(U), ut(_);
-        var M = Tt(_, 2),
-            F = t => {
-                var e = Sr();
-                Gi(e, t => Te(d, t), () => ln(d)), Hn("error", e, m), Hn("loadstart", e, y), Hn("canplay", e, b), Hn("pause", e, S), Hn("playing", e, w), Hn("ended", e, v), Xn(t, e)
+        ut(q), ut(N), ut(_);
+        var F = Tt(_, 2),
+            M = t => {
+                var e = wr();
+                Ji(e, t => Te(d, t), () => ln(d)), qn("error", e, m), qn("loadstart", e, y), qn("canplay", e, b), qn("pause", e, S), qn("playing", e, w), qn("ended", e, v), Yn(t, e)
             };
-        return gi(M, t => {
-            ln(g) && t(F)
+        return pi(F, t => {
+            ln(g) && t(M)
         }), ut(k), wn(() => {
-            si(A, c().enterCodeFromImage), Hi(I, "src", a()), Hi(L, "minlength", i().length || 1), Hi(L, "maxlength", i().length), Hi(L, "placeholder", c().enterCode), Hi(L, "aria-label", ln(u) === fr.LOADING ? c().loading : ln(u) === fr.PLAYING ? "" : c().enterCodeAria), Hi(L, "aria-live", ln(u) ? "assertive" : "polite"), Hi(L, "aria-busy", ln(u) === fr.LOADING), Hi(j, "title", c().reload), Hi(j, "aria-label", c().reload), Hi(N, "aria-label", c().verify), si(P, c().verify), Hi(q, "aria-label", c().cancel), si(H, c().cancel)
-        }), Hn("submit", _, function(t) {
+            oi(A, c().enterCodeFromImage), qi(I, "src", a()), qi(L, "minlength", i().length || 1), qi(L, "maxlength", i().length), qi(L, "placeholder", c().enterCode), qi(L, "aria-label", ln(u) === hr.LOADING ? c().loading : ln(u) === hr.PLAYING ? "" : c().enterCodeAria), qi(L, "aria-live", ln(u) ? "assertive" : "polite"), qi(L, "aria-busy", ln(u) === hr.LOADING), qi(j, "title", c().reload), qi(j, "aria-label", c().reload), qi(U, "aria-label", c().verify), oi(P, c().verify), qi(q, "aria-label", c().cancel), oi(H, c().cancel)
+        }), qn("submit", _, function(t) {
             t.preventDefault(), t.stopPropagation(), l()?.(ln(p))
-        }, !0), Mn("keydown", L, function(t) {
+        }, !0), Hn("keydown", L, function(t) {
             "Space" === t.code ? (t.preventDefault(), t.stopPropagation(), x()) : "Escape" === t.code && (t.preventDefault(), t.stopPropagation(), o()?.())
-        }), Vi(L, () => ln(p), t => Te(p, t)), Hn("click", j, () => s()?.(), !0), Hn("click", q, () => o()?.(), !0), Xn(t, k), X($)
+        }), Bi(L, () => ln(p), t => Te(p, t)), qn("click", j, () => s()?.(), !0), qn("click", q, () => o()?.(), !0), Yn(t, k), X($)
     }
-    Fn(["keydown"]), nr($r, {
+    Fn(["keydown"]), er(xr, {
         audioUrl: {},
         codeChallenge: {},
         config: {},
@@ -3972,24 +3971,24 @@ function(t) {
     }, [], [], {
         mode: "open"
     });
-    var kr = Jn('<div class="altcha-popover-backdrop" data-backdrop=""></div>'),
-        _r = Jn('<div class="altcha-popover-arrow"></div>'),
-        Er = Jn('<div role="button" class="altcha-popover-close">&times;</div>'),
-        Cr = Jn('<!> <div><!> <!> <div class="altcha-popover-content"><!></div></div>', 1);
+    var $r = Wn('<div class="altcha-popover-backdrop" data-backdrop=""></div>'),
+        kr = Wn('<div class="altcha-popover-arrow"></div>'),
+        _r = Wn('<div role="button" class="altcha-popover-close">&times;</div>'),
+        Er = Wn('<!> <div><!> <!> <div class="altcha-popover-content"><!></div></div>', 1);
 
-    function Tr(t, e) {
+    function Cr(t, e) {
         Y(e, !0);
-        let n = Yi(e, "anchor"),
-            i = Yi(e, "children"),
-            r = Yi(e, "display", 0, "standard"),
-            a = Yi(e, "backdrop", 0, !1),
-            o = Yi(e, "onClickOutside"),
-            s = Yi(e, "onClickOutsideDelay", 0, 600),
-            l = Yi(e, "onClose"),
-            c = Yi(e, "placement", 0, "auto"),
-            u = Yi(e, "updateUISignal"),
-            d = Yi(e, "variant", 0, "neutral"),
-            h = Zi(e, ["$$slots", "$$events", "$$legacy", "$$host", "anchor", "children", "display", "backdrop", "onClickOutside", "onClickOutsideDelay", "onClose", "placement", "updateUISignal", "variant"]),
+        let n = Zi(e, "anchor"),
+            i = Zi(e, "children"),
+            r = Zi(e, "display", 0, "standard"),
+            a = Zi(e, "backdrop", 0, !1),
+            o = Zi(e, "onClickOutside"),
+            s = Zi(e, "onClickOutsideDelay", 0, 600),
+            l = Zi(e, "onClose"),
+            c = Zi(e, "placement", 0, "auto"),
+            u = Zi(e, "updateUISignal"),
+            d = Zi(e, "variant", 0, "neutral"),
+            h = Ki(e, ["$$slots", "$$events", "$$legacy", "$$host", "anchor", "children", "display", "backdrop", "onClickOutside", "onClickOutsideDelay", "onClose", "placement", "updateUISignal", "variant"]),
             f = Ee(void 0),
             g = Ee(void 0),
             v = Ee(!1),
@@ -4010,7 +4009,7 @@ function(t) {
             "auto" !== c() && Te(v, "top" === c())
         }), vn(() => {
             u() && y()
-        }), pi(() => {
+        }), fi(() => {
             const t = "bottomsheet" === r() || "overlay" === r();
             return t && (ln(g) && document.body.append(ln(g)), ln(f) && document.body.append(ln(f))), y(), sn().then(() => {
                 Te(m, Date.now(), !0)
@@ -4080,25 +4079,25 @@ function(t) {
                     d(t), ie()
                 }
             },
-            S = Cr();
-        Hn("click", mt, function(t) {
+            S = Er();
+        qn("click", mt, function(t) {
             const e = t.target;
             ln(f)?.contains(e) || s() && !(ln(m) + s() < Date.now()) || o()?.()
-        }, !0), Hn("resize", mt, function() {
+        }, !0), qn("resize", mt, function() {
             y()
-        }), Hn("scroll", mt, function() {
+        }), qn("scroll", mt, function() {
             y()
         });
         var x = Ct(S),
             $ = t => {
-                var e = kr();
-                Gi(e, t => Te(g, t), () => ln(g)), Xn(t, e)
+                var e = $r();
+                Ji(e, t => Te(g, t), () => ln(g)), Yn(t, e)
             };
-        gi(x, t => {
+        pi(x, t => {
             a() && t($)
         });
         var k = Tt(x, 2);
-        Mi(k, () => ({
+        Hi(k, () => ({
             ...h,
             class: `altcha-popover ${(e.class||"")??""}`,
             "data-popover": !0,
@@ -4108,29 +4107,29 @@ function(t) {
         }));
         var _ = Et(k),
             E = t => {
-                Xn(t, _r())
+                Yn(t, kr())
             };
-        gi(_, t => {
+        pi(_, t => {
             "standard" === r() && t(E)
         });
         var C = Tt(_, 2),
             A = t => {
-                var e = Er();
-                Hn("click", e, b, !0), Xn(t, e)
+                var e = _r();
+                qn("click", e, b, !0), Yn(t, e)
             };
-        gi(C, t => {
+        pi(C, t => {
             "standard" !== r() && t(A)
         });
         var I = Tt(C, 2);
         return function(t, e, ...n) {
-            var i = new fi(t);
+            var i = new hi(t);
             Sn(() => {
                 const t = e() ?? null;
                 i.ensure(t, t && (e => t(e, ...n)))
             }, T)
-        }(Et(I), () => i() ?? p), ut(I), ut(k), Gi(k, t => Te(f, t), () => ln(f)), Xn(t, S), X(w)
+        }(Et(I), () => i() ?? p), ut(I), ut(k), Ji(k, t => Te(f, t), () => ln(f)), Yn(t, S), X(w)
     }
-    async function Ar(t) {
+    async function Tr(t) {
         const {
             challenge: e,
             concurrency: n = navigator.hardwareConcurrency,
@@ -4173,7 +4172,7 @@ function(t) {
             if (n instanceof Error && !!n?.message?.includes("Out of memory") && a) {
                 u();
                 const n = a(l);
-                if (n) return Ar({
+                if (n) return Tr({
                     ...t,
                     challenge: e,
                     controller: i,
@@ -4187,7 +4186,7 @@ function(t) {
         }
         return i.signal.aborted ? null : d || null
     }
-    nr(Tr, {
+    er(Cr, {
         anchor: {},
         children: {},
         display: {},
@@ -4201,7 +4200,7 @@ function(t) {
     }, [], [], {
         mode: "open"
     });
-    class Ir {
+    class Ar {
         TAG_CODES = {
             INPUT: 1,
             TEXTAREA: 2,
@@ -4290,24 +4289,24 @@ function(t) {
             n && (this.pendingTouch = [Math.round(n.clientX), Math.round(n.clientY), Math.round(e), Math.round(1e3 * n.force) / 1e3, Math.round(n.radiusX || 0), Math.round(n.radiusY || 0)], e - this.lastTouchSample >= this.sampleInterval && (this.touch.push(this.pendingTouch), this.lastTouchSample = e, this.pendingTouch = null, this.evict(this.touch)))
         }
     }
-    var Or = Jn('<div class="altcha-overlay-backdrop" data-backdrop=""></div>'),
-        Lr = Jn('<div class="altcha-overlay-content"></div>'),
-        Rr = Jn('<div role="button" class="altcha-overlay-close">&times;</div> <!>', 1),
-        Dr = Jn('<div class="altcha-floating-arrow"></div>'),
-        jr = Jn('<input type="hidden"/>'),
-        Ur = Jn('<div class="altcha-error">Secure context (HTTPS) required.</div>'),
-        Nr = Jn('<div class="altcha-error"> </div>'),
-        Pr = Jn('<div class="altcha-error"> </div>'),
-        qr = Jn("<!> <!>", 1),
-        Hr = Jn('<!> <div class="altcha"><!> <div class="altcha-main"><div><div class="altcha-checkbox-wrap"><!> <label><!></label></div> <!></div> <!> <!> <!></div> <!></div>', 1);
-    "undefined" != typeof window && window.customElements && !customElements.get("altcha-widget") && customElements.define("altcha-widget", nr(function(t, e) {
+    var Ir = Wn('<div class="altcha-overlay-backdrop" data-backdrop=""></div>'),
+        Or = Wn('<div class="altcha-overlay-content"></div>'),
+        Lr = Wn('<div role="button" class="altcha-overlay-close">&times;</div> <!>', 1),
+        Dr = Wn('<div class="altcha-floating-arrow"></div>'),
+        Rr = Wn('<input type="hidden"/>'),
+        jr = Wn('<div class="altcha-error">Secure context (HTTPS) required.</div>'),
+        Nr = Wn('<div class="altcha-error"> </div>'),
+        Ur = Wn('<div class="altcha-error"> </div>'),
+        Pr = Wn("<!> <!>", 1),
+        qr = Wn('<!> <div class="altcha"><!> <div class="altcha-main"><div><div class="altcha-checkbox-wrap"><!> <label><!></label></div> <!></div> <!> <!> <!></div> <!></div>', 1);
+    "undefined" != typeof window && window.customElements && !customElements.get("altcha-widget") && customElements.define("altcha-widget", er(function(t, e) {
         Y(e, !0);
         const [n, i] = function() {
             const t = {};
             return [t, function() {
                 gn(() => {
                     for (var e in t) t[e].unsubscribe();
-                    s(t, Ft, {
+                    s(t, Mt, {
                         enumerable: !1,
                         value: !0
                     })
@@ -4330,7 +4329,7 @@ function(t) {
             m = Ee(null),
             b = Ee(null),
             y = Ee(null),
-            w = Ee(pt(pr.UNVERIFIED)),
+            w = Ee(pt(fr.UNVERIFIED)),
             S = Ee(void 0),
             x = Ee(void 0),
             $ = Ee(null),
@@ -4342,8 +4341,8 @@ function(t) {
             I = Ee(pt([])),
             O = Ee(0),
             L = Ee(pt({})),
-            R = Ee(!0);
-        const D = be(() => ({
+            D = Ee(!0);
+        const R = be(() => ({
                 fetch: (t, e) => fetch(t, e),
                 audioChallengeLanguage: "",
                 auto: "off",
@@ -4383,21 +4382,21 @@ function(t) {
                 ...ln(L)
             })),
             j = be(() => `altcha-checkbox-${e.id||Math.floor(1e12*Math.random()).toString(16)}`),
-            U = be(() => function(t) {
+            N = be(() => function(t) {
                 switch (t) {
                     case "checkbox":
-                        return rr;
+                        return ir;
                     case "switch":
-                        return hr;
+                        return dr;
                     default:
-                        return or
+                        return ar
                 }
-            }(ln(D).type)),
-            N = be(() => ln(D).auto),
-            P = be(() => ln(w) === pr.VERIFYING),
-            q = be(() => !ln(D).hideFooter),
-            H = be(() => !ln(D).hideLogo && "bar" !== ln(D).display),
-            M = be(() => function(t, e) {
+            }(ln(R).type)),
+            U = be(() => ln(R).auto),
+            P = be(() => ln(w) === fr.VERIFYING),
+            q = be(() => !ln(R).hideFooter),
+            H = be(() => !ln(R).hideLogo && "bar" !== ln(R).display),
+            F = be(() => function(t, e) {
                 const n = Object.keys(t).map(t => t.toLowerCase());
                 let i = e.reduce((e, i) => (i = i.toLowerCase(), e || (t[i] ? i : null) || n.find(t => i.split("-")[0] === t.split("-")[0]) || null), null);
                 t[i || ""] || (i = "en");
@@ -4405,13 +4404,13 @@ function(t) {
                     language: i,
                     strings: t[i]
                 }
-            }(zt(d, "$altchaI18nStore", n), [ln(D).language, document.documentElement.lang, ...navigator.languages])),
-            F = be(() => r.includes(ln(M).language) ? "rtl" : void 0),
+            }(zt(d, "$altchaI18nStore", n), [ln(R).language, document.documentElement.lang, ...navigator.languages])),
+            M = be(() => r.includes(ln(F).language) ? "rtl" : void 0),
             z = be(() => ({
-                ...ln(M).strings
+                ...ln(F).strings
             })),
             B = be(() => ln(m)?.audio?.match(/^(https?:)?\//) ? Z(ln(m).audio, ln(g), {
-                language: ln(D).audioChallengeLanguage || ln(M).language
+                language: ln(R).audioChallengeLanguage || ln(F).language
             }).toString() : ln(m)?.audio),
             V = be(() => ln(m)?.image?.match(/^(https?:)?\//) ? Z(ln(m).image, ln(g)) : ln(m)?.image);
         async function Q(t, ...e) {
@@ -4422,7 +4421,7 @@ function(t) {
         async function W(t) {
             await new Promise(e => setTimeout(e, t))
         }
-        async function J(t = ln(D).challenge, e) {
+        async function J(t = ln(R).challenge, e) {
             const n = await Q("onFetchChallenge", t);
             let i = null;
             if (void 0 !== n) return n;
@@ -4436,8 +4435,8 @@ function(t) {
                     }
                 } else {
                     $t("fetching challenge from", e?.method || "GET", t), Te(g, new URL(t, location.origin), !0);
-                    const n = await ln(D).fetch(t, {
-                        credentials: ln(D).credentials || void 0,
+                    const n = await ln(R).fetch(t, {
+                        credentials: ln(R).credentials || void 0,
                         ...e
                     });
                     await yt(n);
@@ -4533,28 +4532,28 @@ function(t) {
         }
 
         function tt(t) {
-            !ln(v) && t.currentTarget.checked ? (t.preventDefault(), t.currentTarget.checked = !1, ln(w) !== pr.VERIFYING && Ot()) : t.currentTarget.checked || (t.preventDefault(), kt())
+            !ln(v) && t.currentTarget.checked ? (t.preventDefault(), t.currentTarget.checked = !1, ln(w) !== fr.VERIFYING && Ot()) : t.currentTarget.checked || (t.preventDefault(), kt())
         }
 
         function et(t) {
-            ln(w) === pr.VERIFYING ? t.currentTarget.setCustomValidity(ln(z).waitAlert) : ln(D).validationMessage && t.currentTarget.setCustomValidity(ln(D).validationMessage)
+            ln(w) === fr.VERIFYING ? t.currentTarget.setCustomValidity(ln(z).waitAlert) : ln(R).validationMessage && t.currentTarget.setCustomValidity(ln(R).validationMessage)
         }
 
         function nt() {
-            vt(ln(D).display), kt()
+            vt(ln(R).display), kt()
         }
 
         function it(t) {
-            "onfocus" === ln(N) && ln(w) === pr.UNVERIFIED && Ot()
+            "onfocus" === ln(U) && ln(w) === fr.UNVERIFIED && Ot()
         }
 
         function rt() {
-            vt(ln(D).display), kt()
+            vt(ln(R).display), kt()
         }
 
         function dt(t) {
             const e = t.target;
-            "true" !== e?.getAttribute("data-code-challenge") && "onsubmit" === ln(N) && ln(w) === pr.UNVERIFIED && (t.preventDefault(), t.stopPropagation(), Te(_, t.submitter, !0), At(), Ot().then(t => {
+            "true" !== e?.getAttribute("data-code-challenge") && "onsubmit" === ln(U) && ln(w) === fr.UNVERIFIED && (t.preventDefault(), t.stopPropagation(), Te(_, t.submitter, !0), At(), Ot().then(t => {
                 t && !ln(m) && sn().then(() => {
                     gt(ln(_))
                 })
@@ -4570,7 +4569,7 @@ function(t) {
                 case "bar":
                 case "floating":
                 case "overlay":
-                    xt(), ln(N) && "off" !== ln(N) || (ln(L).auto = "onsubmit");
+                    xt(), ln(U) && "off" !== ln(U) || (ln(L).auto = "onsubmit");
                     break;
                 case "standard":
                     At()
@@ -4592,25 +4591,25 @@ function(t) {
             if (!e || !e.includes("/json")) throw new Error(`Server responded with invalid content-type. Expected application/json, received ${e}.`)
         }
         async function wt(t) {
-            if (!ln(A)) return void _t(pr.ERROR, "Cannot verify code challenge without PoW payload.");
-            _t(pr.VERIFYING);
+            if (!ln(A)) return void _t(fr.ERROR, "Cannot verify code challenge without PoW payload.");
+            _t(fr.VERIFYING);
             let e = null;
-            if (ln(D).verifyUrl) e = await async function(t, e) {
+            if (ln(R).verifyUrl) e = await async function(t, e) {
                 const n = await Q("onRequestServerVerification", t, e);
                 if (void 0 !== n) return n;
-                if ($t("requesting server verification from", ln(D).verifyUrl), !ln(D).verifyUrl) throw new Error("Parameter verifyUrl must be set for server verification.");
-                const i = await ln(D).fetch(Z(ln(D).verifyUrl, ln(g)), {
+                if ($t("requesting server verification from", ln(R).verifyUrl), !ln(R).verifyUrl) throw new Error("Parameter verifyUrl must be set for server verification.");
+                const i = await ln(R).fetch(Z(ln(R).verifyUrl, ln(g)), {
                     body: JSON.stringify({
                         code: e,
-                        fields: ln(D).serverVerificationFields ? [...ln($)?.querySelectorAll('input[type="text"]:not([data-no-spamfilter]), textarea:not([data-no-spamfilter])') || []].reduce((t, e) => {
+                        fields: ln(R).serverVerificationFields ? [...ln($)?.querySelectorAll('input[type="text"]:not([data-no-spamfilter]), textarea:not([data-no-spamfilter])') || []].reduce((t, e) => {
                             const n = e.name,
                                 i = e.value;
                             return n && i && (t[n] = /\n/.test(i) ? i.replace(new RegExp("(?<!\\r)\\n", "g"), "\r\n") : i), t
                         }, {}) : void 0,
                         payload: t,
-                        timeZone: ln(D).serverVerificationTimeZone ? K() : void 0
+                        timeZone: ln(R).serverVerificationTimeZone ? K() : void 0
                     }),
-                    credentials: ln(D).credentials || void 0,
+                    credentials: ln(R).credentials || void 0,
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -4621,14 +4620,14 @@ function(t) {
                 return r && "object" == typeof r && "payload" in r && r.payload && f("serververification", r), r
             }(ln(A), t);
             else {
-                if (!ln(D).verifyFunction) return void _t(pr.ERROR, "Parameter verifyUrl is required for code challenge verification.");
-                e = await ln(D).verifyFunction(ln(A), t)
+                if (!ln(R).verifyFunction) return void _t(fr.ERROR, "Parameter verifyUrl is required for code challenge verification.");
+                e = await ln(R).verifyFunction(ln(A), t)
             }
-            e?.payload && (Te(A, e.payload, !0), $t("server payload", ln(A))), !0 === e?.verified ? ($t("verified"), _t(pr.VERIFIED), f("verified", {
+            e?.payload && (Te(A, e.payload, !0), $t("server payload", ln(A))), !0 === e?.verified ? ($t("verified"), _t(fr.VERIFIED), f("verified", {
                 payload: ln(A)
-            }), "onsubmit" === ln(N) && sn().then(() => {
+            }), "onsubmit" === ln(U) && sn().then(() => {
                 gt(ln(_))
-            })) : _t(pr.ERROR, e?.reason || "Verification failed."), ln(D).disableAutoFocus || G()?.focus()
+            })) : _t(fr.ERROR, e?.reason || "Verification failed."), ln(R).disableAutoFocus || G()?.focus()
         }
 
         function St(t) {
@@ -4638,14 +4637,14 @@ function(t) {
         }
 
         function xt() {
-            Te(R, !1)
+            Te(D, !1)
         }
 
         function $t(...t) {
-            (ln(D).debug || t.some(t => t instanceof Error)) && console[t[0] instanceof Error ? "error" : "log"]("ALTCHA", `[name=${ln(D).name}]`, ...t)
+            (ln(R).debug || t.some(t => t instanceof Error)) && console[t[0] instanceof Error ? "error" : "log"]("ALTCHA", `[name=${ln(R).name}]`, ...t)
         }
 
-        function kt(t = pr.UNVERIFIED, e = null) {
+        function kt(t = fr.UNVERIFIED, e = null) {
             Te(v, !1), Te(E, e, !0), Te(A, null), ln(b) && ln(b).abort(), ln(C) && (clearTimeout(ln(C)), Te(C, null)), _t(t)
         }
 
@@ -4657,17 +4656,17 @@ function(t) {
         }
 
         function At() {
-            Te(R, !0), sn().then(() => {
+            Te(D, !0), sn().then(() => {
                 It()
             })
         }
 
         function It() {
-            if ("floating" === ln(D).display) return function(t = 20) {
+            if ("floating" === ln(R).display) return function(t = 20) {
                 if (!ln(k)) return;
-                const e = ln(D).floatingPlacement;
-                if (!ln(x) && (Te(x, (ln(D).floatingAnchor instanceof HTMLElement ? ln(D).floatingAnchor : ln(D).floatingAnchor ? document.querySelector(ln(D).floatingAnchor) : ln($)?.querySelector('input[type="submit"], button[type="submit"], button:not([type="button"]):not([type="reset"])')) || ln($), !0), !ln(x))) return void $t("unable to find floating anchor element");
-                const n = parseInt(ln(D).floatingOffset, 10) || 12,
+                const e = ln(R).floatingPlacement;
+                if (!ln(x) && (Te(x, (ln(R).floatingAnchor instanceof HTMLElement ? ln(R).floatingAnchor : ln(R).floatingAnchor ? document.querySelector(ln(R).floatingAnchor) : ln($)?.querySelector('input[type="submit"], button[type="submit"], button:not([type="button"]):not([type="reset"])')) || ln($), !0), !ln(x))) return void $t("unable to find floating anchor element");
+                const n = parseInt(ln(R).floatingOffset, 10) || 12,
                     i = ln(x).getBoundingClientRect(),
                     r = ln(k).getBoundingClientRect(),
                     a = document.documentElement.clientHeight,
@@ -4683,24 +4682,24 @@ function(t) {
         }
         async function Ot(t = {}) {
             const {
-                concurrency: e = Math.max(1, ln(D).workers),
+                concurrency: e = Math.max(1, ln(R).workers),
                 controller: n = new AbortController,
-                minDuration: i = ln(D).minDuration
+                minDuration: i = ln(R).minDuration
             } = t, r = performance.now();
             let o = null,
                 s = null,
                 l = !1;
             const c = await Q("onVerify", t);
             if (void 0 !== c) return c;
-            kt(pr.VERIFYING), Te(b, n, !0);
+            kt(fr.VERIFYING), Te(b, n, !0);
             try {
                 if (!a) throw new Error("Secure context (HTTPS) required.");
-                if (ln(D).mockError) throw new Error("Mock error.");
-                if (ln(D).test) return $t("running test mode with null challenge"), await W(Math.max(0, i - (performance.now() - r))), ln(b)?.signal.aborted ? (kt(), null) : (Te(A, btoa(JSON.stringify({
+                if (ln(R).mockError) throw new Error("Mock error.");
+                if (ln(R).test) return $t("running test mode with null challenge"), await W(Math.max(0, i - (performance.now() - r))), ln(b)?.signal.aborted ? (kt(), null) : (Te(A, btoa(JSON.stringify({
                     challenge: null,
                     solution: null,
                     test: !0
-                })), !0), $t("verified"), _t(pr.VERIFIED), f("verified", {
+                })), !0), $t("verified"), _t(fr.VERIFIED), f("verified", {
                     payload: ln(A)
                 }), {
                     payload: ln(A)
@@ -4709,29 +4708,29 @@ function(t) {
                 $t("challenge", o), "configuration" in o && ($t("re-configuring from challenge", o.configuration), St(o.configuration)), o.parameters.expiresAt && function(t) {
                     ln(C) && clearTimeout(ln(C));
                     const e = () => {
-                            ln(w) !== pr.UNVERIFIED ? (Te(v, !1), _t(pr.EXPIRED)) : kt(), f("expired")
+                            ln(w) !== fr.UNVERIFIED ? (Te(v, !1), _t(fr.EXPIRED)) : kt(), f("expired")
                         },
                         n = 1e3 * t - Date.now();
                     n >= 1 ? Te(C, setTimeout(e, n), !0) : e()
                 }(o.parameters.expiresAt), l = "_version" in o && 1 === o._version;
                 const t = globalThis.$altcha.algorithms.get(o.parameters.algorithm);
                 if (!t) throw new Error(`Unsupported algorithm ${o.parameters.algorithm}.`);
-                if (s = await Ar({
+                if (s = await Tr({
                         challenge: o,
                         concurrency: e,
                         controller: n,
                         createWorker: t,
                         counterMode: l ? "string" : "uint32",
                         onOutOfMemory: t => {
-                            if ($t("out of memory error received"), f("outofmemory"), ln(D).retryOnOutOfMemoryError && t > 1) {
+                            if ($t("out of memory error received"), f("outofmemory"), ln(R).retryOnOutOfMemoryError && t > 1) {
                                 const e = Math.floor(t / 2);
                                 return $t(`retrying with ${e} workers...`), e
                             }
                         },
-                        timeout: ln(D).timeout
+                        timeout: ln(R).timeout
                     }), ln(b)?.signal.aborted) return kt(), null;
                 if (!s) throw new Error("Failed to find solution.");
-                $t("solution", s), await W(Math.max(0, i - (performance.now() - r))), Te(m, o.codeChallenge || ln(D).codeChallenge || null, !0), Te(A, l ? btoa(JSON.stringify(function(t, e) {
+                $t("solution", s), await W(Math.max(0, i - (performance.now() - r))), Te(m, o.codeChallenge || ln(R).codeChallenge || null, !0), Te(A, l ? btoa(JSON.stringify(function(t, e) {
                     return {
                         algorithm: t.parameters.algorithm,
                         challenge: t.parameters.keyPrefix,
@@ -4746,13 +4745,13 @@ function(t) {
                         signature: o.signature
                     },
                     solution: s
-                })), !0), ln(m) ? ($t("requesting code verification"), _t(pr.CODE), f("codechallenge", {
+                })), !0), ln(m) ? ($t("requesting code verification"), _t(fr.CODE), f("codechallenge", {
                     codeChallenge: ln(m)
-                })) : ln(D).verifyUrl ? await wt() : ($t("verified"), _t(pr.VERIFIED), f("verified", {
+                })) : ln(R).verifyUrl ? await wt() : ($t("verified"), _t(fr.VERIFIED), f("verified", {
                     payload: ln(A)
                 }))
             } catch (t) {
-                return $t("verification failed", t), _t(pr.ERROR, String(t)), null
+                return $t("verification failed", t), _t(fr.ERROR, String(t)), null
             } finally {
                 Te(b, null)
             }
@@ -4773,26 +4772,28 @@ function(t) {
                 workers: e.workers
             })
         }), vn(() => {
+            e.theme ? h?.setAttribute("theme", e.theme) : h?.removeAttribute("theme")
+        }), vn(() => {
             if (e.configuration) try {
                 St(JSON.parse(e.configuration))
             } catch {
                 $t("unable to parse the `configuration` attribute (JSON expected)")
             }
         }), vn(() => {
-            ln(y) !== ln(D).display && vt(ln(D).display)
+            ln(y) !== ln(R).display && vt(ln(R).display)
         }), vn(() => {
-            ln(v) && ln(w) === pr.VERIFYING && Te(v, !1)
+            ln(v) && ln(w) === fr.VERIFYING && Te(v, !1)
         }), vn(() => {
-            ln(v) || ln(w) !== pr.VERIFIED || Te(v, !0)
+            ln(v) || ln(w) !== fr.VERIFIED || Te(v, !0)
         }), vn(() => {
             if (!ln(v)) {
                 const t = G();
                 t && t.checked && (t.checked = !1)
             }
         }), vn(() => {
-            ln(w) === pr.VERIFIED && G()?.setCustomValidity("")
+            ln(w) === fr.VERIFIED && G()?.setCustomValidity("")
         }), vn(() => {
-            if ("onload" === ln(N)) {
+            if ("onload" === ln(U)) {
                 const t = setTimeout(() => {
                     Ot()
                 }, 1);
@@ -4803,10 +4804,10 @@ function(t) {
         }), vn(() => {
             ln(E) && $t("error:", ln(E))
         }), vn(() => {
-            ln(A) && ln(D).setCookie && function(t, e = {}) {
+            ln(A) && ln(R).setCookie && function(t, e = {}) {
                 const {
                     domain: n,
-                    name: i = ln(D).name,
+                    name: i = ln(R).name,
                     maxAge: r,
                     path: a,
                     sameSite: o,
@@ -4819,13 +4820,13 @@ function(t) {
                 o && (l += `; SameSite=${o}`);
                 s && (l += "; Secure");
                 document.cookie = l
-            }(ln(A), ln(D).setCookie)
-        }), pi(() => ($t("mounted", "3.0.11"), h && globalThis.$altcha.instances.add(h), Te($, ln(k)?.closest("form"), !0), ln($)?.addEventListener("reset", rt), ln($)?.addEventListener("submit", dt, {
+            }(ln(A), ln(R).setCookie)
+        }), fi(() => ($t("mounted", "3.2.2"), h && globalThis.$altcha.instances.add(h), Te($, ln(k)?.closest("form"), !0), ln($)?.addEventListener("reset", rt), ln($)?.addEventListener("submit", dt, {
             capture: !0
         }), ln($)?.addEventListener("focusin", it), function() {
             Te(I, [...globalThis.$altcha.plugins].map(t => new t(h)), !0), $t("activating plugins", ln(I).map(t => t.constructor.name));
             for (const t of ln(I)) t.activate()
-        }(), ln(D).humanInteractionSignature && ($t("human interaction signature enabled"), p = new Ir), f("load"), a || $t("secure context (HTTPS) required"), () => {
+        }(), ln(R).humanInteractionSignature && ($t("human interaction signature enabled"), p = new Ar), f("load"), a || $t("secure context (HTTPS) required"), () => {
             ! function() {
                 for (const t of ln(I)) t.destroy()
             }(), h && globalThis.$altcha.instances.delete(h), ln(C) && clearTimeout(ln(C)), ln($)?.removeEventListener("reset", rt), ln($)?.removeEventListener("submit", dt, {
@@ -4836,7 +4837,7 @@ function(t) {
                 configure: St,
                 getConfiguration: function() {
                     return {
-                        ...ln(D)
+                        ...ln(R)
                     }
                 },
                 getState: function() {
@@ -4850,51 +4851,51 @@ function(t) {
                 updateUI: It,
                 verify: Ot
             },
-            Rt = Hr();
-        Hn("scroll", bt, function() {
+            Dt = qr();
+        qn("scroll", bt, function() {
             It()
-        }), Hn("click", bt, function(t) {
+        }), qn("click", bt, function(t) {
             const e = t.target;
-            "floating" !== ln(D).display || !e || h?.contains(e) || e.hasAttribute("data-backdrop") || e.closest("[data-popover]") || ln(w) === pr.VERIFIED || ln(D).floatingPersist || xt()
-        }), Hn("pageshow", mt, function(t) {
-            t.persisted && (vt(ln(D).display), kt())
-        }), Hn("resize", mt, function() {
+            "floating" !== ln(R).display || !e || h?.contains(e) || e.hasAttribute("data-backdrop") || e.closest("[data-popover]") || ln(w) === fr.VERIFIED || ln(R).floatingPersist || xt()
+        }), qn("pageshow", mt, function(t) {
+            t.persisted && (vt(ln(R).display), kt())
+        }), qn("resize", mt, function() {
             It()
         });
-        var Dt = Ct(Rt),
+        var Rt = Ct(Dt),
             jt = t => {
-                Xn(t, Or())
+                Yn(t, Ir())
             };
-        gi(Dt, t => {
-            "overlay" === ln(D).display && ln(R) && t(jt)
+        pi(Rt, t => {
+            "overlay" === ln(R).display && ln(D) && t(jt)
         });
-        var Ut = Tt(Dt, 2),
-            Nt = Et(Ut),
+        var Nt = Tt(Rt, 2),
+            Ut = Et(Nt),
             Pt = t => {
-                var e = Rr(),
+                var e = Lr(),
                     n = Ct(e),
                     i = Tt(n, 2),
                     r = t => {
-                        var e = Lr();
-                        mi(e, () => document.querySelector(ln(D).overlayContent)?.innerHTML, !0), ut(e), Xn(t, e)
+                        var e = Or();
+                        vi(e, () => document.querySelector(ln(R).overlayContent)?.innerHTML, !0), ut(e), Yn(t, e)
                     };
-                gi(i, t => {
-                    ln(D).overlayContent && t(r)
-                }), Hn("click", n, nt, !0), Xn(t, e)
+                pi(i, t => {
+                    ln(R).overlayContent && t(r)
+                }), qn("click", n, nt, !0), Yn(t, e)
             };
-        gi(Nt, t => {
-            "overlay" === ln(D).display && ln(R) && t(Pt)
+        pi(Ut, t => {
+            "overlay" === ln(R).display && ln(D) && t(Pt)
         });
-        var qt = Tt(Nt, 2),
+        var qt = Tt(Ut, 2),
             Ht = Et(qt),
-            Mt = Et(Ht),
-            Bt = Et(Mt);
+            Ft = Et(Ht),
+            Bt = Et(Ft);
         {
-            let t = be(() => "standard" === ln(D).display && "onsubmit" !== ln(N) || ln(w) === pr.VERIFYING);
+            let t = be(() => "standard" === ln(R).display && "onsubmit" !== ln(U) || ln(w) === fr.VERIFYING);
             ! function(t, e, n) {
                 var i;
                 ot && (i = at, ct());
-                var r = new fi(t);
+                var r = new hi(t);
                 Sn(() => {
                     var t = e() ?? null;
                     if (ot && "[" === ft(i) != (null !== t)) {
@@ -4903,7 +4904,7 @@ function(t) {
                     }
                     r.ensure(t, t && (e => n(e, t)))
                 }, T)
-            }(Bt, () => ln(U), (e, n) => {
+            }(Bt, () => ln(N), (e, n) => {
                 n(e, {
                     get id() {
                         return ln(j)
@@ -4926,40 +4927,40 @@ function(t) {
         var Vt = Tt(Bt, 2),
             Qt = Et(Vt),
             Wt = t => {
-                var e = Zn();
-                wn(() => si(e, ln(z).verificationRequired)), Xn(t, e)
+                var e = Kn();
+                wn(() => oi(e, ln(z).verificationRequired)), Yn(t, e)
             },
             Jt = t => {
-                var e = Zn();
-                wn(() => si(e, ln(z).verifying)), Xn(t, e)
+                var e = Kn();
+                wn(() => oi(e, ln(z).verifying)), Yn(t, e)
             },
             Gt = t => {
-                var e = Zn();
-                wn(() => si(e, ln(z).verified)), Xn(t, e)
+                var e = Kn();
+                wn(() => oi(e, ln(z).verified)), Yn(t, e)
             },
             Kt = t => {
-                var e = Zn();
-                wn(() => si(e, ln(z).label)), Xn(t, e)
+                var e = Kn();
+                wn(() => oi(e, ln(z).label)), Yn(t, e)
             };
-        gi(Qt, t => {
-            ln(w) === pr.CODE && ln(m) ? t(Wt) : ln(w) === pr.VERIFYING ? t(Jt, 1) : ln(w) === pr.VERIFIED ? t(Gt, 2) : t(Kt, -1)
-        }), ut(Vt), ut(Mt);
-        var Zt = Tt(Mt, 2),
+        pi(Qt, t => {
+            ln(w) === fr.CODE && ln(m) ? t(Wt) : ln(w) === fr.VERIFYING ? t(Jt, 1) : ln(w) === fr.VERIFIED ? t(Gt, 2) : t(Kt, -1)
+        }), ut(Vt), ut(Ft);
+        var Zt = Tt(Ft, 2),
             Yt = t => {
-                lr(t, {
+                sr(t, {
                     get strings() {
                         return ln(z)
                     }
                 })
             };
-        gi(Zt, t => {
+        pi(Zt, t => {
             ln(H) && t(Yt)
         }), ut(Ht);
         var Xt = Tt(Ht, 2),
             te = t => {
                 {
-                    let e = be(() => "bar" === ln(D).display && ln(H));
-                    ur(t, {
+                    let e = be(() => "bar" === ln(R).display && ln(H));
+                    cr(t, {
                         get logo() {
                             return ln(e)
                         },
@@ -4969,31 +4970,31 @@ function(t) {
                     })
                 }
             };
-        gi(Xt, t => {
+        pi(Xt, t => {
             ln(q) && t(te)
         });
         var ee = Tt(Xt, 2),
             ne = t => {
                 var e = Dr();
-                Gi(e, t => Te(S, t), () => ln(S)), Xn(t, e)
+                Ji(e, t => Te(S, t), () => ln(S)), Yn(t, e)
             };
-        gi(ee, t => {
-            "floating" === ln(D).display && t(ne)
+        pi(ee, t => {
+            "floating" === ln(R).display && t(ne)
         });
         var ie = Tt(ee, 2),
             re = t => {
-                var e = jr();
-                Pi(e), wn(() => {
+                var e = Rr();
+                Ui(e), wn(() => {
                     var t, n, i;
-                    Hi(e, "name", ln(D).name), t = e, n = ln(A), (i = Fi(t)).value !== (i.value = n ?? void 0) && (t.value !== n || 0 === n && t.nodeName === Ni) && (t.value = n ?? "")
-                }), Xn(t, e)
+                    qi(e, "name", ln(R).name), t = e, n = ln(A), (i = Fi(t)).value !== (i.value = n ?? void 0) && (t.value !== n || 0 === n && t.nodeName === Ni) && (t.value = n ?? "")
+                }), Yn(t, e)
             };
-        gi(ie, t => {
-            ln(D).setCookie || t(re)
+        pi(ie, t => {
+            ln(R).setCookie || t(re)
         }), ut(qt);
         var ae = Tt(qt, 2),
             oe = t => {
-                Tr(t, {
+                Cr(t, {
                     get anchor() {
                         return ln(k)
                     },
@@ -5001,37 +5002,37 @@ function(t) {
                         a && kt()
                     },
                     get placement() {
-                        return ln(D).popoverPlacement
+                        return ln(R).popoverPlacement
                     },
                     role: "alert",
                     variant: "error",
                     get dir() {
-                        return ln(F)
+                        return ln(M)
                     },
                     get updateUISignal() {
                         return ln(O)
                     },
                     children: (t, e) => {
-                        var n = Yn(),
+                        var n = Zn(),
                             i = Ct(n),
                             r = t => {
-                                Xn(t, Ur())
+                                Yn(t, jr())
                             },
                             o = t => {
                                 var e = Nr(),
                                     n = Et(e, !0);
-                                ut(e), wn(() => si(n, ln(z).expired)), Xn(t, e)
+                                ut(e), wn(() => oi(n, ln(z).expired)), Yn(t, e)
                             },
                             s = t => {
-                                var e = Pr(),
+                                var e = Ur(),
                                     n = Et(e, !0);
                                 ut(e), wn(() => {
-                                    Hi(e, "title", ln(E)), si(n, ln(z).error)
-                                }), Xn(t, e)
+                                    qi(e, "title", ln(E)), oi(n, ln(z).error)
+                                }), Yn(t, e)
                             };
-                        gi(i, t => {
-                            ln(E) || a ? ln(E) || ln(w) !== pr.EXPIRED ? t(s, -1) : t(o, 1) : t(r)
-                        }), Xn(t, n)
+                        pi(i, t => {
+                            ln(E) || a ? ln(E) || ln(w) !== fr.EXPIRED ? t(s, -1) : t(o, 1) : t(r)
+                        }), Yn(t, n)
                     },
                     $$slots: {
                         default: !0
@@ -5039,18 +5040,18 @@ function(t) {
                 })
             },
             se = t => {
-                var e = Yn();
+                var e = Zn();
                 ! function(t, e, n) {
                     ot && ct();
-                    var i = new fi(t);
+                    var i = new hi(t);
                     Sn(() => {
                         var t = e();
-                        t != t && (t = vi), i.ensure(t, n)
+                        t != t && (t = gi), i.ensure(t, n)
                     })
                 }(Ct(e), () => ln(m), t => {
                     {
-                        let e = be(() => "standard" !== ln(D).codeChallengeDisplay);
-                        Tr(t, {
+                        let e = be(() => "standard" !== ln(R).codeChallengeDisplay);
+                        Cr(t, {
                             get anchor() {
                                 return ln(k)
                             },
@@ -5058,28 +5059,28 @@ function(t) {
                                 return ln(e)
                             },
                             get display() {
-                                return ln(D).codeChallengeDisplay
+                                return ln(R).codeChallengeDisplay
                             },
                             onClose: () => {
                                 kt()
                             },
                             get placement() {
-                                return ln(D).popoverPlacement
+                                return ln(R).popoverPlacement
                             },
                             role: "dialog",
                             get "aria-label"() {
                                 return ln(z).verificationRequired
                             },
                             get dir() {
-                                return ln(F)
+                                return ln(M)
                             },
                             get updateUISignal() {
                                 return ln(O)
                             },
                             children: (t, e) => {
-                                var n = qr(),
+                                var n = Pr(),
                                     i = Ct(n);
-                                $r(i, {
+                                xr(i, {
                                     get audioUrl() {
                                         return ln(B)
                                     },
@@ -5093,7 +5094,7 @@ function(t) {
                                         return ln(m)
                                     },
                                     get config() {
-                                        return ln(D)
+                                        return ln(R)
                                     },
                                     get strings() {
                                         return ln(z)
@@ -5101,7 +5102,7 @@ function(t) {
                                 });
                                 var r = Tt(i, 2),
                                     a = t => {
-                                        ur(t, {
+                                        cr(t, {
                                             get logo() {
                                                 return ln(H)
                                             },
@@ -5110,31 +5111,31 @@ function(t) {
                                             }
                                         })
                                     };
-                                gi(r, t => {
-                                    ln(q) && "standard" !== ln(D).codeChallengeDisplay && t(a)
-                                }), Xn(t, n)
+                                pi(r, t => {
+                                    ln(q) && "standard" !== ln(R).codeChallengeDisplay && t(a)
+                                }), Yn(t, n)
                             },
                             $$slots: {
                                 default: !0
                             }
                         })
                     }
-                }), Xn(t, e)
+                }), Yn(t, e)
             };
-        gi(ae, t => {
-            ln(E) || ln(w) === pr.EXPIRED || !a ? t(oe) : ln(m) && ln(w) === pr.CODE && t(se, 1)
-        }), ut(Ut), Gi(Ut, t => Te(k, t), () => ln(k)), wn(t => {
-            Hi(Ut, "data-state", ln(w)), Hi(Ut, "data-display", ln(D).display || void 0), Hi(Ut, "data-placement", t), Hi(Ut, "data-visible", ln(R) || void 0), Hi(Ut, "dir", ln(F)), Hi(Vt, "for", ln(j)), Ut.dir = Ut.dir
+        pi(ae, t => {
+            ln(E) || ln(w) === fr.EXPIRED || !a ? t(oe) : ln(m) && ln(w) === fr.CODE && t(se, 1)
+        }), ut(Nt), Ji(Nt, t => Te(k, t), () => ln(k)), wn(t => {
+            qi(Nt, "data-state", ln(w)), qi(Nt, "data-display", ln(R).display || void 0), qi(Nt, "data-placement", t), qi(Nt, "data-visible", ln(D) || void 0), qi(Nt, "dir", ln(M)), qi(Vt, "for", ln(j)), Nt.dir = Nt.dir
         }, [() => function(t) {
             switch (t) {
                 case "bar":
-                    return ln(D).barPlacement || "bottom";
+                    return ln(R).barPlacement || "bottom";
                 case "floating":
-                    return ln(D).floatingPlacement || "auto";
+                    return ln(R).floatingPlacement || "auto";
                 default:
                     return
             }
-        }(ln(D).display)]), Xn(t, Rt);
+        }(ln(R).display)]), Yn(t, Dt);
         var le = X(Lt);
         return i(), le
     }, {
@@ -5791,31 +5792,13 @@ springSpace.la = springSpace.la || {}, springSpace.Util = {};
             n.selectNodeContents(t), e.removeAllRanges(), e.addRange(n)
         },
         e = function(t, e) {
-            t = t.replace(/^\?/, "");
-            for (var n = (t = decodeURIComponent(t)).split("&"), i = jQuery(`#${e}`), r = 0; r < n.length; r++) {
-                var a = decodeURIComponent(n[r]).split("="),
-                    o = a[0],
-                    s = a[1];
-                if (void 0 !== s)
-                    if (s = s.replace(/\+/g, " "), o.match(/\[.*?\]/)) {
-                        var l = o.replace(/\[.*?\]/, "[]"),
-                            c = i.find(`select[name="${l}"]`);
-                        void 0 === c.data("multiselect") ? c.find(`option[value="${s}"]`).prop("selected", !0) : c.multiselect("select", s)
-                    } else {
-                        var u = i.find(`*[name="${o}"]`);
-                        void 0 === u.data("multiselect") ? u.val(s) : u.multiselect("select", s)
-                    }
-            }
-        },
-        n = function(t, e) {
             return t.replace(/%(\d+)/g, function(t, n) {
                 return e[--n]
             })
         };
     springSpace.Util = {
         selectText: t,
-        rePopForm: e,
-        stringFormat: n
+        stringFormat: e
     }
 }
 
@@ -5875,22 +5858,7 @@ var errorAlert = function(t = "") {
         var r = document.createElement("button");
         return r.type = "button", r.classList.add("close"), r.setAttribute("aria-label", "close"), r.setAttribute("data-dismiss", "alert"), r.innerHTML = '<span aria-hidden="true">&times;</span>', i.appendChild(r), i.insertAdjacentHTML("beforeend", t), i
     },
-    enableMultiSelect = function(t, e) {
-        if (0 !== t.length)
-            if ("function" == typeof t.multiselect) {
-                var n = {};
-                window.springyText && window.springyText.bsMultiselect && Object.keys(window.springyText.bsMultiselect).forEach(function(t) {
-                    n[t] = window.springyText.bsMultiselect[t]
-                }), Object.keys(e).forEach(function(t) {
-                    n[t] = e[t]
-                }), t.multiselect(n)
-            } else console.error("Multiselect called but not present, probably BS5 change")
-    };
-const resetMultiSelect = function(t, e) {
-    const n = jQuery(t);
-    n.multiselect("deselectAll"), n.multiselect("select", e), n.multiselect("refresh")
-};
-var springSpace = springSpace || {};
+    springSpace = springSpace || {};
 springSpace.regex = {
         email: /^<?(['a-zA-Z0-9_=\.\-\+&!#\$%\*\?\^\|\{\}\~])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,6})+>?$/i,
         url: /^((mailto|https?):)*\/\/.+/i,
