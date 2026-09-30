@@ -3368,13 +3368,14 @@ var springyCommon = {
     onModalClosed: function(i) {
         jQuery(document).on("hidden.bs.modal", i)
     },
-    showModal: function(i) {
+    showModal: function(i, n) {
         springyCommon.setLastFocusElement();
-        let n = jQuery("div, button").addClass("s-lc-do-not-print");
+        let o = jQuery("div, button").addClass("s-lc-do-not-print");
         i.removeClass("s-lc-do-not-print"), i.find("div").removeClass("s-lc-do-not-print"), i.springshareModal({
-            backdrop: "static"
+            backdrop: "static",
+            focus: n ?? !0
         }), i.on("shown.bs.modal", springyCommon.onModalLoadedEarly), i.on("hidden.bs.modal", function() {
-            closeDialog(), n.removeClass("s-lc-do-not-print"), springyCommon.restoreLastFocusElement()
+            closeDialog(), o.removeClass("s-lc-do-not-print"), springyCommon.restoreLastFocusElement()
         })
     },
     closeDialog: function(i) {
