@@ -1420,6 +1420,9 @@ springSpace.public = {}, springSpace.public._construct = function() {
                 site_id: config.site_id,
                 content_id: config.content_id ? config.content_id : 0,
                 is_widget: springSpace.azList.is_widget,
+                ...1 == springSpace.azList.is_lti ? {
+                    is_lti: 1
+                } : {},
                 bootstrap5: is_bootstrap,
                 page_size: page_size,
                 preview: springSpace.azList.az_preview,
