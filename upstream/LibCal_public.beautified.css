@@ -112,8 +112,8 @@ table.dataTable thead>tr>th.dt-orderable-asc .dt-column-order:before,
 table.dataTable thead>tr>th.dt-ordering-asc .dt-column-order:before {
     bottom: calc(50% + var(--dt-order-arrow-gap));
     border-bottom: var(--dt-order-arrow-height) solid var(--dt-order-arrow_color);
-    border-left: calc(var(--dt-order-arrow-width)/2) solid transparent;
-    border-right: calc(var(--dt-order-arrow-width)/2) solid transparent
+    border-left: calc(var(--dt-order-arrow-width) / 2) solid transparent;
+    border-right: calc(var(--dt-order-arrow-width) / 2) solid transparent
 }
 
 table.dataTable thead>tr>td.dt-orderable-desc .dt-column-order:after,
@@ -122,8 +122,8 @@ table.dataTable thead>tr>th.dt-orderable-desc .dt-column-order:after,
 table.dataTable thead>tr>th.dt-ordering-desc .dt-column-order:after {
     top: calc(50% + 1px);
     border-top: var(--dt-order-arrow-height) solid var(--dt-order-arrow_color);
-    border-left: calc(var(--dt-order-arrow-width)/2) solid transparent;
-    border-right: calc(var(--dt-order-arrow-width)/2) solid transparent
+    border-left: calc(var(--dt-order-arrow-width) / 2) solid transparent;
+    border-right: calc(var(--dt-order-arrow-width) / 2) solid transparent
 }
 
 table.dataTable thead>tr>td.dt-orderable-asc .dt-column-order,
@@ -1547,8 +1547,7 @@ h3 {
 
 select {
     cursor: pointer;
-    padding: 2px 4px;
-    height: 24px
+    padding: 2px 4px
 }
 
 .panel-title {
@@ -2052,7 +2051,7 @@ a.s-lc-color-links:hover {
     margin-top: 20px
 }
 
-#s-lc-c-clear {
+.s-lc-filters-clear {
     color: #333;
     font-size: .8em;
     float: right
@@ -2163,6 +2162,10 @@ a.s-lc-color-links:hover {
 
 .s-lc-event-register-header {
     margin-top: 30px
+}
+
+#lc-s-event-fs>legend {
+    float: none
 }
 
 #s-lc-event-regreq {
@@ -2679,7 +2682,7 @@ a.s-lc-color-links:hover {
     margin: 0 auto;
     height: auto;
     border-radius: 5px;
-    min-width: 70%;
+    width: 100%;
     -o-object-fit: contain;
     object-fit: contain;
     padding-bottom: 10px
@@ -3093,7 +3096,14 @@ a.s-lc-color-links:hover {
 
 .btn-info {
     background-color: #00838f;
-    border-color: #00838f
+    border-color: #00838f;
+    color: #fff
+}
+
+.btn-info.show,
+.btn-info:hover {
+    background-color: #05646d !important;
+    color: #fff !important
 }
 
 .text-muted,
@@ -3165,7 +3175,7 @@ h6 small {
 
 .s-lc-period-view {
     margin: auto;
-    width: 100%
+    width: calc(100% + calc(-1 * 0px))
 }
 
 .s-lc-period-wrapper {
@@ -3347,7 +3357,7 @@ h6 small {
     gap: 12px
 }
 
-@media (max-width:1024px) {
+@media(max-width:1024px) {
     .s-lc-patron-cards {
         grid-template-columns: 1fr
     }
@@ -3394,6 +3404,81 @@ h6 small {
     font-weight: 700
 }
 
+.s-lc-eq-cancel-bookings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 15px
+}
+
+@media(max-width:767px) {
+    .s-lc-eq-cancel-bookings {
+        grid-template-columns: 1fr
+    }
+}
+
+.s-lc-eq-cancel-booking:only-child {
+    grid-column: 1/-1
+}
+
+.s-lc-eq-cancel-booking {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+    padding: 12px
+}
+
+.s-lc-eq-cancel-booking-summary {
+    display: grid;
+    grid-template-columns: 74px 1fr
+}
+
+.s-lc-eq-cancel-booking-summary.s-lc-eq-cancel-booking-no-image {
+    grid-template-columns: 1fr
+}
+
+.s-lc-eq-cancel-booking-image img {
+    width: 64px;
+    height: 64px;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.s-lc-eq-cancel-booking-details h2 {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 1.15em;
+    font-weight: 700
+}
+
+.s-lc-eq-cancel-booking-check-in-out {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #efefef
+}
+
+.s-lc-eq-cancel-booking-check-in-out .s-lc-check-in-btn,
+.s-lc-eq-cancel-booking-check-in-out .s-lc-check-out-btn {
+    margin-bottom: 4px
+}
+
+@media(max-width:767px) {
+
+    .s-lc-eq-cancel-booking-check-in-out .s-lc-check-in-btn,
+    .s-lc-eq-cancel-booking-check-in-out .s-lc-check-out-btn {
+        display: block;
+        width: 100%
+    }
+}
+
+.s-lc-eq-cancel-booking-actions {
+    margin-top: auto;
+    padding-top: 12px;
+    text-align: right
+}
+
 #s-ui-cc-read-more-link {
     text-decoration: underline
 }
@@ -3403,6 +3488,135 @@ h6 small {
 .bootstrap-select>.dropdown-toggle.bs-placeholder:focus,
 .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
     color: #595959
+}
+
+.pad-left-xsm {
+    margin-left: 2px
+}
+
+.pad-left-sm {
+    margin-left: 5px
+}
+
+.pad-left-med {
+    margin-left: 15px
+}
+
+.pad-right-xsm {
+    margin-right: 2px
+}
+
+.pad-right-sm {
+    margin-right: 5px
+}
+
+.pad-right-med {
+    margin-right: 15px
+}
+
+.pad-top-med {
+    padding-top: 10px
+}
+
+.pad-top-sm {
+    padding-top: 5px
+}
+
+.pad-bottom-med {
+    padding-bottom: 10px
+}
+
+.pad-bottom-sm {
+    padding-bottom: 5px
+}
+
+.no-pad {
+    padding: 0
+}
+
+.no-pad-right {
+    padding-right: 0
+}
+
+.pad-med {
+    padding: 10px
+}
+
+.margin-top-xlg {
+    margin-top: 25px
+}
+
+.margin-top-lg {
+    margin-top: 15px
+}
+
+.margin-top-med {
+    margin-top: 10px
+}
+
+.margin-top-sm {
+    margin-top: 5px
+}
+
+.margin-top-none {
+    margin-top: 0
+}
+
+.margin-bottom-med {
+    margin-bottom: 10px
+}
+
+.margin-bottom-lg {
+    margin-bottom: 25px
+}
+
+.margin-bottom-sm {
+    margin-bottom: 5px
+}
+
+.margin-bottom-none {
+    margin-bottom: 0
+}
+
+.margin-left-sm {
+    margin-left: 5px
+}
+
+.margin-left-med {
+    margin-left: 10px
+}
+
+.margin-right-sm {
+    margin-right: 5px
+}
+
+.margin-right-med {
+    margin-right: 10px
+}
+
+.margin-right-lg {
+    margin-right: 25px
+}
+
+.no-deco {
+    text-decoration: none !important
+}
+
+.cf {
+    clear: both
+}
+
+.s-lc-small {
+    font-size: 90%
+}
+
+.bold,
+.s-lc-bold {
+    font-weight: 700
+}
+
+.nowrap {
+    white-space: nowrap
 }
 
 .s-lc-app-flab,
@@ -3419,7 +3633,7 @@ h6 small {
     border-top: 1px solid #eee
 }
 
-@media (max-width:530px) {
+@media(max-width:530px) {
     #index_php .fc-toolbar {
         font-size: .9em !important
     }
@@ -3488,14 +3702,14 @@ h6 small {
     }
 }
 
-@media (max-width:993px) {
+@media(max-width:993px) {
     .s-lc-event-label {
         text-align: left;
         margin-top: 10px
     }
 }
 
-@media (max-width:319px) {
+@media(max-width:319px) {
     #s-lc-rm-tg-scroll {
         width: 170px
     }
@@ -3535,7 +3749,7 @@ h6 small {
     }
 }
 
-@media (min-width:320px) and (max-width:468px) {
+@media(min-width:320px) and (max-width:468px) {
     #s-lc-rm-tg-scroll {
         width: 170px
     }
@@ -3575,7 +3789,7 @@ h6 small {
     }
 }
 
-@media (min-width:469px) and (max-width:768px) {
+@media(min-width:469px) and (max-width:768px) {
     #s-lc-rm-tg-scroll {
         width: 320px
     }
@@ -3615,7 +3829,7 @@ h6 small {
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media(min-width:768px) and (max-width:991px) {
     #s-lc-rm-tg-scroll {
         width: 555px
     }
@@ -3637,7 +3851,7 @@ h6 small {
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media(min-width:992px) and (max-width:1199px) {
     #s-lc-rm-tg-scroll {
         width: 535px
     }
@@ -3647,7 +3861,7 @@ h6 small {
     }
 }
 
-@media (min-width:1200px) {
+@media(min-width:1200px) {
     #s-lc-rm-tg-scroll {
         width: 675px
     }
@@ -3657,31 +3871,31 @@ h6 small {
     }
 }
 
-@media (min-width:395px) and (max-width:468px) {
+@media(min-width:395px) and (max-width:468px) {
     #s-lc-rm-tg-scroll {
         width: 230px !important
     }
 }
 
-@media (min-width:544px) and (max-width:619px) {
+@media(min-width:544px) and (max-width:619px) {
     #s-lc-rm-tg-scroll {
         width: 390px !important
     }
 }
 
-@media (min-width:620px) and (max-width:695px) {
+@media(min-width:620px) and (max-width:695px) {
     #s-lc-rm-tg-scroll {
         width: 470px !important
     }
 }
 
-@media (min-width:696px) and (max-width:768px) {
+@media(min-width:696px) and (max-width:768px) {
     #s-lc-rm-tg-scroll {
         width: 530px !important
     }
 }
 
-@media (max-width:1024px) {
+@media(max-width:1024px) {
     #s-lc-rm-tg-cont ::-webkit-scrollbar {
         width: 15px;
         height: 20px;
@@ -3695,7 +3909,7 @@ h6 small {
     }
 }
 
-@media (max-width:319px) {
+@media(max-width:319px) {
 
     #s-lc-app-dp .datepicker table,
     #s-lc-app-dp .datepicker-inline {
@@ -3717,7 +3931,7 @@ h6 small {
     }
 }
 
-@media (min-width:320px) and (max-width:468px) {
+@media(min-width:320px) and (max-width:468px) {
 
     #s-lc-app-dp .datepicker table,
     #s-lc-app-dp .datepicker-inline {
@@ -3739,7 +3953,7 @@ h6 small {
     }
 }
 
-@media (min-width:469px) and (max-width:768px) {
+@media(min-width:469px) and (max-width:768px) {
 
     #s-lc-app-dp .datepicker table,
     #s-lc-app-dp .datepicker-inline {
@@ -3761,7 +3975,7 @@ h6 small {
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media(min-width:768px) and (max-width:991px) {
 
     #s-lc-app-dp .datepicker table,
     #s-lc-app-dp .datepicker-inline {
@@ -3769,7 +3983,7 @@ h6 small {
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media(min-width:992px) and (max-width:1199px) {
 
     #s-lc-app-dp .datepicker table,
     #s-lc-app-dp .datepicker-inline {
@@ -3777,7 +3991,7 @@ h6 small {
     }
 }
 
-@media (min-width:1200px) {
+@media(min-width:1200px) {
 
     #s-lc-app-dp .datepicker table,
     #s-lc-app-dp .datepicker-inline {
@@ -3785,7 +3999,7 @@ h6 small {
     }
 }
 
-@media (min-width:320px) {
+@media(min-width:320px) {
 
     #s-lc-appm-dp .datepicker table,
     #s-lc-appm-dp .datepicker-inline {
@@ -3793,7 +4007,7 @@ h6 small {
     }
 }
 
-@media (max-width:768px) {
+@media(max-width:768px) {
     h2.s-lc-app-s1h3 {
         font-size: 1.5em
     }
@@ -3811,7 +4025,7 @@ h6 small {
     }
 }
 
-@media (min-width:768px) {
+@media(min-width:768px) {
     .col-item .info {
         position: absolute;
         bottom: 0;
@@ -3828,7 +4042,7 @@ h6 small {
     }
 }
 
-@media (max-width:768px) {
+@media(max-width:768px) {
     #s-lc-eq-navform {
         padding-bottom: 50px
     }
@@ -3872,19 +4086,19 @@ h6 small {
     }
 }
 
-@media (max-width:480px) {
+@media(max-width:480px) {
     .s-lc-eq-n-col-search {
         display: none
     }
 }
 
-@media (min-width:500px) {
+@media(min-width:500px) {
     .s-lc-info-label {
         font-size: .7em
     }
 }
 
-@media (max-width:768px) {
+@media(max-width:768px) {
     #equip_ .s-lc-eq-s-conf-link {
         display: inline
     }
@@ -4083,19 +4297,19 @@ h6 small {
     padding-bottom: 8px
 }
 
-@media (min-width:768px) {
+@media(min-width:768px) {
     .s-lc-catalog-item-container {
         width: 50%
     }
 }
 
-@media (max-width:993px) {
+@media(max-width:993px) {
     .s-lc-item-image {
         max-height: 180px
     }
 }
 
-@media (min-width:992px) {
+@media(min-width:992px) {
     .s-lc-catalog-item-container {
         width: 33.333%
     }
@@ -4295,7 +4509,7 @@ h6 small {
     border: 1px dashed #cecece
 }
 
-@media (min-width:768px) {
+@media(min-width:768px) {
     .s-lc-eq-location-select {
         display: inline-block
     }
@@ -4346,13 +4560,13 @@ h6 small {
     line-height: 18px
 }
 
-@media (min-width:768px) {
+@media(min-width:768px) {
     .s-lc-eventcard {
         width: 50%
     }
 }
 
-@media (min-width:992px) {
+@media(min-width:992px) {
     .s-lc-eventcard-inner-container .s-lc-eventcard {
         width: 33.333%
     }
@@ -4571,8 +4785,8 @@ h4 .s-lc-eventcard-pill {
 .s-lc-eventcard-horizontal-image img {
     width: 100%;
     height: 100%;
-    -o-object-fit: fill;
-    object-fit: fill
+    -o-object-fit: cover;
+    object-fit: cover
 }
 
 .s-lc-eventcard-client {
@@ -4679,7 +4893,7 @@ h4 .s-lc-eventcard-pill {
     color: #616161
 }
 
-@media (max-width:450px) {
+@media(max-width:450px) {
 
     .s-lc-mc th,
     .s-lc-mc-evt {
@@ -4772,7 +4986,7 @@ form {
 }
 
 select {
-    max-height: 37px
+    max-height: 38px
 }
 
 textarea {
@@ -4787,124 +5001,12 @@ textarea {
     display: none
 }
 
-.pad-left-xsm {
-    margin-left: 2px
-}
-
-.pad-left-sm {
-    margin-left: 5px
-}
-
-.pad-left-med {
-    margin-left: 15px
-}
-
-.pad-right-xsm {
-    margin-right: 2px
-}
-
-.pad-right-sm {
-    margin-right: 5px
-}
-
-.pad-right-med {
-    margin-right: 15px
-}
-
-.pad-top-med {
-    padding-top: 10px
-}
-
-.pad-top-sm {
-    padding-top: 5px
-}
-
-.pad-bottom-med {
-    padding-bottom: 10px
-}
-
-.pad-bottom-sm {
-    padding-bottom: 5px
-}
-
-.no-pad {
-    padding: 0
-}
-
-.no-pad-right {
-    padding-right: 0
-}
-
-.pad-med {
-    padding: 10px
-}
-
 .margin-top-jumbo {
     margin-top: 60px
 }
 
-.margin-top-xlg {
-    margin-top: 25px
-}
-
-.margin-top-lg {
-    margin-top: 15px
-}
-
-.margin-top-med {
-    margin-top: 10px
-}
-
-.margin-top-sm {
-    margin-top: 5px
-}
-
-.margin-top-none {
-    margin-top: 0
-}
-
-.margin-bottom-med {
-    margin-bottom: 10px
-}
-
-.margin-bottom-lg {
-    margin-bottom: 25px
-}
-
-.margin-bottom-sm {
-    margin-bottom: 5px
-}
-
-.margin-bottom-none {
-    margin-bottom: 0
-}
-
-.margin-left-sm {
-    margin-left: 5px
-}
-
-.margin-left-med {
-    margin-left: 10px
-}
-
-.margin-right-sm {
-    margin-right: 5px
-}
-
-.margin-right-med {
-    margin-right: 10px
-}
-
-.margin-right-lg {
-    margin-right: 25px
-}
-
 .link-pointer {
     cursor: pointer
-}
-
-.no-deco {
-    text-decoration: none !important
 }
 
 .border-dashed {
@@ -4917,10 +5019,6 @@ textarea {
 
 .uppercase {
     text-transform: uppercase
-}
-
-.cf {
-    clear: both
 }
 
 .s-lc-color-lt-grey {
@@ -5141,6 +5239,10 @@ textarea {
     margin-left: 16px
 }
 
+.alert>:last-child {
+    margin-bottom: 0
+}
+
 .alert-success {
     color: #2d4821
 }
@@ -5186,15 +5288,6 @@ textarea {
 .s-lc-no-val,
 .s-lc-text-greyout {
     color: #666
-}
-
-.s-lc-small {
-    font-size: 90%
-}
-
-.bold,
-.s-lc-bold {
-    font-weight: 700
 }
 
 .s-lc-text-ghost {
@@ -5252,10 +5345,6 @@ textarea {
     position: relative;
     top: 3px;
     border: 0
-}
-
-.nowrap {
-    white-space: nowrap
 }
 
 #jquery-notification {
@@ -5335,7 +5424,7 @@ h2.modal-title {
     text-align: right
 }
 
-@media (max-width:768px) {
+@media(max-width:768px) {
     .s-lc-event-flegend {
         text-align: left !important
     }
@@ -5462,7 +5551,7 @@ table.s-lc-export-table th {
     font-size: .75em
 }
 
-@media (min-width:769px) {
+@media(min-width:769px) {
     .s-lc-desktop-only-margin-bottom-lg {
         margin-bottom: 20px
     }
@@ -5492,7 +5581,7 @@ div.dt-container div.dt-layout-row {
     text-decoration: underline
 }
 
-@media (min-width:769px) {
+@media(min-width:769px) {
 
     .s-lc-modal-large,
     .s-lc-modal-medium,
@@ -5502,7 +5591,7 @@ div.dt-container div.dt-layout-row {
     }
 }
 
-@media (min-width:992px) {
+@media(min-width:992px) {
 
     .s-lc-modal-large,
     .s-lc-modal-medium {
@@ -5511,11 +5600,33 @@ div.dt-container div.dt-layout-row {
     }
 }
 
-@media (min-width:1200px) {
+@media(min-width:1200px) {
     .s-lc-modal-large {
         width: 1100px;
         --bs-modal-width: 1100px
     }
+}
+
+.nav-filter {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 100%
+}
+
+@media(min-width:768px) {
+    .nav-filter {
+        width: auto
+    }
+}
+
+.nav-filter>label {
+    white-space: nowrap;
+    margin-bottom: 0
+}
+
+.nav-filter>:not(label) {
+    flex-grow: 1
 }
 
 .s-lc-underline-on-hover a {
@@ -5524,4 +5635,51 @@ div.dt-container div.dt-layout-row {
 
 .s-lc-underline-on-hover a:hover {
     text-decoration: underline
+}
+
+.s-lc-select-sm .springy-select__toggle {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: .875rem
+}
+
+.s-lc-select-icon-presenter {
+    display: inline-block;
+    width: auto
+}
+
+.s-lc-select-icon-presenter .springy-select__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem
+}
+
+.s-lc-select-icon-presenter .springy-select__toggle:before {
+    font-family: FontAwesome;
+    content: "\f234"
+}
+
+.s-lc-select-icon-presenter .springy-select__toggle-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+.input-group>springy-select:not(:first-child) .springy-select__toggle {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius)
+}
+
+.input-group>springy-select:not(:last-child) .springy-select__toggle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
 }
